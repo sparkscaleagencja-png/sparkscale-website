@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kuchnia na wymiar pod klucz &#8212; cena, proces, terminy | Wr&#281;ba</title>
+<meta name="description" content="Kuchnia pod klucz: ile kosztuje i od czego zale&#380;y cena, ile trwa realizacja, jakie materia&#322;y i fronty, jakie gwarancje i co je&#347;li co&#347; nie pasuje po monta&#380;u. Bezp&#322;atny pomiar.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230F2B2A'/%3E%3Cpath d='M8 22V10h3.2l4.8 8 4.8-8H24v12h-3v-6.6l-3.6 6.1h-2.8L11 15.4V22z' fill='%23C2603B'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* --- elementy tylko dla landingu --- */
+.lp-hero{background:var(--ink);color:var(--bg);padding:clamp(40px,6vw,74px) 0 clamp(44px,6vw,80px)}
+.lp-hero h1,.lp-hero .eyebrow{color:var(--bg)}
+.lp-hero .eyebrow{color:var(--sage-lt)}
+.lp-hero p{color:rgba(255,255,255,.78)}
+:root[data-theme="dark"] .lp-hero p{color:var(--tx-mut)}
+.lp-hero h1 em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--clay)}
+.lp-bullets{display:grid;gap:11px;margin:24px 0 28px}
+.lp-bullets div{display:flex;gap:11px;align-items:flex-start;font-size:.955rem}
+.lp-bullets svg{width:18px;height:18px;color:var(--sage-lt);flex-shrink:0;margin-top:4px}
+.crumb{font-size:.83rem;margin-bottom:18px;color:rgba(255,255,255,.62)}
+:root[data-theme="dark"] .crumb{color:var(--tx-mut)}
+.crumb a{color:inherit;text-decoration:none;border-bottom:1px solid currentColor}
+
+.incl{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.incl-box{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:26px}
+.incl-box.yes{border-left:4px solid var(--sage)}
+.incl-box.no{border-left:4px solid var(--clay)}
+.incl-box h3{margin-bottom:14px;font-size:1.12rem}
+.incl-box ul{list-style:none;display:grid;gap:10px;font-size:.905rem;color:var(--tx-mut)}
+.incl-box li{display:flex;gap:10px;align-items:flex-start}
+.incl-box li svg{width:16px;height:16px;flex-shrink:0;margin-top:4px}
+.incl-box.yes li svg{color:var(--sage)}
+.incl-box.no li svg{color:var(--clay)}
+
+.drivers{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.drv{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.drv .n{font-family:var(--serif);font-size:1.5rem;color:var(--clay);font-weight:700;line-height:1;margin-bottom:10px;display:block}
+.drv h4{font-size:1.01rem;margin-bottom:6px}
+.drv p{font-size:.865rem;margin-bottom:10px}
+.drv .impact{font-size:.79rem;font-weight:640;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:7px;padding:5px 10px;display:inline-block}
+
+.tl{position:relative;padding-left:0}
+.tl-item{display:grid;grid-template-columns:96px 1fr;gap:20px;padding-bottom:26px;position:relative}
+.tl-item::before{content:"";position:absolute;left:47px;top:38px;bottom:-4px;width:2px;background:var(--line)}
+.tl-item:last-child::before{display:none}
+.tl-day{text-align:center}
+.tl-day b{display:block;width:96px;padding:9px 0;border-radius:10px;background:var(--ink);color:var(--bg);font-size:.845rem;font-weight:650;position:relative;z-index:2}
+.tl-body{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:19px 21px}
+.tl-body h4{font-size:1.04rem;margin-bottom:6px}
+.tl-body p{font-size:.895rem}
+.tl-body .who{display:inline-block;margin-top:10px;font-size:.785rem;padding:4px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);color:var(--tx-mut)}
+
+.mats{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.mat{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;display:flex;flex-direction:column}
+.mat svg{width:100%;height:120px;border-bottom:1px solid var(--line);display:block}
+.mat-b{padding:19px 21px;flex:1;display:flex;flex-direction:column}
+.mat h4{font-size:1.04rem;margin-bottom:5px}
+.mat p{font-size:.875rem;flex:1;margin-bottom:12px}
+.mat .row{display:flex;justify-content:space-between;gap:12px;font-size:.825rem;padding-top:11px;border-top:1px solid var(--line)}
+.mat .row b{color:var(--ink);font-weight:640}
+
+.warr{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.wr{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-lg);padding:24px;text-align:center}
+.wr .big{font-size:2.15rem;font-weight:700;color:var(--clay);letter-spacing:-.03em;line-height:1.05;display:block;margin-bottom:6px}
+.wr h4{font-size:1rem;margin-bottom:7px}
+.wr p{font-size:.855rem}
+
+.fix{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--sage);border-radius:var(--r-lg);padding:clamp(24px,3vw,34px)}
+.fix ol{list-style:none;counter-reset:f;display:grid;gap:16px;margin-top:18px}
+.fix li{counter-increment:f;display:grid;grid-template-columns:34px 1fr;gap:14px;font-size:.92rem;color:var(--tx-mut)}
+.fix li::before{content:counter(f);width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-weight:700;font-size:.875rem}
+.fix li b{color:var(--ink)}
+
+@media (max-width:980px){.incl,.drivers,.mats,.warr{grid-template-columns:1fr 1fr}}
+@media (max-width:760px){
+  .incl,.drivers,.mats,.warr{grid-template-columns:1fr}
+  .tl-item{grid-template-columns:1fr;gap:10px}
+  .tl-item::before{display:none}
+  .tl-day b{width:auto;display:inline-block;padding:7px 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="demobar">
+  <b>STRONA DEMONSTRACYJNA.</b> Wr&#281;ba to fikcyjna pracownia stworzona na potrzeby prezentacji. Dane, terminy, kwoty i opinie s&#261; przyk&#322;adowe.
+</div>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a href="index.html" class="logo">
+      <span class="logo-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 22V10h3.2l4.8 8 4.8-8H24v12h-3v-6.6l-3.6 6.1h-2.8L11 15.4V22z" fill="#C2603B"/></svg></span>
+      <span>Wr&#281;ba<small>Pracownia Kuchni</small></span>
+    </a>
+    <div class="nav-links">
+      <a href="#cena">Cena</a>
+      <a href="#proces">Proces</a>
+      <a href="#materialy">Materia&#322;y</a>
+      <a href="#gwarancja">Gwarancja</a>
+      <a href="#poprawki">Po monta&#380;u</a>
+      <a href="index.html#realizacje">Realizacje</a>
+    </div>
+    <div class="nav-cta">
+      <button class="themebtn" id="theme" aria-label="Prze&#322;&#261;cz tryb jasny i ciemny">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
+      <a href="#pomiar" class="btn btn-p btn-sm">Bezp&#322;atny pomiar</a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile" id="mobile">
+    <a href="#cena">Cena</a><a href="#proces">Proces</a><a href="#materialy">Materia&#322;y</a>
+    <a href="#gwarancja">Gwarancja</a><a href="#poprawki">Po monta&#380;u</a><a href="index.html">Strona g&#322;&#243;wna</a>
+    <a href="#pomiar" style="color:var(--clay);font-weight:700">Zam&#243;w bezp&#322;atny pomiar</a>
+  </div>
+</nav>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+  <symbol id="lp-hero" viewBox="0 0 560 400">
+    <rect width="560" height="400" fill="var(--ink)"/>
+    <rect x="0" y="0" width="560" height="248" fill="var(--ink-2)" opacity=".28"/>
+    <g fill="var(--bg)" opacity=".14"><rect x="36" y="30" width="118" height="78" rx="4"/><rect x="162" y="30" width="118" height="78" rx="4"/><rect x="288" y="20" width="96" height="88" rx="4"/></g>
+    <rect x="400" y="28" width="136" height="98" rx="5" fill="var(--sage)" opacity=".3"/>
+    <g stroke="var(--sage-lt)" stroke-width="2" opacity=".4"><line x1="468" y1="28" x2="468" y2="126"/><line x1="400" y1="77" x2="536" y2="77"/></g>
+    <rect x="36" y="168" width="500" height="13" rx="5" fill="var(--clay)"/>
+    <g fill="var(--bg)" opacity=".1"><rect x="36" y="181" width="120" height="67" rx="4"/><rect x="164" y="181" width="120" height="67" rx="4"/><rect x="292" y="181" width="90" height="67" rx="4"/><rect x="390" y="181" width="146" height="67" rx="4"/></g>
+    <g stroke="var(--sage-lt)" stroke-width="2.6" stroke-linecap="round" opacity=".55"><line x1="78" y1="214" x2="112" y2="214"/><line x1="206" y1="214" x2="240" y2="214"/><line x1="440" y1="214" x2="482" y2="214"/></g>
+    <rect x="130" y="296" width="300" height="14" rx="6" fill="var(--clay)"/>
+    <rect x="142" y="310" width="276" height="62" rx="4" fill="var(--bg)" opacity=".12"/>
+    <g fill="var(--sage)" opacity=".6"><circle cx="200" cy="341" r="6"/><circle cx="280" cy="341" r="6"/><circle cx="360" cy="341" r="6"/></g>
+    <g stroke="var(--clay)" stroke-width="2.4" stroke-dasharray="5 6" opacity=".7"><line x1="36" y1="388" x2="536" y2="388"/></g>
+    <g fill="var(--clay)"><circle cx="36" cy="388" r="4"/><circle cx="536" cy="388" r="4"/></g>
+  </symbol>
+  <symbol id="m-lam" viewBox="0 0 320 120"><rect width="320" height="120" fill="var(--surface)"/><g fill="var(--ink)" opacity=".85"><rect x="16" y="16" width="136" height="42" rx="3"/><rect x="164" y="16" width="140" height="42" rx="3"/></g><rect x="16" y="66" width="288" height="8" rx="3" fill="var(--sage)"/><g fill="var(--ink)" opacity=".7"><rect x="16" y="78" width="136" height="28" rx="3"/><rect x="164" y="78" width="140" height="28" rx="3"/></g></symbol>
+  <symbol id="m-lak" viewBox="0 0 320 120"><rect width="320" height="120" fill="var(--surface)"/><g fill="var(--ink)" opacity=".94"><rect x="16" y="14" width="90" height="46" rx="3"/><rect x="114" y="14" width="90" height="46" rx="3"/><rect x="212" y="14" width="92" height="46" rx="3"/></g><g stroke="var(--bg)" stroke-width="1.6" opacity=".22"><line x1="16" y1="26" x2="106" y2="26"/><line x1="114" y1="26" x2="204" y2="26"/><line x1="212" y1="26" x2="304" y2="26"/></g><rect x="16" y="68" width="288" height="9" rx="3" fill="var(--clay)"/><g fill="var(--ink)" opacity="0.8"><rect x="16" y="81" width="138" height="25" rx="3"/><rect x="164" y="81" width="140" height="25" rx="3"/></g></symbol>
+  <symbol id="m-forn" viewBox="0 0 320 120"><rect width="320" height="120" fill="var(--surface)"/><g fill="var(--sage)" opacity=".9"><rect x="16" y="14" width="136" height="48" rx="3"/><rect x="164" y="14" width="140" height="48" rx="3"/></g><g stroke="var(--ink)" stroke-width="1.3" opacity=".3"><path d="M32 20c10 9 10 21 0 30M56 20c10 9 10 21 0 30M80 20c10 9 10 21 0 30M104 20c10 9 10 21 0 30M128 20c10 9 10 21 0 30M180 20c10 9 10 21 0 30M204 20c10 9 10 21 0 30M228 20c10 9 10 21 0 30M252 20c10 9 10 21 0 30M276 20c10 9 10 21 0 30"/></g><rect x="16" y="70" width="288" height="9" rx="3" fill="var(--ink)"/><g fill="var(--sage)" opacity=".85"><rect x="16" y="83" width="288" height="23" rx="3"/></g></symbol>
+  <symbol id="m-ram" viewBox="0 0 320 120"><rect width="320" height="120" fill="var(--surface)"/><g fill="var(--sage)" opacity=".92"><rect x="16" y="14" width="88" height="48" rx="3"/><rect x="112" y="14" width="88" height="48" rx="3"/><rect x="208" y="14" width="96" height="48" rx="3"/></g><g fill="none" stroke="var(--bg)" stroke-width="2.4" opacity=".85"><rect x="26" y="24" width="68" height="28" rx="2"/><rect x="122" y="24" width="68" height="28" rx="2"/><rect x="218" y="24" width="76" height="28" rx="2"/></g><rect x="16" y="70" width="288" height="10" rx="3" fill="var(--ink)"/><g fill="var(--sage)" opacity=".88"><rect x="16" y="84" width="138" height="22" rx="3"/><rect x="164" y="84" width="140" height="22" rx="3"/></g><g fill="var(--clay)"><circle cx="85" cy="95" r="3.4"/><circle cx="233" cy="95" r="3.4"/></g></symbol>
+</defs></svg>
+
+<!-- ============ HERO ============ -->
+<header class="lp-hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="crumb"><a href="index.html">Strona g&#322;&#243;wna</a> &middot; Kuchnia pod klucz</p>
+      <p class="eyebrow">Kuchnia na wymiar pod klucz</p>
+      <h1>Jedna umowa, jeden termin, <em>jeden numer telefonu.</em></h1>
+      <p class="lead" style="color:rgba(255,255,255,.8)">Pod klucz znaczy u nas dok&#322;adnie tyle: projekt, produkcja, blat, AGD, monta&#380; i pod&#322;&#261;czenie robimy my albo nasi podwykonawcy, za kt&#243;rych odpowiadamy. Nie umawiasz si&#281; osobno z blaciarzem, hydraulikiem i elektrykiem.</p>
+      <div class="lp-bullets">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Wide&#322;ki cenowe podajemy w pierwszej rozmowie, nie po tygodniu</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Harmonogram z konkretnymi datami w umowie, nie &#8222;oko&#322;o sze&#347;ciu tygodni"</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Ostatnia p&#322;atno&#347;&#263; po odbiorze, po Twoim &#8222;gotowe"</div>
+      </div>
+      <div class="hero-btns">
+        <a href="#pomiar" class="btn btn-p">Zam&#243;w bezp&#322;atny pomiar
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#cena" class="btn btn-s" style="color:var(--bg);border-color:rgba(255,255,255,.3)">Od czego zale&#380;y cena</a>
+      </div>
+    </div>
+    <div class="hero-art" style="border:none"><svg viewBox="0 0 560 400" role="img" aria-label="Ilustracja pogl&#261;dowa kuchni pod klucz"><use href="#lp-hero"/></svg></div>
+  </div>
+</header>
+
+<!-- ============ CO WCHODZI W ZAKRES ============ -->
+<section>
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Zakres</p>
+      <h2>Co znaczy &#8222;pod klucz", a co nie</h2>
+      <p class="lead">Najcz&#281;stsza przyczyna konflikt&#243;w w tej bran&#380;y to r&#243;&#380;ne rozumienie tego s&#322;owa. Poni&#380;ej dok&#322;adna granica, w obie strony.</p>
+    </div>
+    <div class="incl">
+      <div class="incl-box yes rv">
+        <h3>Robimy i odpowiadamy za to</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Pomiar, projekt 3D i kosztorys pozycja po pozycji</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Korpusy, fronty, blaty, okucia i o&#347;wietlenie</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Zakup sprz&#281;tu AGD w naszych cenach hurtowych, je&#347;li chcesz</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Transport, wniesienie i monta&#380; zabudowy</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Wyci&#281;cie i monta&#380; blatu, zlewozmywaka i baterii</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Pod&#322;&#261;czenie p&#322;yty, piekarnika, zmywarki i okapu</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Wyw&#243;z opakowa&#324; i uprz&#261;tni&#281;cie po monta&#380;u</li>
+        </ul>
+      </div>
+      <div class="incl-box no rv">
+        <h3>Tego nie robimy &#8212; i m&#243;wimy o tym na starcie</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Przenoszenie pion&#243;w wodnych i kanalizacji</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Wyburzanie &#347;cian i prace konstrukcyjne</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Tynkowanie, g&#322;adzie, malowanie i pod&#322;ogi</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Uk&#322;adanie p&#322;ytek na &#347;cianie mi&#281;dzy szafkami</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Nowe obwody elektryczne i rozdzielnica</li>
+        </ul>
+        <p style="font-size:.855rem;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)">Na pomiarze dostajesz list&#281; tego, co musi by&#263; zrobione przed naszym wej&#347;ciem, razem z wymaganymi wysoko&#347;ciami gniazdek i przy&#322;&#261;czy. Je&#347;li nie masz ekipy remontowej, podamy kontakty do ludzi, z kt&#243;rymi pracujemy &#8212; ale rozliczasz si&#281; z nimi bezpo&#347;rednio i nie bierzemy z tego prowizji.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CENA ============ -->
+<section id="cena" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Ile to kosztuje</p>
+      <h2>Kuchnia pod klucz: 34 000 &#8211; 78 000 z&#322;</h2>
+      <p class="lead">To realny przedzia&#322; naszych realizacji &#8222;pod klucz" z ostatnich dw&#243;ch lat, razem ze sprz&#281;tem AGD i monta&#380;em. Po&#322;owa zam&#243;wie&#324; mie&#347;ci si&#281; mi&#281;dzy 42 a 58 tysi&#261;cami. Poni&#380;ej sze&#347;&#263; rzeczy, kt&#243;re decyduj&#261;, gdzie w tym przedziale wyl&#261;dujesz.</p>
+    </div>
+
+    <div class="drivers rv">
+      <div class="drv"><span class="n">1</span><h4>D&#322;ugo&#347;&#263; zabudowy</h4><p>Najprostszy czynnik: liczba metr&#243;w bie&#380;&#261;cych. Ka&#380;dy dodatkowy metr to komplet korpus, front, blat i okucia.</p><span class="impact">ok. 3 400 &#8211; 6 200 z&#322; za metr</span></div>
+      <div class="drv"><span class="n">2</span><h4>Rodzaj frontu</h4><p>Laminat jest najta&#324;szy, lakier matowy dro&#380;szy o po&#322;ow&#281;, fornir naturalny i lite drewno jeszcze wy&#380;ej. To zwykle najwi&#281;ksza pojedyncza r&#243;&#380;nica w kosztorysie.</p><span class="impact">r&#243;&#380;nica nawet 14 000 z&#322;</span></div>
+      <div class="drv"><span class="n">3</span><h4>Materia&#322; blatu</h4><p>Laminat, drewno klejone, konglomerat kwarcowy albo spiek wielkoformatowy. Spiek wygl&#261;da najlepiej i najd&#322;u&#380;ej wytrzymuje, ale kosztuje trzy razy tyle co laminat.</p><span class="impact">2 000 &#8211; 11 000 z&#322;</span></div>
+      <div class="drv"><span class="n">4</span><h4>Wyposa&#380;enie wewn&#281;trzne</h4><p>Szuflady zamiast szafek z p&#243;&#322;kami, cargo naro&#380;ne, kosze segregacyjne, podno&#347;niki na szafkach g&#243;rnych. Tego nie wida&#263; na wizualizacji, a u&#380;ywa si&#281; codziennie.</p><span class="impact">3 000 &#8211; 12 000 z&#322;</span></div>
+      <div class="drv"><span class="n">5</span><h4>Sprz&#281;t AGD</h4><p>Tu rozrzut jest najwi&#281;kszy i ca&#322;kowicie zale&#380;y od Ciebie. Kompletny zestaw w podstawowej klasie to oko&#322;o 8 tysi&#281;cy, w klasie premium bywa i pi&#281;&#263; razy wi&#281;cej.</p><span class="impact">8 000 &#8211; 40 000 z&#322;</span></div>
+      <div class="drv"><span class="n">6</span><h4>Nietypowe rozwi&#261;zania</h4><p>Drzwi kieszeniowe, fronty pod k&#261;tem, zabudowa skosu pod dachem, okap w wyspie, pod&#347;wietlane szk&#322;o. Ka&#380;de z nich to osobna pozycja i osobne ryzyko terminowe.</p><span class="impact">od 1 500 z&#322; za element</span></div>
+    </div>
+
+    <div class="panel rv" style="margin-top:34px">
+      <h3 style="margin-bottom:8px">Dwa przyk&#322;ady z kosztorysami</h3>
+      <p style="font-size:.895rem;margin-bottom:22px">Realne realizacje, kwoty po zaokr&#261;gleniu do stu z&#322;otych.</p>
+      <div class="incl" style="gap:16px">
+        <div style="background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:20px">
+          <div class="card-meta" style="margin-bottom:10px"><span>Mieszkanie 52 m&#178;, Pozna&#324;</span><i></i><span>2026</span></div>
+          <h4 style="margin-bottom:12px">Kuchnia w literze L, 7,5 mb</h4>
+          <ul style="list-style:none;display:grid;gap:8px;font-size:.875rem;color:var(--tx-mut)">
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Zabudowa, fronty lakierowane</span><b style="color:var(--ink)">26 400 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Blat z konglomeratu</span><b style="color:var(--ink)">4 800 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Szuflady Legrabox, cargo, kosze</span><b style="color:var(--ink)">4 100 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>AGD (p&#322;yta, piekarnik, okap, zmywarka)</span><b style="color:var(--ink)">9 700 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Monta&#380; i pod&#322;&#261;czenia</span><b style="color:var(--ink)">2 600 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px;padding-top:10px;margin-top:4px;border-top:1px solid var(--line);font-size:.98rem"><b style="color:var(--ink)">Razem</b><b style="color:var(--clay);font-size:1.08rem">47 600 z&#322;</b></li>
+          </ul>
+        </div>
+        <div style="background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:20px">
+          <div class="card-meta" style="margin-bottom:10px"><span>Dom, Swarz&#281;dz</span><i></i><span>2025</span></div>
+          <h4 style="margin-bottom:12px">Kuchnia z wysp&#261;, 13 mb</h4>
+          <ul style="list-style:none;display:grid;gap:8px;font-size:.875rem;color:var(--tx-mut)">
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Zabudowa, fronty fornirowane</span><b style="color:var(--ink)">44 800 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Blat ze spieku, wyspa i &#347;ciana</span><b style="color:var(--ink)">10 200 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Wyposa&#380;enie wewn&#281;trzne i LED</span><b style="color:var(--ink)">8 300 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>AGD (zestaw, okap wyci&#261;gowy w p&#322;ycie)</span><b style="color:var(--ink)">21 500 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px"><span>Monta&#380; i pod&#322;&#261;czenia</span><b style="color:var(--ink)">3 900 z&#322;</b></li>
+            <li style="display:flex;justify-content:space-between;gap:12px;padding-top:10px;margin-top:4px;border-top:1px solid var(--line);font-size:.98rem"><b style="color:var(--ink)">Razem</b><b style="color:var(--clay);font-size:1.08rem">88 700 z&#322;</b></li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:.815rem;margin-top:18px">Drugi przyk&#322;ad wychodzi powy&#380;ej podanego przedzia&#322;u, bo sprz&#281;t AGD by&#322; z najwy&#380;szej p&#243;&#322;ki. Pokazujemy go w&#322;a&#347;nie dlatego &#8212; g&#243;rna granica zale&#380;y g&#322;&#243;wnie od AGD, nie od stolarki.</p>
+      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap">
+        <a href="index.html#ile" class="btn btn-p">Policz sw&#243;j przedzia&#322; w kalkulatorze</a>
+        <a href="#pomiar" class="btn btn-s">Chc&#281; dok&#322;adn&#261; wycen&#281;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCES I TERMINY ============ -->
+<section id="proces">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Proces i terminy</p>
+      <h2>Od pierwszego telefonu do gotowej kuchni: 7 do 10 tygodni</h2>
+      <p class="lead">Poni&#380;ej realny harmonogram z naszych ostatnich realizacji. Daty trafiaj&#261; do umowy razem z informacj&#261;, co si&#281; stanie, je&#347;li ich nie dowieziemy.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item rv"><div class="tl-day"><b>Dzie&#324; 0</b></div><div class="tl-body">
+        <h4>Rozmowa telefoniczna, 15 minut</h4>
+        <p>Pytamy o metra&#380;, uk&#322;ad, planowany termin i bud&#380;et. Na koniec tej rozmowy znasz ju&#380; przedzia&#322; cenowy. Je&#347;li si&#281; nie zgadza z Twoimi oczekiwaniami, ko&#324;czymy tu i nikt nie traci czasu.</p>
+        <span class="who">Tomasz albo Micha&#322;</span></div></div>
+
+      <div class="tl-item rv"><div class="tl-day"><b>Dzie&#324; 1&#8211;3</b></div><div class="tl-body">
+        <h4>Pomiar u Ciebie, bez op&#322;at</h4>
+        <p>Mierzymy pomieszczenie, sprawdzamy piony &#347;cian, po&#322;o&#380;enie przy&#322;&#261;czy wody, gazu i gniazdek oraz szeroko&#347;&#263; drzwi i klatki schodowej. Zostawiamy list&#281; prac, kt&#243;re musz&#261; by&#263; gotowe przed monta&#380;em.</p>
+        <span class="who">Micha&#322;, ok. 60 minut</span></div></div>
+
+      <div class="tl-item rv"><div class="tl-day"><b>Dzie&#324; 4&#8211;10</b></div><div class="tl-body">
+        <h4>Projekt 3D i kosztorys pozycja po pozycji</h4>
+        <p>Dostajesz wizualizacj&#281;, rysunki techniczne i kosztorys rozbity na korpusy, fronty, blat, okucia, AGD i monta&#380; &#8212; &#380;eby da&#322;o si&#281; por&#243;wna&#263; z ofert&#261; innej firmy. Dwie tury poprawek s&#261; w cenie.</p>
+        <span class="who">Micha&#322;</span></div></div>
+
+      <div class="tl-item rv"><div class="tl-day"><b>Dzie&#324; 11&#8211;14</b></div><div class="tl-body">
+        <h4>Umowa i zaliczka 30%</h4>
+        <p>W umowie jest data monta&#380;u, pe&#322;na specyfikacja materia&#322;&#243;w z nazwami producent&#243;w, warunki gwarancji i zapis o karze za op&#243;&#378;nienie z naszej winy. Podpisujemy u nas w warsztacie albo elektronicznie.</p>
+        <span class="who">Tomasz</span></div></div>
+
+      <div class="tl-item rv"><div class="tl-day"><b>Tydzie&#324; 3&#8211;7</b></div><div class="tl-body">
+        <h4>Produkcja we w&#322;asnym warsztacie</h4>
+        <p>Ci&#281;cie p&#322;yty, oklejanie kraw&#281;dzi klejem PUR, wiercenie pod okucia, lakierowanie front&#243;w w naszej lakierni. Blaty kamienne i spiekane zamawiamy u dostawcy &#8212; to jedyny etap, na kt&#243;ry nie mamy pe&#322;nego wp&#322;ywu, i dlatego zamawiamy je jako pierwsze.</p>
+        <span class="who">Warsztat, 4&#8211;6 tygodni</span></div></div>
+
+      <div class="tl-item rv"><div class="tl-day"><b>Tydzie&#324; 7&#8211;8</b></div><div class="tl-body">
+        <h4>Monta&#380;: 2 do 3 dni</h4>
+        <p>Pierwszy dzie&#324; korpusy i blat, drugi fronty, okucia i AGD, trzeci regulacje i wyko&#324;czenia. P&#322;atno&#347;&#263; 40% idzie po zatwierdzeniu projektu, wi&#281;c na monta&#380;u nie rozmawiamy o pieni&#261;dzach.</p>
+        <span class="who">Dwuosobowa ekipa monta&#380;owa</span></div></div>
+
+      <div class="tl-item rv"><div class="tl-day"><b>Odbi&#243;r</b></div><div class="tl-body">
+        <h4>Przechodzimy razem szafka po szafce</h4>
+        <p>Otwierasz ka&#380;d&#261; szuflad&#281; i ka&#380;dy front. Co nie dzia&#322;a &#8212; zapisujemy do protoko&#322;u. Ostatnie 30% p&#322;acisz po tym, jak powiesz &#8222;gotowe", nie wcze&#347;niej.</p>
+        <span class="who">Tomasz i ekipa</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MATERIALY I FRONTY ============ -->
+<section id="materialy" style="background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Materia&#322;y i fronty</p>
+      <h2>Cztery rodzaje frontu, cztery r&#243;&#380;ne ceny i trwa&#322;o&#347;ci</h2>
+      <p class="lead">Korpusy robimy zawsze z p&#322;yty 18 mm z kraw&#281;dzi&#261; klejon&#261; klejem PUR &#8212; to nie jest opcja do wyboru, bo cie&#324;sza p&#322;yta i ta&#324;szy klej to najcz&#281;stsza przyczyna problem&#243;w po trzech latach.</p>
+    </div>
+    <div class="mats">
+      <div class="mat rv">
+        <svg viewBox="0 0 320 120" role="img" aria-label="Fronty laminowane"><use href="#m-lam"/></svg>
+        <div class="mat-b"><h4>Laminowany</h4><p>P&#322;yta wi&#243;rowa pokryta laminatem. Najta&#324;szy i zaskakuj&#261;co odporny na zadrapania. Ograniczenie: widoczna kraw&#281;d&#378; i mniejszy wyb&#243;r wyko&#324;cze&#324; matowych.</p>
+        <div class="row"><span>Cena</span><b>najni&#380;sza</b></div><div class="row"><span>Odporno&#347;&#263; na wilgo&#263;</span><b>dobra</b></div><div class="row"><span>Naprawa po latach</span><b>trudna</b></div></div>
+      </div>
+      <div class="mat rv">
+        <svg viewBox="0 0 320 120" role="img" aria-label="Fronty lakierowane"><use href="#m-lak"/></svg>
+        <div class="mat-b"><h4>Lakierowany</h4><p>MDF lakierowany w naszej lakierni, dowolny kolor z palety NCS lub RAL. Jednolita, bezszwowa powierzchnia bez widocznej kraw&#281;dzi. Wybierany najcz&#281;&#347;ciej.</p>
+        <div class="row"><span>Cena</span><b>&#347;rednia-wysoka</b></div><div class="row"><span>Odporno&#347;&#263; na wilgo&#263;</span><b>bardzo dobra</b></div><div class="row"><span>Naprawa po latach</span><b>mo&#380;liwa, przelakierowanie</b></div></div>
+      </div>
+      <div class="mat rv">
+        <svg viewBox="0 0 320 120" role="img" aria-label="Fronty fornirowane"><use href="#m-forn"/></svg>
+        <div class="mat-b"><h4>Fornirowany</h4><p>Cienka warstwa naturalnego drewna na p&#322;ycie. Ka&#380;dy front ma inny rysunek s&#322;oj&#243;w, dlatego przy zam&#243;wieniu dobieramy je tak, &#380;eby uk&#322;ada&#322;y si&#281; w ci&#261;g.</p>
+        <div class="row"><span>Cena</span><b>wysoka</b></div><div class="row"><span>Odporno&#347;&#263; na wilgo&#263;</span><b>dobra, wymaga uwagi</b></div><div class="row"><span>Naprawa po latach</span><b>mo&#380;liwa, cyklinowanie</b></div></div>
+      </div>
+      <div class="mat rv">
+        <svg viewBox="0 0 320 120" role="img" aria-label="Fronty ramiakowe"><use href="#m-ram"/></svg>
+        <div class="mat-b"><h4>Ramiakowy (klasyczny)</h4><p>Front z widoczn&#261; ramk&#261; i wype&#322;nieniem, lakierowany. Do wn&#281;trz klasycznych i w stylu angielskim. Trudniejszy w utrzymaniu, bo kurz zbiera si&#281; w naro&#380;nikach frezu.</p>
+        <div class="row"><span>Cena</span><b>wysoka</b></div><div class="row"><span>Odporno&#347;&#263; na wilgo&#263;</span><b>bardzo dobra</b></div><div class="row"><span>Naprawa po latach</span><b>mo&#380;liwa, przelakierowanie</b></div></div>
+      </div>
+    </div>
+    <div class="brands rv" style="margin-top:32px;border-top:1px dashed var(--line)">
+      <p>Komponenty, na kt&#243;rych pracujemy &#8212; i kt&#243;re wpisujemy do umowy z nazwy</p>
+      <span class="brand">BLUM</span><span class="brand">HETTICH</span><span class="brand">EGGER</span><span class="brand">H&#196;FELE</span><span class="brand">PEKA</span><span class="brand">PFLEIDERER</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KTO WYKONUJE ============ -->
+<section>
+  <div class="wrap people">
+    <div class="rv">
+      <p class="eyebrow">Kto wykonuje</p>
+      <h2>Trzy nazwiska, nie &#8222;nasz zesp&#243;&#322;"</h2>
+      <p class="lead" style="margin-bottom:18px">Przy zleceniu na kilkadziesi&#261;t tysi&#281;cy z&#322;otych powiniene&#347; wiedzie&#263;, kto konkretnie robi robot&#281; i do kogo dzwoni&#263;, gdy co&#347; p&#243;jdzie nie tak.</p>
+      <div class="machines">
+        <div class="mach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span><b>Tomasz Wr&#281;ba</b> &#8212; w&#322;a&#347;ciciel, prowadzi warsztat i podpisuje umowy. Kuchnie robi od 1999 roku.</span></div>
+        <div class="mach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></svg><span><b>Micha&#322; Wr&#281;ba</b> &#8212; pomiary, projekty 3D, kontakt w trakcie realizacji. Tw&#243;j numer pierwszego kontaktu.</span></div>
+        <div class="mach"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9"/></svg><span><b>Ekipa monta&#380;owa</b> &#8212; dwie osoby, te same od siedmiu lat. Montuj&#261; to, co sami sk&#322;adali w warsztacie.</span></div>
+      </div>
+      <p style="margin-top:20px;font-size:.895rem">Blaty kamienne i spiekane robi dla nas zak&#322;ad kamieniarski z Poznania, z kt&#243;rym pracujemy od dziewi&#281;ciu lat. <strong style="color:var(--ink)">Za ich prac&#281; odpowiadamy my</strong> &#8212; je&#347;li blat przyjedzie z wad&#261;, to nasz problem, nie Tw&#243;j.</p>
+      <p style="margin-top:14px;font-size:.895rem">Nie zlecamy monta&#380;u firmom zewn&#281;trznym i nie sprzedajemy zabud&#243;w produkowanych przez kogo&#347; innego pod nasz&#261; mark&#261;.</p>
+    </div>
+    <div class="people-art rv"><svg viewBox="0 0 560 420" role="img" aria-label="Ilustracja pogl&#261;dowa warsztatu"><use href="#lp-hero"/></svg></div>
+  </div>
+</section>
+
+<!-- ============ GWARANCJA ============ -->
+<section id="gwarancja" style="background:var(--surface);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <p class="eyebrow">Gwarancja</p>
+      <h2>Trzy poziomy, bo trzy r&#243;&#380;ne rzeczy psuj&#261; si&#281; w innym tempie</h2>
+      <p class="lead">Warunki s&#261; w umowie, nie w regulaminie na stronie. Podpisujesz je razem ze specyfikacj&#261; materia&#322;&#243;w, wi&#281;c wiadomo, czego dok&#322;adnie dotycz&#261;.</p>
+    </div>
+    <div class="warr">
+      <div class="wr rv"><span class="big">do&#380;ywotnia</span><h4>Okucia Blum i Hettich</h4><p>Prowadnice, zawiasy, podno&#347;niki, systemy cichego domyku. Gwarancja producenta, realizowana przez nas &#8212; nie musisz nigdzie pisa&#263; sam.</p></div>
+      <div class="wr rv"><span class="big">10 lat</span><h4>Fronty lakierowane i fornirowane</h4><p>Na odspojenie pow&#322;oki, p&#281;cherze i rozwarstwienie. Nie obejmuje mechanicznych uszkodze&#324; i odbarwie&#324; od bezpo&#347;redniego s&#322;o&#324;ca.</p></div>
+      <div class="wr rv"><span class="big">3 lata</span><h4>Korpusy, blaty i pozosta&#322;e</h4><p>Na p&#281;kni&#281;cia, rozklejenie kraw&#281;dzi, wypaczenie i wady monta&#380;u. Blaty kamienne maj&#261; osobn&#261; gwarancj&#281; kamieniarza, kt&#243;r&#261; do umowy do&#322;&#261;czamy.</p></div>
+    </div>
+    <p class="rv" style="margin-top:22px;font-size:.875rem">Po pi&#281;ciu latach oferujemy p&#322;atny przegl&#261;d: regulacja wszystkich front&#243;w i szuflad, wymiana zu&#380;ytych element&#243;w, sprawdzenie silikon&#243;w. Zwykle kosztuje kilkaset z&#322;otych i przed&#322;u&#380;a &#380;ycie kuchni o kilka lat.</p>
+  </div>
+</section>
+
+<!-- ============ CO JESLI COS NIE PASUJE ============ -->
+<section id="poprawki">
+  <div class="wrap" style="max-width:940px">
+    <div class="sec-head rv">
+      <p class="eyebrow">Po monta&#380;u</p>
+      <h2>Co, je&#347;li co&#347; nie pasuje</h2>
+      <p class="lead">To pytanie zadaje prawie ka&#380;dy klient i prawie nikt w tej bran&#380;y nie odpowiada na nie na stronie. Odpowiadamy.</p>
+    </div>
+    <div class="fix rv">
+      <h3>Procedura, krok po kroku</h3>
+      <ol>
+        <li><span><b>Zg&#322;aszasz telefonicznie albo mailem, bez formularzy.</b> Wystarczy zdj&#281;cie. Odpowiadamy w ci&#261;gu jednego dnia roboczego i m&#243;wimy, czy to naprawa na miejscu, czy element musi wr&#243;ci&#263; do warsztatu.</span></li>
+        <li><span><b>Naprawa na miejscu: do 5 dni roboczych.</b> Regulacja frontu, wymiana zawiasu, poprawienie silikonu, doci&#281;cie listwy &#8212; przyje&#380;d&#380;amy i robimy. Bez op&#322;at, tak&#380;e po gwarancji, je&#347;li to nasz b&#322;&#261;d.</span></li>
+        <li><span><b>Element do wykonania od nowa: do 14 dni.</b> Zdemontujemy, zrobimy nowy, zamontujemy. Je&#347;li w tym czasie kuchnia jest nieu&#380;ywalna, ustalamy rozwi&#261;zanie tymczasowe &#8212; w praktyce zostawiamy stary element do wymiany.</span></li>
+        <li><span><b>Faktury ko&#324;cowej nie wystawiamy przed odbiorem.</b> Ostatnie 30% p&#322;acisz, kiedy przejdziemy razem szafka po szafce i powiesz, &#380;e jest dobrze. To Twoje jedyne realne zabezpieczenie i uwa&#380;amy, &#380;e powinno by&#263; standardem.</span></li>
+        <li><span><b>Sp&#243;r, kt&#243;rego nie umiemy rozwi&#261;za&#263; mi&#281;dzy sob&#261;.</b> W umowie jest zapis o rzeczoznawcy meblarskim: je&#347;li nie dogadamy si&#281; co do tego, czy usterka jest wad&#261;, opini&#281; wydaje niezale&#380;ny rzeczoznawca, a koszt ponosi strona, kt&#243;ra si&#281; myli&#322;a.</span></li>
+      </ol>
+      <p style="margin-top:20px;font-size:.875rem;padding-top:16px;border-top:1px dashed var(--line)">W ostatnich dw&#243;ch latach mieli&#347;my 11 zg&#322;osze&#324; poprawek na 128 realizacji. Osiem dotyczy&#322;o regulacji, dwa wymiany frontu z wad&#261; lakieru, jedno &#378;le policzonego wymiaru &#8212; nasz b&#322;&#261;d, poprawiony w 9 dni. Piszemy to, bo firma, kt&#243;ra twierdzi, &#380;e nie ma poprawek, albo robi bardzo ma&#322;o kuchni, albo nie m&#243;wi prawdy.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section style="background:var(--surface);border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="sec-head rv"><p class="eyebrow">Pozosta&#322;e pytania</p><h2>Reszta rzeczy, o kt&#243;re pytaj&#261; klienci</h2></div>
+    <div class="faq">
+      <details class="rv"><summary>Czy musz&#281; kupi&#263; AGD u Was?</summary><div class="ans">Nie. Mo&#380;esz kupi&#263; sam, a my wpiszemy Twoje modele do projektu &#8212; wtedy potrzebujemy listy albo link&#243;w przed rozpocz&#281;ciem produkcji. Je&#347;li kupujesz przez nas, p&#322;acisz nasze ceny zakupu plus mar&#380;&#281; wpisan&#261; w kosztorys jawnie, &#380;eby da&#322;o si&#281; j&#261; por&#243;wna&#263; z cen&#261; w sklepie.</div></details>
+      <details class="rv"><summary>Ile musz&#281; zap&#322;aci&#263; na start?</summary><div class="ans">30% przy podpisaniu umowy. Kolejne 40% po zatwierdzeniu projektu i rozpocz&#281;ciu produkcji. Ostatnie 30% po monta&#380;u i odbiorze. <strong>Za projekt i pomiar nie p&#322;acisz osobno</strong> &#8212; je&#347;li po projekcie zrezygnujesz, zaliczka wraca w ca&#322;o&#347;ci, bo projekt jest naszym kosztem akwizycji, nie produktem.</div></details>
+      <details class="rv"><summary>Co, je&#347;li op&#243;&#378;nicie si&#281; z terminem?</summary><div class="ans">W umowie jest kara umowna za ka&#380;dy dzie&#324; op&#243;&#378;nienia z naszej winy, liczona jako procent warto&#347;ci zlecenia. Je&#347;li op&#243;&#378;nienie wynika z rzeczy, na kt&#243;r&#261; nie mamy wp&#322;ywu &#8212; najcz&#281;&#347;ciej dostawa blatu kamiennego &#8212; informujemy natychmiast i proponujemy rekompensat&#281;. W ostatnich dw&#243;ch latach dwie realizacje przesun&#281;&#322;y si&#281; o wi&#281;cej ni&#380; tydzie&#324;, w obu obni&#380;yli&#347;my faktur&#281;.</div></details>
+      <details class="rv"><summary>Czy przyje&#380;d&#380;acie na pomiar do mieszkania w stanie surowym?</summary><div class="ans">Tak, i to jest dobry moment. Na surowych &#347;cianach wska&#380;emy, gdzie powinny by&#263; gniazdka, przy&#322;&#261;cza wody i odp&#322;yw, &#380;eby potem nie ku&#263; p&#322;ytek. Drugi, dok&#322;adny pomiar robimy po po&#322;o&#380;eniu p&#322;ytek i wylewek, bo dopiero wtedy znamy realne wymiary.</div></details>
+      <details class="rv"><summary>Robicie kuchnie w mieszkaniach na wynajem?</summary><div class="ans">Tak, w uproszczonym standardzie z powtarzalnymi modu&#322;ami i kr&#243;tszym terminem. Przy trzech i wi&#281;cej mieszkaniach rozmawiamy o innej cenie i harmonogramie. To inny produkt ni&#380; kuchnia autorska i nie udajemy, &#380;e jest taki sam.</div></details>
+      <details class="rv"><summary>Czy doje&#380;d&#380;acie poza Pozna&#324;?</summary><div class="ans">Bez dop&#322;aty w promieniu 60 km &#8212; to obejmuje Swarz&#281;dz, Lubo&#324;, K&#243;rnik, Mosin&#281;, &#346;rem, Wrze&#347;ni&#281; i Gniezno. Dalej te&#380; je&#378;dzimy, doliczaj&#261;c koszt dojazdu, o kt&#243;rym m&#243;wimy przy pierwszej rozmowie, a nie w kosztorysie na ko&#324;cu.</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FORMULARZ ============ -->
+<section id="pomiar" class="form-sec">
+  <div class="wrap form-grid">
+    <div class="rv">
+      <p class="eyebrow">Bezp&#322;atny pomiar i wycena</p>
+      <h2 style="margin-bottom:16px">Zacznijmy od pi&#281;tnastu minut przez telefon</h2>
+      <p style="margin-bottom:8px">Zostaw numer, oddzwonimy tego samego dnia roboczego. Na koniec rozmowy b&#281;dziesz zna&#322; przedzia&#322; cenowy dla swojego pomieszczenia &#8212; jeszcze przed pomiarem.</p>
+      <div class="contact-list">
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><span><b>61 000 00 00</b><span>Pon.&#8211;pt. 8:00&#8211;17:00, sob. 9:00&#8211;13:00</span></span></div>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg><span><b>biuro@wreba-demo.pl</b><span>Najlepiej z rzutem albo zdj&#281;ciem pomieszczenia</span></span></div>
+        <div class="ci"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><span><b>Warsztat i ekspozycja</b><span>ul. Przyk&#322;adowa 12, 62-020 Swarz&#281;dz &middot; soboty przed po&#322;udniem</span></span></div>
+      </div>
+      <p style="font-size:.79rem;letter-spacing:.11em;text-transform:uppercase;margin-top:26px;margin-bottom:0">Doje&#380;d&#380;amy bez dop&#322;aty</p>
+      <div class="areas">
+        <span class="area">Pozna&#324; &middot; 0 km</span><span class="area">Swarz&#281;dz &middot; 12 km</span><span class="area">Lubo&#324; &middot; 14 km</span>
+        <span class="area">K&#243;rnik &middot; 22 km</span><span class="area">Mosina &middot; 26 km</span><span class="area">&#346;rem &middot; 42 km</span>
+        <span class="area">Wrze&#347;nia &middot; 48 km</span><span class="area">Gniezno &middot; 55 km</span>
+      </div>
+    </div>
+
+    <div class="form-card rv">
+      <form id="form" novalidate>
+        <div class="fr">
+          <div class="fg"><label for="f-im">Imi&#281; i nazwisko</label><input type="text" id="f-im" required autocomplete="name"></div>
+          <div class="fg"><label for="f-tel">Telefon</label><input type="tel" id="f-tel" required autocomplete="tel" placeholder="600 000 000"></div>
+        </div>
+        <div class="fg"><label for="f-mail">E-mail</label><input type="email" id="f-mail" required autocomplete="email"></div>
+        <div class="fr">
+          <div class="fg"><label for="f-mb">D&#322;ugo&#347;&#263; zabudowy</label>
+            <select id="f-mb"><option>Nie wiem, trzeba zmierzy&#263;</option><option>do 6 mb</option><option>6&#8211;9 mb</option><option>9&#8211;13 mb</option><option>powy&#380;ej 13 mb</option></select></div>
+          <div class="fg"><label for="f-budzet">Bud&#380;et ca&#322;o&#347;ciowy</label>
+            <select id="f-budzet"><option>Jeszcze nie wiem</option><option>do 35 tys. z&#322;</option><option>35&#8211;50 tys. z&#322;</option><option>50&#8211;75 tys. z&#322;</option><option>powy&#380;ej 75 tys. z&#322;</option></select></div>
+        </div>
+        <div class="fg"><label for="f-agd">Sprz&#281;t AGD</label>
+          <select id="f-agd"><option>Kupi&#281; sam</option><option>Chc&#281; kupi&#263; przez Was</option><option>Jeszcze nie zdecydowa&#322;em</option></select></div>
+        <div class="fg"><label for="f-kiedy">Kiedy monta&#380;</label>
+          <select id="f-kiedy"><option>Jak najszybciej</option><option>Za 1&#8211;3 miesi&#261;ce</option><option>Za 3&#8211;6 miesi&#281;cy</option><option>P&#243;&#378;niej</option></select></div>
+        <div class="fg"><label for="f-op">Wymiary, uwagi, czego szukasz</label><textarea id="f-op" placeholder="Np. mieszkanie w bloku, kuchnia w aneksie ok. 3,2 m &#347;ciany, chcemy zabudow&#281; pod sufit i jasne matowe fronty."></textarea></div>
+        <div class="fg">
+          <label>Rzut, zdj&#281;cie albo szkic (opcjonalnie)</label>
+          <div class="drop" id="drop" tabindex="0" role="button" aria-label="Dodaj plik z rzutem lub zdj&#281;ciem">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 9l5-5 5 5M12 4v12"/></svg>
+            <b id="dropTxt">Przeci&#261;gnij plik albo kliknij, &#380;eby wybra&#263;</b>
+            <small>JPG, PNG lub PDF, do 10 MB. Zdj&#281;cie z telefonu wystarczy.</small>
+          </div>
+          <input type="file" id="file" accept="image/*,.pdf" hidden>
+        </div>
+        <label class="consent"><input type="checkbox" id="f-rodo" required><span>Zgadzam si&#281; na kontakt w sprawie mojego zapytania. Dane wykorzystujemy wy&#322;&#261;cznie do przygotowania wyceny.</span></label>
+        <button type="submit" class="btn btn-p" style="width:100%">Zamawiam bezp&#322;atny pomiar</button>
+        <p style="font-size:.775rem;text-align:center;margin-top:12px">Zwykle odpisujemy w 2&#8211;4 godziny w dni robocze.</p>
+      </form>
+      <div class="form-ok" id="formOk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 3 3 5-6"/></svg>
+        <h3>Zg&#322;oszenie przyj&#281;te</h3>
+        <p>To jest strona demonstracyjna, wi&#281;c formularz nic nie wysy&#322;a. Na prawdziwej stronie zg&#322;oszenie trafi&#322;oby do skrzynki i do CRM, a Ty dosta&#322;by&#347; potwierdzenie SMS-em.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div>
+        <a href="index.html" class="logo" style="margin-bottom:14px">
+          <span class="logo-mark"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M8 22V10h3.2l4.8 8 4.8-8H24v12h-3v-6.6l-3.6 6.1h-2.8L11 15.4V22z" fill="#C2603B"/></svg></span>
+          <span>Wr&#281;ba<small>Pracownia Kuchni</small></span>
+        </a>
+        <p style="font-size:.885rem;max-width:34ch">Fikcyjna pracownia stworzona na potrzeby demonstracji. Wszystkie dane, terminy, kwoty i opinie s&#261; przyk&#322;adowe.</p>
+      </div>
+      <div><h4>Na tej stronie</h4><ul>
+        <li><a href="#cena">Ile to kosztuje</a></li><li><a href="#proces">Proces i terminy</a></li>
+        <li><a href="#materialy">Materia&#322;y i fronty</a></li><li><a href="#gwarancja">Gwarancja</a></li><li><a href="#poprawki">Co po monta&#380;u</a></li>
+      </ul></div>
+      <div><h4>Strona g&#322;&#243;wna</h4><ul>
+        <li><a href="index.html#realizacje">Realizacje</a></li><li><a href="index.html#ile">Kalkulator</a></li>
+        <li><a href="index.html#quiz">Jaka kuchnia dla Ciebie</a></li><li><a href="index.html#warsztat">Warsztat</a></li>
+      </ul></div>
+      <div><h4>Kontakt</h4><ul>
+        <li><a href="tel:+48610000000">61 000 00 00</a></li><li><a href="mailto:biuro@wreba-demo.pl">biuro@wreba-demo.pl</a></li>
+        <li>ul. Przyk&#322;adowa 12<br>62-020 Swarz&#281;dz</li>
+      </ul></div>
+    </div>
+    <div class="f-bot">
+      <span>Strona demonstracyjna &middot; przyk&#322;ad realizacji, nie istniej&#261;ca firma</span>
+      <span>Projekt i wykonanie: Twoja agencja</span>
+    </div>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a href="tel:+48610000000" class="btn btn-s">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+    Zadzwo&#324;
+  </a>
+  <a href="#pomiar" class="btn btn-p">Bezp&#322;atny pomiar</a>
+</div>
+
+<button class="totop" id="totop" aria-label="Wr&#243;&#263; na g&#243;r&#281;">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,c){return (c||document).querySelector(s);};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s));};
+
+var themeBtn=$("#theme");
+try{var saved=localStorage.getItem("wreba-theme"); if(saved){document.documentElement.setAttribute("data-theme",saved);}}catch(e){}
+themeBtn.addEventListener("click",function(){
+  var cur=document.documentElement.getAttribute("data-theme");
+  var sysDark=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;
+  var next=cur?(cur==="dark"?"light":"dark"):(sysDark?"light":"dark");
+  document.documentElement.setAttribute("data-theme",next);
+  try{localStorage.setItem("wreba-theme",next);}catch(e){}
+});
+
+var burger=$("#burger"),mobile=$("#mobile");
+burger.addEventListener("click",function(){
+  var open=mobile.classList.toggle("open");
+  burger.setAttribute("aria-expanded",open?"true":"false");
+});
+$$("#mobile a").forEach(function(a){a.addEventListener("click",function(){mobile.classList.remove("open");burger.setAttribute("aria-expanded","false");});});
+
+if("IntersectionObserver" in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); } });
+  },{threshold:.1,rootMargin:"0px 0px -40px 0px"});
+  $$(".rv").forEach(function(el,i){ el.style.transitionDelay=(Math.min(i%3,2)*60)+"ms"; io.observe(el); });
+}else{ $$(".rv").forEach(function(el){el.classList.add("in");}); }
+
+var totop=$("#totop");
+window.addEventListener("scroll",function(){ totop.classList.toggle("on",window.scrollY>620); },{passive:true});
+totop.addEventListener("click",function(){ window.scrollTo({top:0,behavior:"smooth"}); });
+
+var drop=$("#drop"),file=$("#file"),dropTxt=$("#dropTxt");
+drop.addEventListener("click",function(){file.click();});
+drop.addEventListener("keydown",function(e){ if(e.key==="Enter"||e.key===" "){e.preventDefault();file.click();} });
+["dragover","dragenter"].forEach(function(ev){ drop.addEventListener(ev,function(e){e.preventDefault();drop.style.borderColor="var(--clay)";}); });
+["dragleave","drop"].forEach(function(ev){ drop.addEventListener(ev,function(e){e.preventDefault();drop.style.borderColor="";}); });
+drop.addEventListener("drop",function(e){ if(e.dataTransfer.files.length){ dropTxt.textContent="Dodano: "+e.dataTransfer.files[0].name; } });
+file.addEventListener("change",function(){ if(file.files.length){ dropTxt.textContent="Dodano: "+file.files[0].name; } });
+
+$("#form").addEventListener("submit",function(e){
+  e.preventDefault();
+  var ok=true;
+  ["#f-im","#f-tel","#f-mail"].forEach(function(id){
+    var el=$(id);
+    if(!el.value.trim()){ el.style.borderColor="var(--clay)"; ok=false; } else { el.style.borderColor=""; }
+  });
+  if(!$("#f-rodo").checked){ ok=false; $(".consent").style.color="var(--clay)"; }
+  if(!ok){ return; }
+  $("#form").style.display="none";
+  $("#formOk").classList.add("on");
+});
+})();
+</script>
+</body>
+</html>
