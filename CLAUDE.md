@@ -43,6 +43,7 @@ demo/                       # dema realizacji (podpięte w sekcji "Realizacje")
   pao-elite.html            # PAO Elite — elewacje i dachy (ładuje wideo z pexels)
   wreba/index.html + styles.css + kuchnia-pod-klucz.html   # Wręba — kuchnie na wymiar
   slemie/index.html + styles.css + wymiana-stolarki.html   # Ślemię — okna/drzwi/bramy
+  kliniec/index.html + styles.css + app.js + nagrobek-granitowy.html   # Kliniec - kamieniarstwo (źródło: ~/Documents/Strony/demo-kliniec)
 .gitignore
 ```
 
@@ -56,7 +57,7 @@ demo/                       # dema realizacji (podpięte w sekcji "Realizacje")
 
 ### Sekcje strony (kotwice)
 hero → manifest (#) → **#filary** (5 kafli z modalami) → **#proces** (4 kroki: Rozmowa → Strategia →
-Wdrożenie → Skalowanie) → **#realizacje** (4 dema w ramkach „okna przeglądarki" z iframe) →
+Wdrożenie → Skalowanie) → **#realizacje** (5 dem w ramkach „okna przeglądarki" z iframe) →
 **#o-nas** → **#faq** (akordeon) → **#kontakt** (formularz) → stopka. Sticky mini-nav po przewinięciu.
 
 ---
@@ -76,7 +77,7 @@ Wdrożenie → Skalowanie) → **#realizacje** (4 dema w ramkach „okna przegl�
 
 ## 4. Deployment (produkcja)
 
-- **Hosting:** VPS OVH Ubuntu, IP **164.132.243.94**, użytkownik **ubuntu** (SSH), wiele aplikacji.
+- **Hosting:** VPS OVH Ubuntu, IP **164.132.243.94**, użytkownik **ubuntu** (SSH kluczem `~/.ssh/id_ed25519`, bez hasła), wiele aplikacji.
 - **Serwer WWW:** **Caddy** jako reverse proxy dla innych appek; dla tej strony serwuje pliki statyczne.
 - **Katalog strony na serwerze:** `/var/www/spark-scale/`
 - **Blok w `/etc/caddy/Caddyfile`:**
