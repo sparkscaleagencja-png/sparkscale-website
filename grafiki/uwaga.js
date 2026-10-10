@@ -32,8 +32,18 @@
       clip=el('clipPath',{id:'uClip'},wrapD),cr=el('rect',{x:30,y:20,width:0,height:220},clip),fills=el('g',{'clip-path':'url(#uClip)'},wrapD),outs=[],hnd=el('g',{},wrapD);
   BARS.forEach(function(poly){el('polygon',{points:P(poly),fill:'#FF8900'},fills)});ORS.forEach(function(poly){el('polygon',{points:P(poly),fill:'#F4F4F2'},fills)});
   BARS.concat(ORS).forEach(function(poly,k){outs.push(el('polygon',{points:P(poly),fill:'none',stroke:'#F4F4F2','stroke-width':1.5,'vector-effect':'non-scaling-stroke',pathLength:1,'stroke-dasharray':1,'stroke-dashoffset':1},wrapD))});
-  var hn=[];BARS.concat(ORS).forEach(function(poly){poly.forEach(function(p,j){var q=poly[(j+1)%poly.length];var hx=p[0]+(q[0]-p[0])*.28,hy=p[1]+(q[1]-p[1])*.28;
-    var l=el('line',{x1:p[0],y1:p[1],x2:hx,y2:hy,stroke:'#FF8900','stroke-width':1,'vector-effect':'non-scaling-stroke',opacity:0},hnd),c=el('circle',{cx:hx,cy:hy,r:1.8,fill:'#FF8900',opacity:0},hnd),s=el('rect',{x:p[0]-2.4,y:p[1]-2.4,width:4.8,height:4.8,fill:'#0a0a0b',stroke:'#F4F4F2','stroke-width':1.2,'vector-effect':'non-scaling-stroke',opacity:0},hnd);hn.push([l,c,s])})});
+  var hn=[];BARS.concat(ORS).forEach(function(poly,pi){poly.forEach(function(p,j){var q=poly[(j+1)%poly.length];var hx=p[0]+(q[0]-p[0])*.28,hy=p[1]+(q[1]-p[1])*.28;
+    var l=el('line',{x1:p[0],y1:p[1],x2:hx,y2:hy,stroke:'#FF8900','stroke-width':1,'vector-effect':'non-scaling-stroke',opacity:0},hnd),c=el('circle',{cx:hx,cy:hy,r:1.8,fill:'#FF8900',opacity:0},hnd),s=el('rect',{x:p[0]-2.4,y:p[1]-2.4,width:4.8,height:4.8,fill:'#0a0a0b',stroke:'#F4F4F2','stroke-width':1.2,'vector-effect':'non-scaling-stroke',opacity:0},hnd);var hh=[l,c,s];hh.pi=pi;hn.push(hh)})});
+  var pen=el('g',{opacity:0},gD);
+  el('polygon',{points:'0,0 -9,-30 9,-30',fill:'#e8c89c',stroke:'#0a0a0a','stroke-width':2,'stroke-linejoin':'round'},pen);
+  el('polygon',{points:'0,0 -3.4,-11 3.4,-11',fill:'#2a2a30'},pen);
+  el('rect',{x:-9,y:-165,width:18,height:135,fill:'#FF8900',stroke:'#0a0a0a','stroke-width':2},pen);
+  el('rect',{x:-3,y:-160,width:6,height:125,fill:'#FFB259'},pen);
+  el('rect',{x:-9.5,y:-182,width:19,height:17,fill:'#cfcfd4',stroke:'#0a0a0a','stroke-width':2},pen);
+  el('rect',{x:-9.5,y:-198,width:19,height:16,rx:4,fill:'#F4F4F2',stroke:'#0a0a0a','stroke-width':2},pen);
+  var polys=BARS.concat(ORS),lastPen={x:270,y:480};
+  function pointOn(poly,p){var L=[],tot=0,i;for(i=0;i<poly.length;i++){var a=poly[i],b=poly[(i+1)%poly.length],d=Math.hypot(b[0]-a[0],b[1]-a[1]);L.push(d);tot+=d}
+    var t=p*tot;for(i=0;i<poly.length;i++){if(t<=L[i]){var a2=poly[i],b2=poly[(i+1)%poly.length],k=t/L[i];return[a2[0]+(b2[0]-a2[0])*k,a2[1]+(b2[1]-a2[1])*k]}t-=L[i]}return poly[0]}
   // scena E: finalowa karta
   var gE=el('g',{}),logoE=el('g',{transform:'translate(270 300) scale(1.25) translate(-101 -128)'},gE);
   BARS.forEach(function(poly){el('polygon',{points:P(poly),fill:'#F4F4F2'},logoE)});ORS.forEach(function(poly){el('polygon',{points:P(poly),fill:'#FF8900'},logoE)});
@@ -74,9 +84,15 @@
     // ----- D: pen tool, 10.8 - 15.6 s -----
     var dd=a-10.8;show(gD,dd>0&&a<15.7);
     if(dd>0&&a<15.7){gD.setAttribute('opacity',clamp(dd/.3));
-      outs.forEach(function(o,k){var p=iO(clamp((dd-k*.18)/1.2));o.setAttribute('stroke-dashoffset',1-p);o.setAttribute('opacity',1)});
-      hn.forEach(function(h,k){var v=clamp((dd-.5-k*.05)/.25);h.forEach(function(e){e.setAttribute('opacity',v*(dd>3.2?1-clamp((dd-3.2)/.5):1))})});
-      cr.setAttribute('width',iO(clamp((dd-2.4)/1.4))*130)}
+      var ST=.45,T0=.2,cur=-1,curP=0;
+      outs.forEach(function(o,k){var p=clamp((dd-T0-k*ST)/.6);o.setAttribute('stroke-dashoffset',1-p);o.setAttribute('opacity',1);if(p>0&&p<1){cur=k;curP=p}});
+      hn.forEach(function(h){var v=clamp((dd-T0-h.pi*ST-.45)/.25);h.forEach(function(e){e.setAttribute('opacity',v*(dd>4.0?1-clamp((dd-4.0)/.5):1))})});
+      cr.setAttribute('width',iO(clamp((dd-3.7)/1.0))*130);
+      // olowek: czubek idzie po aktualnie rysowanej krawedzi
+      var endT=T0+(polys.length-1)*ST+.6;
+      if(cur>=0){var pt=pointOn(polys[cur],curP);lastPen={x:270+(pt[0]-101)*2.4,y:480+(pt[1]-128)*2.4}}
+      var po=dd<T0?clamp(dd/T0):(dd>endT?1-clamp((dd-endT)/.35):1),lift=dd>endT?(dd-endT)*260:0;
+      pen.setAttribute('opacity',po);pen.setAttribute('transform','translate('+(lastPen.x+lift*.4)+' '+(lastPen.y-lift)+') rotate('+(26+Math.sin(dd*38)*1.6)+')')}
     // ----- E: finalowa karta, 15.5 - 21 s -----
     var e2=a-15.5;show(gE,e2>0);
     if(e2>0){var k3=clamp(e2/.7);gE.setAttribute('opacity',k3);logoE.setAttribute('transform','translate(270 '+(300+(1-oExp(k3))*40)+') scale(1.25) translate(-101 -128)')}
