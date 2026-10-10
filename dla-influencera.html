@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Dla influencera - SparkScale</title>
+<meta name="description" content="SparkScale dla influencerów: marka osobista, content i systemy, które zamieniają zasięgi w dochód.">
+<link rel="canonical" href="https://spark-scale.pl/dla-influencera.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{--bg:#0A0A0B;--o:#FF8900;--o2:#FFB259;--mut:#8C8C88;--mut2:#B8B8B4;--u:clamp(64px,8.4vh,96px);--gap:calc(var(--u)*.11);--bw:calc(var(--u)*.065)}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:#F4F4F2;font-family:'Inter',sans-serif}
+a{color:inherit}
+.top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(18px,4vw,48px);pointer-events:none}
+.top>*{pointer-events:auto}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:-.3px}
+.brand svg{height:34px;width:auto}
+.back{font-family:'Space Grotesk';font-weight:600;font-size:14px;text-decoration:none;color:var(--mut2);padding:10px 16px;border:1px solid #2a2a30;border-radius:999px;background:rgba(10,10,11,.6);backdrop-filter:blur(6px)}
+.back:hover{color:#fff;border-color:var(--o)}
+
+/* --- SCENA: sciana okienek w perspektywie --- */
+.stage{position:relative;height:100vh;height:100svh;min-height:560px;overflow:hidden;perspective:1300px;perspective-origin:60% 40%}
+.plane{position:absolute;left:50%;top:48%;width:240vw;height:calc(var(--u)*5 + var(--gap)*4);transform-style:preserve-3d;
+  transform:translate(-50%,-50%) rotateZ(-9deg) rotateY(-21deg) rotateX(17deg);will-change:transform}
+.slab{position:absolute;left:-4%;right:-4%;top:-14%;bottom:-16%;background:var(--o);transform:translateZ(-60px) skewY(-2deg);box-shadow:0 60px 120px rgba(255,137,0,.18)}
+.track{position:absolute;inset:0;display:flex;gap:var(--gap);will-change:transform}
+.wall{display:grid;grid-template-rows:repeat(5,var(--u));grid-auto-columns:var(--u);gap:var(--gap);flex:none}
+.tile{border:var(--bw) solid #0a0a0a;background:#fff;overflow:hidden;position:relative}
+.tile svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.tile.big{border-width:calc(var(--bw)*1.4)}
+
+.shade{position:absolute;inset:0;z-index:2;pointer-events:none;background:
+  linear-gradient(90deg,rgba(10,10,11,.92) 0%,rgba(10,10,11,.55) 34%,rgba(10,10,11,0) 62%),
+  linear-gradient(0deg,rgba(10,10,11,.95) 0%,rgba(10,10,11,0) 38%),
+  radial-gradient(ellipse at 70% 40%,transparent 40%,rgba(10,10,11,.5) 100%);opacity:0;transition:opacity 1.2s}
+.copy{position:absolute;z-index:3;left:clamp(18px,5vw,72px);bottom:clamp(40px,9vh,110px);max-width:min(640px,88vw)}
+.kick{font-family:'Space Grotesk';font-weight:600;font-size:13px;letter-spacing:2.5px;color:var(--o2);text-transform:uppercase}
+.h1{font-family:'Space Grotesk';font-weight:700;letter-spacing:-2px;line-height:.98;font-size:clamp(40px,6.4vw,92px);margin:14px 0 0}
+.h1 em{font-style:normal;color:var(--o)}
+.sub{margin:22px 0 0;color:var(--mut2);font-size:clamp(16px,1.4vw,19px);line-height:1.55;max-width:540px}
+.sub b{color:#EDEDEB;font-weight:600}
+.cta{display:inline-flex;margin-top:28px;padding:16px 26px;border-radius:999px;background:var(--o);color:#0a0a0a;font-family:'Space Grotesk';font-weight:700;text-decoration:none;box-shadow:0 10px 40px rgba(255,137,0,.35);transition:transform .25s}
+.cta:hover{transform:translateY(-2px)}
+.copy>*{opacity:0;transform:translateY(18px)}
+.ready .shade{opacity:1}
+.ready .copy>*{animation:up .8s cubic-bezier(.2,.8,.2,1) forwards}
+.ready .copy>:nth-child(2){animation-delay:.12s}.ready .copy>:nth-child(3){animation-delay:.24s}.ready .copy>:nth-child(4){animation-delay:.36s}
+@keyframes up{to{opacity:1;transform:none}}
+@media(max-width:720px){.stage{perspective:900px}.plane{width:420vw}.shade{background:linear-gradient(0deg,rgba(10,10,11,.97) 8%,rgba(10,10,11,.6) 48%,rgba(10,10,11,.1) 75%)}}
+@media(prefers-reduced-motion:reduce){.copy>*{opacity:1;transform:none}.shade{opacity:1}}
+</style></head><body>
+
+<header class="top">
+  <a class="brand" href="index.html" aria-label="SparkScale - strona główna"><svg viewBox="38 26 126 204" aria-hidden="true"><g fill="#F4F4F2"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g><g fill="#FF8900"><polygon points="46,125 46,161 77,143"/><polygon points="156,131 156,95 125,113"/></g></svg>sparkscale.</a>
+  <a class="back" href="index.html#ssStrefy">← Strefy działalności</a>
+</header>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <!-- domyslne, anonimowe awatary (styl "brak zdjecia profilowego") -->
+  <symbol id="av-m" viewBox="0 0 100 100"><rect width="100" height="100" fill="#D8DADF"/><circle cx="50" cy="39" r="17" fill="#F0F2F5"/><path d="M14 100c0-21 16-35 36-35s36 14 36 35z" fill="#F0F2F5"/></symbol>
+  <symbol id="av-f" viewBox="0 0 100 100"><rect width="100" height="100" fill="#D8DADF"/><path d="M27 66c-3-8-4-18-3-28 2-15 12-25 26-25s24 10 26 25c1 10 0 20-3 28z" fill="#F0F2F5"/><circle cx="50" cy="40" r="15.5" fill="#E4E6EA"/><path d="M14 100c0-21 16-34 36-34s36 13 36 34z" fill="#F0F2F5"/></symbol>
+</svg>
+
+<main class="stage" id="stage">
+  <div class="plane" id="plane"><div class="slab"></div><div class="track" id="track"></div></div>
+  <div class="shade"></div>
+  <div class="copy">
+    <div class="kick">(strefa: influencer)</div>
+    <h1 class="h1">Tysiące profili.<br><em>Jedna twarz.</em></h1>
+    <p class="sub">Większość twórców ginie w tłumie identycznych okienek - jedni trochę więksi, ale tak samo nijacy. <b>Robimy z Ciebie markę, której nie da się przewinąć.</b></p>
+    <a class="cta" href="index.html#kontakt">Porozmawiajmy →</a>
+  </div>
+</main>
+
+<script>
+(function(){
+  var ROWS=5,COLS=46,track=document.getElementById('track'),plane=document.getElementById('plane'),stage=document.getElementById('stage');
+  var RM=matchMedia('(prefers-reduced-motion:reduce)').matches;
+  // deterministyczny los (ten sam uklad przy kazdym wejsciu)
+  var seed=20261010;function rnd(){seed=(seed*1664525+1013904223)>>>0;return seed/4294967296}
+  // pakowanie: siatka ROWS x COLS, najpierw wieksze okienka, potem dziury wypelniane 1x1 -> rowno, ale chaotycznie
+  function layout(){
+    var occ=[],items=[],r,c;for(r=0;r<ROWS;r++)occ.push(new Array(COLS).fill(0));
+    function free(r,c,h,w){if(r+h>ROWS||c+w>COLS)return false;for(var i=r;i<r+h;i++)for(var j=c;j<c+w;j++)if(occ[i][j])return false;return true}
+    function put(r,c,h,w){for(var i=r;i<r+h;i++)for(var j=c;j<c+w;j++)occ[i][j]=1;items.push([r,c,h,w])}
+    for(c=0;c<COLS;c++)for(r=0;r<ROWS;r++){
+      if(occ[r][c])continue;var x=rnd(),s;
+      s=x<.13?[2,2]:x<.19?[2,1]:x<.25?[1,2]:x<.28?[3,2]:[1,1];
+      if(!free(r,c,s[0],s[1]))s=free(r,c,2,1)&&rnd()<.3?[2,1]:[1,1];
+      put(r,c,s[0],s[1]);
+    }
+    return items;
+  }
+  var items=layout();
+  function wall(){
+    var w=document.createElement('div');w.className='wall';
+    w.innerHTML=items.map(function(it,i){var big=it[2]*it[3]>1;
+      return '<div class="tile'+(big?' big':'')+'" style="grid-row:'+(it[0]+1)+' / span '+it[2]+';grid-column:'+(it[1]+1)+' / span '+it[3]+'"><svg preserveAspectRatio="xMidYMid slice" viewBox="0 0 100 100"><use href="#av-'+((i*7+it[1])%3===0?'f':(i%2?'f':'m'))+'"/></svg></div>'}).join('');
+    return w;
+  }
+  track.appendChild(wall());track.appendChild(wall());track.appendChild(wall());
+  var period=0;function measure(){var w=track.children[0];period=w.offsetWidth+parseFloat(getComputedStyle(track).gap||0)}
+  measure();addEventListener('resize',measure);
+
+  // --- ruch: wjazd sciany z glebi + przewijanie w prawo, szybko -> wolno ---
+  var mx=0,my=0,tmx=0,tmy=0;
+  stage.addEventListener('pointermove',function(e){tmx=e.clientX/innerWidth*2-1;tmy=e.clientY/innerHeight*2-1});
+  var t0=null,x=0,last=0,shown=false;
+  function frame(n){
+    if(t0===null){t0=n;last=n}
+    var t=(n-t0)/1000,dt=Math.min(.05,(n-last)/1000);last=n;
+    var v=RM?0:(26+2600*Math.exp(-t/0.75));           // px/s: wielki rozped na starcie, potem leniwy dryf
+    x=(x+v*dt)%period;
+    track.style.transform='translate3d('+(x-period*1.5)+'px,0,0)';
+    var k=RM?1:Math.min(1,t/1.6),e=1-Math.pow(1-k,4);   // wjazd plaszczyzny
+    mx+=(tmx-mx)*.05;my+=(tmy-my)*.05;
+    var z=(1-e)*-1400,rx=17+(1-e)*30+my*-3,ry=-21+(1-e)*-28+mx*5,rz=-9+(1-e)*-10;
+    plane.style.transform='translate(-50%,-50%) translateZ('+z+'px) rotateZ('+rz+'deg) rotateY('+ry+'deg) rotateX('+rx+'deg)';
+    plane.style.opacity=Math.min(1,k*2.2);
+    if(!shown&&t>1.9){shown=true;document.body.classList.add('ready')}
+    if(!RM||!shown)requestAnimationFrame(frame);
+  }
+  if(RM)document.body.classList.add('ready');
+  requestAnimationFrame(frame);
+  window.__inflKlatka=function(ms){var n=performance.now();t0=n-ms;last=n;frame(n)}; // do testow: klatka po ms
+})();
+</script>
+</body></html>
