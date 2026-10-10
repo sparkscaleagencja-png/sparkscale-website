@@ -182,17 +182,23 @@ a{color:inherit}
 
 
     <!-- WLASCICIEL: ramie z prawej, dlon trzyma line -->
-    <g id="arm" style="visibility:hidden">
-      <line id="sleeveO" stroke="#0a0a0a" stroke-width="72" stroke-linecap="round"/>
-      <line id="sleeve" stroke="#24242b" stroke-width="64" stroke-linecap="round"/>
-      <line id="sleeveL" stroke="#33333c" stroke-width="6" stroke-linecap="round"/>
-      <g id="hand">
-        <rect x="20" y="-17" width="12" height="34" rx="3" fill="#f4f4f2" stroke="#0a0a0a" stroke-width="3"/>
-        <circle cx="26" cy="9" r="3" fill="#FF8900"/>
-        <ellipse cx="9" cy="0" rx="16" ry="13" fill="#e7b08a" stroke="#0a0a0a" stroke-width="3"/>
-        <ellipse cx="-1" cy="-11" rx="8" ry="5" fill="#e7b08a" stroke="#0a0a0a" stroke-width="3" transform="rotate(-20 -1 -11)"/>
-        <g fill="#e7b08a" stroke="#0a0a0a" stroke-width="2.5"><rect x="-10" y="-6" width="12" height="7" rx="3.5"/><rect x="-11" y="1" width="12" height="7" rx="3.5"/><rect x="-9" y="8" width="11" height="6.5" rx="3.2"/></g>
-      </g>
+    <g id="arm" style="visibility:hidden"><g id="hand">
+        <!-- rekaw garnituru: zwezajacy sie, z szwem i zalamaniem -->
+        <path d="M30,-17 L760,-52 L760,52 L30,17 Z" fill="#24242b" stroke="#0a0a0a" stroke-width="3.5" stroke-linejoin="round"/>
+        <path d="M34,-12 L760,-40" stroke="#3a3a45" stroke-width="5" stroke-linecap="round" fill="none"/>
+        <path d="M34,10 L760,38" stroke="#17171c" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <path d="M120,-14 C126,-4 126,4 120,14 M300,-24 C307,-8 307,8 300,24" stroke="#17171c" stroke-width="3" fill="none"/>
+        <rect x="30" y="-17" width="7" height="34" fill="#17171c"/>
+        <rect x="22" y="-14.5" width="5" height="3" rx="1.5" fill="#FF8900"/>
+        <!-- mankiet bialej koszuli, ledwo wystaje spod rekawa -->
+        <path d="M17,-15 L31,-17.5 L31,17.5 L17,15 Z" fill="#f4f4f2" stroke="#0a0a0a" stroke-width="3" stroke-linejoin="round"/>
+        <line x1="22" y1="-13" x2="22" y2="13" stroke="#cfcfd4" stroke-width="2"/>
+        <circle cx="25" cy="0" r="2.2" fill="#FF8900"/>
+        <!-- dlon -->
+        <ellipse cx="6" cy="0" rx="15" ry="13" fill="#e7b08a" stroke="#0a0a0a" stroke-width="3"/>
+        <ellipse cx="-4" cy="-11" rx="8" ry="5" fill="#e7b08a" stroke="#0a0a0a" stroke-width="3" transform="rotate(-20 -4 -11)"/>
+        <g fill="#e7b08a" stroke="#0a0a0a" stroke-width="2.5"><rect x="-13" y="-6" width="12" height="7" rx="3.5"/><rect x="-14" y="1" width="12" height="7" rx="3.5"/><rect x="-12" y="8" width="11" height="6.5" rx="3.2"/></g>
+      </g></g>
     </g>
     <!-- pyl przy uderzeniu -->
     <g id="dust"></g>
@@ -216,14 +222,12 @@ a{color:inherit}
   var hook=document.createElementNS(NS,'rect');hook.setAttribute('width','18');hook.setAttribute('height','8');hook.setAttribute('fill','#FF8900');hook.style.visibility='hidden';world.appendChild(hook);
   function puff(x,y,n,big){for(var i=0;i<n;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',(big?8:5)+Math.random()*6);c.setAttribute('fill','#55555e');dust.appendChild(c);
       (function(c,dx,dy){var t0=performance.now();(function f(n){var k=(n-t0)/700;if(k>=1){c.remove();return}c.setAttribute('transform','translate('+dx*k+' '+dy*k+')');c.setAttribute('opacity',(1-k)*.8);requestAnimationFrame(f)})(t0)})(c,(Math.random()*2-1)*(big?120:70),-10-Math.random()*30)}}
-  var shakeUntil=0,A=null,arm=document.getElementById('arm'),sl=[document.getElementById('sleeveO'),document.getElementById('sleeve'),document.getElementById('sleeveL')],hand=document.getElementById('hand');
+  var shakeUntil=0,A=null,arm=document.getElementById('arm'),hand=document.getElementById('hand');
   // ramie wlasciciela: wjezdza z prawej (0-.25 s), trzyma line, po puszczeniu odjezdza
   function drawArm(a){
     if(!a){arm.style.visibility='hidden';return}
     var r=a.t<.25?1-a.t/.25:(a.t>SWING?(a.t-SWING)/.8:0);r=r*r*(3-2*r);
-    var hx=a.hx+r*820,hy=a.hy-r*40,sx=hx+620,sy=hy-46,ang=Math.atan2(sy-hy,sx-hx)*57.2958;
-    var wx=hx+Math.cos(ang/57.2958)*38,wy=hy+Math.sin(ang/57.2958)*38;
-    sl.forEach(function(l,i){l.setAttribute('x1',sx);l.setAttribute('y1',sy);l.setAttribute('x2',wx+(i==2?8:0));l.setAttribute('y2',wy+(i==2?-16:0))});
+    var hx=a.hx+r*820,hy=a.hy-r*40,ang=Math.atan2(-46,620)*57.2958;
     hand.setAttribute('transform','translate('+hx+' '+hy+') rotate('+ang+')');arm.style.visibility='visible';
   }
   function render(T,live){
