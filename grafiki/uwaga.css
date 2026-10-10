@@ -1,0 +1,17 @@
+/* --- SEKCJA "JAK PRZYCIAGAMY UWAGE": ramka 9:16 z licznikiem sekund --- */
+.ss-uwaga{padding-top:clamp(70px,9vw,120px);padding-bottom:clamp(70px,9vw,120px)}
+.u-grid{display:grid;grid-template-columns:1.05fr minmax(280px,380px);gap:clamp(30px,6vw,90px);align-items:center}
+.u-copy .ss-h2 .o{color:var(--o)}
+.u-list{list-style:none;margin:26px 0 30px;padding:0;display:grid;gap:14px;max-width:560px}
+.u-list li{position:relative;padding-left:30px;color:var(--mut2);font-size:16px;line-height:1.5}
+.u-list li::before{content:"";position:absolute;left:0;top:.45em;width:12px;height:12px;background:var(--o);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.u-list b{color:#EDEDEB;font-weight:600}
+.u-phone{position:relative;justify-self:center;width:100%;aspect-ratio:9/16;border-radius:30px;border:1px solid #2a2a30;background:#0a0a0b;overflow:hidden;box-shadow:0 0 0 6px #121216,0 30px 90px rgba(255,137,0,.14);cursor:pointer}
+.u-phone svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.u-pill{position:absolute;z-index:3;top:3.2%;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;background:rgba(10,10,11,.78);border:1px solid #2a2a30;font-family:'Space Grotesk';font-weight:600;font-size:12px;color:#b8b8b4;white-space:nowrap;backdrop-filter:blur(6px)}
+.u-pill i{width:7px;height:7px;border-radius:50%;background:#ff3b3b;animation:uBlink 1s infinite}
+.u-pill b{color:#fff;font-variant-numeric:tabular-nums;min-width:4.2ch;display:inline-block}
+@keyframes uBlink{0%,60%{opacity:1}61%,100%{opacity:.2}}
+.u-cta{position:absolute;z-index:3;left:50%;bottom:9%;transform:translate(-50%,12px);padding:13px 22px;border-radius:999px;background:var(--o);color:#0a0a0a;font-family:'Space Grotesk';font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .4s,transform .4s;box-shadow:0 8px 30px rgba(255,137,0,.4)}
+.u-cta.on{opacity:1;transform:translate(-50%,0);pointer-events:auto}
+@media(max-width:900px){.u-grid{grid-template-columns:1fr}.u-phone{max-width:340px}}
