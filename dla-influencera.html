@@ -9,7 +9,7 @@
 *{box-sizing:border-box}
 html,body{margin:0;background:var(--bg);color:#F4F4F2;font-family:'Inter',sans-serif}
 a{color:inherit}
-.top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(18px,4vw,48px);pointer-events:none}
+.top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(18px,4vw,48px);pointer-events:none;background:linear-gradient(rgba(10,10,11,.92),rgba(10,10,11,.6) 70%,transparent)}
 .top>*{pointer-events:auto}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:-.3px}
 .brand svg{height:34px;width:auto}
@@ -46,6 +46,43 @@ a{color:inherit}
 @keyframes up{to{opacity:1;transform:none}}
 @media(max-width:720px){.stage{perspective:900px}.plane{width:420vw}.shade{background:linear-gradient(0deg,rgba(10,10,11,.97) 8%,rgba(10,10,11,.6) 48%,rgba(10,10,11,.1) 75%)}}
 @media(prefers-reduced-motion:reduce){.copy>*{opacity:1;transform:none}.shade{opacity:1}}
+/* --- TASMOCIAG: malpki -> maszyna SS -> goryle biznesu --- */
+.belt-sec{position:relative;padding:clamp(70px,10vw,140px) 0 clamp(50px,7vw,90px);overflow:hidden;border-top:1px solid #1c1c20}
+.belt-head{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,72px)}
+.belt-head h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.5px;line-height:1;font-size:clamp(32px,4.8vw,68px);margin:14px 0 0}
+.belt-head h2 em{font-style:normal;color:var(--o)}
+.scene{--ch:clamp(104px,14vw,196px);--bh:clamp(26px,2.6vw,36px);--by:clamp(26px,4vw,52px);position:relative;height:calc(var(--ch)*1.25 + var(--bh) + var(--by) + clamp(60px,9vw,120px));margin-top:clamp(20px,4vw,50px)}
+.belt{position:absolute;left:0;right:0;bottom:var(--by);height:var(--bh)}
+.belt-surface{position:absolute;left:0;right:0;top:0;height:42%;background:#18181c repeating-linear-gradient(90deg,#26262c 0 26px,#18181c 26px 52px);border-top:2px solid #3a3a42;border-bottom:2px solid #0a0a0a}
+.belt::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(#0f0f12,transparent)}
+.rollers{position:absolute;left:0;right:0;top:42%;bottom:0;background:#101013;overflow:hidden}
+.rollers i{position:absolute;top:50%;width:calc(var(--bh)*.5);height:calc(var(--bh)*.5);margin-top:calc(var(--bh)*-.25);border-radius:50%;background:conic-gradient(#55555e 0 25%,#2a2a30 0 50%,#55555e 0 75%,#2a2a30 0);border:2px solid #0a0a0a}
+.chars{position:absolute;inset:0;z-index:2}
+.ch{position:absolute;left:0;bottom:calc(var(--by) + var(--bh)*.42 - 2px);will-change:transform}
+.ch img{display:block;height:var(--ch);width:auto;transform-origin:50% 100%;animation:bob .42s ease-in-out infinite alternate}
+.ch .g{display:none;height:calc(var(--ch)*1.2);animation-duration:.6s}
+.ch.gor .m{display:none}.ch.gor .g{display:block}
+@keyframes bob{0%{transform:translateY(0) rotate(-2deg)}100%{transform:translateY(-4%) rotate(2.5deg)}}
+.machine{position:absolute;z-index:3;left:50%;bottom:calc(var(--by) - 6px);width:calc(var(--ch)*1.55);height:calc(var(--ch)*1.75);transform:translateX(-50%)}
+.m-body{position:absolute;inset:0;background:linear-gradient(160deg,#1d1d22,#0e0e11 70%);border:3px solid #2e2e36;border-radius:14px 14px 6px 6px;box-shadow:0 0 0 1px #0a0a0a,0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:9%}
+.m-logo{width:34%;height:auto;filter:drop-shadow(0 0 14px rgba(255,137,0,.35))}
+.m-label{margin-top:6%;font-family:'Space Grotesk';font-weight:700;letter-spacing:.3em;font-size:calc(var(--ch)*.075);color:#6b6b72}
+.m-lights{position:absolute;top:6%;right:7%;display:flex;gap:6px}
+.m-lights i{width:8px;height:8px;border-radius:50%;background:#3a2a14;transition:.15s}
+.m-lights i:nth-child(1){animation:blink 1.6s infinite}.m-lights i:nth-child(2){animation:blink 1.6s .5s infinite}
+@keyframes blink{0%,60%{background:#3a2a14;box-shadow:none}70%,90%{background:var(--o);box-shadow:0 0 10px var(--o)}}
+.m-door{position:absolute;bottom:0;width:16%;height:calc(var(--ch)*1.32);background:#050506;border:3px solid #2e2e36;border-bottom:0;overflow:hidden}
+.m-door.in{left:-3px;border-radius:0 8px 0 0}.m-door.out{right:-3px;border-radius:8px 0 0 0}
+.m-door::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,137,0,.55) 0 3px,transparent 3px 9px);transform-origin:top;transition:transform .25s}
+.m-door.flap::before{transform:skewX(-18deg) scaleY(.92)}
+.m-door.out.flap::before{transform:skewX(18deg) scaleY(.92)}
+.m-glow{position:absolute;left:10%;right:10%;bottom:-6%;height:30%;background:radial-gradient(ellipse,rgba(255,137,0,.55),transparent 70%);filter:blur(14px);opacity:.25;transition:opacity .2s}
+.machine.zap .m-glow{opacity:1}.machine.zap .m-body{animation:shake .45s}.machine.zap .m-lights i{background:var(--o);box-shadow:0 0 12px var(--o)}
+@keyframes shake{0%,100%{transform:none}20%{transform:translate(-3px,1px) rotate(-.6deg)}40%{transform:translate(3px,-1px) rotate(.6deg)}60%{transform:translate(-2px,0)}80%{transform:translate(2px,0)}}
+.puff{position:absolute;z-index:4;width:var(--s);height:var(--s);color:var(--c);filter:drop-shadow(0 0 6px var(--c));pointer-events:none;animation:puff 1.3s ease-out forwards}
+.puff svg{width:100%;height:100%;fill:currentColor;display:block}
+@keyframes puff{0%{opacity:0;transform:translate(0,0) scale(.3)}25%{opacity:.85}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1) rotate(40deg)}}
+@media(prefers-reduced-motion:reduce){.ch img,.m-lights i{animation:none}}
 </style></head><body>
 
 <header class="top">
@@ -69,6 +106,18 @@ a{color:inherit}
     <a class="cta" href="index.html#kontakt">Porozmawiajmy →</a>
   </div>
 </main>
+
+<section class="belt-sec" aria-label="Maszyna SparkScale">
+  <div class="belt-head">
+    <div class="kick">(maszyna sparkscale)</div>
+    <h2>Wjeżdżasz jako małpka.<br><em>Wyjeżdżasz jako goryl biznesu.</em></h2>
+  </div>
+  <div class="scene" id="scene" aria-hidden="true">
+    <div class="chars" id="chars"></div>
+    <div class="machine" id="machine"><div class="m-glow"></div><div class="m-body"><div class="m-lights"><i></i><i></i><i></i></div><svg class="m-logo" viewBox="38 26 126 204" aria-hidden="true"><g fill="#F4F4F2"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g><g fill="#FF8900"><polygon points="46,125 46,161 77,143"/><polygon points="156,131 156,95 125,113"/></g></svg><div class="m-label">SCALE</div></div><div class="m-door in" id="dIn"></div><div class="m-door out" id="dOut"></div></div>
+    <div class="belt"><div class="belt-surface" id="beltSurf"></div><div class="rollers" id="rollers"></div></div>
+  </div>
+</section>
 
 <script>
 (function(){
@@ -121,6 +170,59 @@ a{color:inherit}
   if(RM)document.body.classList.add('ready');
   requestAnimationFrame(frame);
   window.__inflKlatka=function(ms){var n=performance.now();t0=n-ms;last=n;frame(n)}; // do testow: klatka po ms
+})();
+</script>
+<script>
+(function(){
+  var scene=document.getElementById('scene');if(!scene)return;
+  var chars=document.getElementById('chars'),mach=document.getElementById('machine'),surf=document.getElementById('beltSurf'),
+      rol=document.getElementById('rollers'),dIn=document.getElementById('dIn'),dOut=document.getElementById('dOut');
+  var RM=matchMedia('(prefers-reduced-motion:reduce)').matches,W=0,M={},rolls=[],list=[],off=0,vis=false,last=0,since=1e9;
+  function measure(){
+    W=scene.clientWidth;M={l:mach.offsetLeft-mach.offsetWidth/2,r:mach.offsetLeft+mach.offsetWidth/2,c:mach.offsetLeft};
+    rol.innerHTML='';rolls=[];var n=Math.ceil(W/64)+1;
+    for(var i=0;i<n;i++){var e=document.createElement('i');e.style.left=(i*64+14)+'px';rol.appendChild(e);rolls.push(e)}
+  }
+  measure();addEventListener('resize',measure);
+  function make(){
+    var d=document.createElement('div');d.className='ch';
+    d.innerHTML='<img class="m" src="img/malpka.webp" alt=""><img class="g" src="img/goryl.webp" alt="">';
+    d.querySelector('.m').style.animationDelay=(-Math.random()).toFixed(2)+'s';
+    chars.appendChild(d);var o={el:d,x:-260,w:0,st:0};list.push(o);return o;
+  }
+  function flap(el){el.classList.add('flap');setTimeout(function(){el.classList.remove('flap')},320)}
+  var STAR='<svg viewBox="-1 -1 2 2"><path d="M0,-1 Q.14,-.14 1,0 Q.14,.14 0,1 Q-.14,.14 -1,0 Q-.14,-.14 0,-1Z"/></svg>';
+  function zap(){
+    mach.classList.remove('zap');void mach.offsetWidth;mach.classList.add('zap');
+    setTimeout(function(){mach.classList.remove('zap')},480);
+    var top=mach.offsetTop;
+    for(var i=0;i<5;i++){var p=document.createElement('span');p.className='puff';p.innerHTML=STAR;
+      p.style.cssText='left:'+(M.c-10+(Math.random()*40-20))+'px;top:'+(top-6)+'px;--s:'+(10+Math.random()*16)+'px;--c:'+(Math.random()<.7?'#FF8900':'#F4F4F2')+
+        ';--dx:'+(Math.random()*90-45)+'px;--dy:'+(-50-Math.random()*70)+'px';
+      scene.appendChild(p);p.addEventListener('animationend',function(){this.remove()})}
+  }
+  if(RM){var a=make(),b=make();a.x=W*.08;b.x=W*.74;b.el.classList.add('gor');
+    [a,b].forEach(function(o){o.el.style.transform='translateX('+o.x+'px)'});return}
+  new IntersectionObserver(function(es){vis=es[0].isIntersecting;last=0}).observe(scene);
+  function step(dt){
+    var v=Math.max(90,W/10);off+=v*dt;since+=v*dt;
+    surf.style.backgroundPosition=off+'px 0';
+    var ang=off/((rolls[0]&&rolls[0].offsetWidth/2)||8)*57.3;
+    rolls.forEach(function(e){e.style.transform='rotate('+ang+'deg)'});
+    if(since>mach.offsetWidth*1.05){since=0;make()}
+    for(var i=list.length-1;i>=0;i--){var o=list[i];o.x+=v*dt;if(!o.w)o.w=o.el.offsetWidth||150;var c=o.x+o.w/2;
+      if(o.st===0&&o.x+o.w>M.l+8){o.st=1;flap(dIn)}
+      if(o.st===1&&c>M.c){o.st=2;o.el.classList.add('gor');o.w=o.el.offsetWidth||o.w;o.x=c-o.w/2;zap()}
+      if(o.st===2&&o.x+o.w*.15>M.r-6){o.st=3;flap(dOut)}
+      if(o.x>W+40){o.el.remove();list.splice(i,1);continue}
+      o.el.style.transform='translateX('+o.x+'px)'}
+  }
+  function tick(n){
+    requestAnimationFrame(tick);if(!vis||document.hidden){last=0;return}
+    var dt=last?Math.min(.05,(n-last)/1000):0;last=n;step(dt);
+  }
+  requestAnimationFrame(tick);
+  window.__tasmaKlatka=function(sec){measure();for(var k=0;k<Math.round(sec*30);k++)step(1/30)}; // do testow
 })();
 </script>
 </body></html>

@@ -1,0 +1,37 @@
+/* --- TASMOCIAG: malpki -> maszyna SS -> goryle biznesu --- */
+.belt-sec{position:relative;padding:clamp(70px,10vw,140px) 0 clamp(50px,7vw,90px);overflow:hidden;border-top:1px solid #1c1c20}
+.belt-head{max-width:1180px;margin:0 auto;padding:0 clamp(18px,5vw,72px)}
+.belt-head h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.5px;line-height:1;font-size:clamp(32px,4.8vw,68px);margin:14px 0 0}
+.belt-head h2 em{font-style:normal;color:var(--o)}
+.scene{--ch:clamp(104px,14vw,196px);--bh:clamp(26px,2.6vw,36px);--by:clamp(26px,4vw,52px);position:relative;height:calc(var(--ch)*1.25 + var(--bh) + var(--by) + clamp(60px,9vw,120px));margin-top:clamp(20px,4vw,50px)}
+.belt{position:absolute;left:0;right:0;bottom:var(--by);height:var(--bh)}
+.belt-surface{position:absolute;left:0;right:0;top:0;height:42%;background:#18181c repeating-linear-gradient(90deg,#26262c 0 26px,#18181c 26px 52px);border-top:2px solid #3a3a42;border-bottom:2px solid #0a0a0a}
+.belt::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(#0f0f12,transparent)}
+.rollers{position:absolute;left:0;right:0;top:42%;bottom:0;background:#101013;overflow:hidden}
+.rollers i{position:absolute;top:50%;width:calc(var(--bh)*.5);height:calc(var(--bh)*.5);margin-top:calc(var(--bh)*-.25);border-radius:50%;background:conic-gradient(#55555e 0 25%,#2a2a30 0 50%,#55555e 0 75%,#2a2a30 0);border:2px solid #0a0a0a}
+.chars{position:absolute;inset:0;z-index:2}
+.ch{position:absolute;left:0;bottom:calc(var(--by) + var(--bh)*.42 - 2px);will-change:transform}
+.ch img{display:block;height:var(--ch);width:auto;transform-origin:50% 100%;animation:bob .42s ease-in-out infinite alternate}
+.ch .g{display:none;height:calc(var(--ch)*1.2);animation-duration:.6s}
+.ch.gor .m{display:none}.ch.gor .g{display:block}
+@keyframes bob{0%{transform:translateY(0) rotate(-2deg)}100%{transform:translateY(-4%) rotate(2.5deg)}}
+.machine{position:absolute;z-index:3;left:50%;bottom:calc(var(--by) - 6px);width:calc(var(--ch)*1.55);height:calc(var(--ch)*1.75);transform:translateX(-50%)}
+.m-body{position:absolute;inset:0;background:linear-gradient(160deg,#1d1d22,#0e0e11 70%);border:3px solid #2e2e36;border-radius:14px 14px 6px 6px;box-shadow:0 0 0 1px #0a0a0a,0 30px 80px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.06);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:9%}
+.m-logo{width:34%;height:auto;filter:drop-shadow(0 0 14px rgba(255,137,0,.35))}
+.m-label{margin-top:6%;font-family:'Space Grotesk';font-weight:700;letter-spacing:.3em;font-size:calc(var(--ch)*.075);color:#6b6b72}
+.m-lights{position:absolute;top:6%;right:7%;display:flex;gap:6px}
+.m-lights i{width:8px;height:8px;border-radius:50%;background:#3a2a14;transition:.15s}
+.m-lights i:nth-child(1){animation:blink 1.6s infinite}.m-lights i:nth-child(2){animation:blink 1.6s .5s infinite}
+@keyframes blink{0%,60%{background:#3a2a14;box-shadow:none}70%,90%{background:var(--o);box-shadow:0 0 10px var(--o)}}
+.m-door{position:absolute;bottom:0;width:16%;height:calc(var(--ch)*1.32);background:#050506;border:3px solid #2e2e36;border-bottom:0;overflow:hidden}
+.m-door.in{left:-3px;border-radius:0 8px 0 0}.m-door.out{right:-3px;border-radius:8px 0 0 0}
+.m-door::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,137,0,.55) 0 3px,transparent 3px 9px);transform-origin:top;transition:transform .25s}
+.m-door.flap::before{transform:skewX(-18deg) scaleY(.92)}
+.m-door.out.flap::before{transform:skewX(18deg) scaleY(.92)}
+.m-glow{position:absolute;left:10%;right:10%;bottom:-6%;height:30%;background:radial-gradient(ellipse,rgba(255,137,0,.55),transparent 70%);filter:blur(14px);opacity:.25;transition:opacity .2s}
+.machine.zap .m-glow{opacity:1}.machine.zap .m-body{animation:shake .45s}.machine.zap .m-lights i{background:var(--o);box-shadow:0 0 12px var(--o)}
+@keyframes shake{0%,100%{transform:none}20%{transform:translate(-3px,1px) rotate(-.6deg)}40%{transform:translate(3px,-1px) rotate(.6deg)}60%{transform:translate(-2px,0)}80%{transform:translate(2px,0)}}
+.puff{position:absolute;z-index:4;width:var(--s);height:var(--s);color:var(--c);filter:drop-shadow(0 0 6px var(--c));pointer-events:none;animation:puff 1.3s ease-out forwards}
+.puff svg{width:100%;height:100%;fill:currentColor;display:block}
+@keyframes puff{0%{opacity:0;transform:translate(0,0) scale(.3)}25%{opacity:.85}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(1) rotate(40deg)}}
+@media(prefers-reduced-motion:reduce){.ch img,.m-lights i{animation:none}}
