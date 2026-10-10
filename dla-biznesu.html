@@ -56,10 +56,11 @@ a{color:inherit}
   <div class="stagebox">
     <div class="steps" id="steps"><span>Parter</span><span>Piętro</span><span>Reklama</span><span>Zakład</span><span>Piętro+</span><span>Helipad</span></div>
     <button class="again" id="again" type="button">↻ Zbuduj od nowa</button>
-<svg id="city" viewBox="0 0 1200 760" role="img" aria-label="Animacja: firma rośnie od parteru do helipadu ze śmigłowcem">
+<svg id="city" viewBox="0 -110 1200 870" role="img" aria-label="Animacja: firma rośnie od parteru do helipadu ze śmigłowcem">
   <defs>
     <symbol id="ssLogo" viewBox="38 26 126 204"><g fill="#0a0a0a"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g><g fill="#fff"><polygon points="46,125 46,161 77,143"/><polygon points="156,131 156,95 125,113"/></g></symbol>
     <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b4a5e"/><stop offset=".55" stop-color="#1c2430"/><stop offset="1" stop-color="#121820"/></linearGradient>
+    <filter id="glow" x="-150%" y="-60%" width="400%" height="220%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
     <linearGradient id="glassL" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd49a"/><stop offset="1" stop-color="#FF8900"/></linearGradient>
   </defs>
   <g id="world">
@@ -67,6 +68,26 @@ a{color:inherit}
     <rect x="-200" y="660" width="1600" height="120" fill="#141417"/>
     <rect x="-200" y="658" width="1600" height="4" fill="#2c2c33"/>
     <g fill="#2c2c33"><rect x="40" y="712" width="60" height="5"/><rect x="180" y="712" width="60" height="5"/><rect x="320" y="712" width="60" height="5"/><rect x="460" y="712" width="60" height="5"/><rect x="600" y="712" width="60" height="5"/><rect x="740" y="712" width="60" height="5"/><rect x="880" y="712" width="60" height="5"/><rect x="1020" y="712" width="60" height="5"/><rect x="1160" y="712" width="60" height="5"/></g>
+
+
+    <!-- SPARKSCALE: ludek na drodze z pałkami jak na lotnisku -->
+    <g id="marsh" transform="translate(402 708) scale(1.25)">
+      <ellipse cx="0" cy="2" rx="22" ry="4" fill="#000" opacity=".55"/>
+      <rect x="-9" y="-34" width="7" height="33" fill="#2a2a32" stroke="#0a0a0a" stroke-width="1.5"/><rect x="2" y="-34" width="7" height="33" fill="#2a2a32" stroke="#0a0a0a" stroke-width="1.5"/>
+      <rect x="-11" y="-4" width="10" height="5" rx="2" fill="#0a0a0a"/><rect x="1" y="-4" width="10" height="5" rx="2" fill="#0a0a0a"/>
+      <rect x="-13" y="-67" width="26" height="35" rx="5" fill="#FF8900" stroke="#0a0a0a" stroke-width="2.5"/>
+      <rect x="-12" y="-53" width="24" height="4" fill="#f4f4f2"/><rect x="-12" y="-43" width="24" height="4" fill="#f4f4f2"/>
+      <use href="#ssLogo" x="-4" y="-66" width="8" height="12"/>
+      <circle cx="0" cy="-77" r="9" fill="#e7b08a" stroke="#0a0a0a" stroke-width="2.5"/>
+      <path d="M-10,-78 A10,10 0 0 1 10,-78 Z" fill="#f4f4f2" stroke="#0a0a0a" stroke-width="2.5" stroke-linejoin="round"/>
+      <rect x="-12" y="-80" width="24" height="3.5" rx="1.5" fill="#FF8900" stroke="#0a0a0a" stroke-width="1.5"/>
+      <g id="mArmL"><animateTransform attributeName="transform" type="rotate" values="165 -12 -62;105 -12 -62;165 -12 -62" dur=".9s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+        <line x1="-12" y1="-62" x2="-12" y2="-42" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/><line x1="-12" y1="-62" x2="-12" y2="-42" stroke="#FF8900" stroke-width="5" stroke-linecap="round"/>
+        <rect x="-14.5" y="-44" width="5" height="30" rx="2.5" fill="#FFB259" filter="url(#glow)"/></g>
+      <g id="mArmR"><animateTransform attributeName="transform" type="rotate" values="-165 12 -62;-105 12 -62;-165 12 -62" dur=".9s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1"/>
+        <line x1="12" y1="-62" x2="12" y2="-42" stroke="#0a0a0a" stroke-width="8" stroke-linecap="round"/><line x1="12" y1="-62" x2="12" y2="-42" stroke="#FF8900" stroke-width="5" stroke-linecap="round"/>
+        <rect x="9.5" y="-44" width="5" height="30" rx="2.5" fill="#FFB259" filter="url(#glow)"/></g>
+    </g>
 
     <!-- 3. BILLBOARD -->
     <g class="blk" data-i="2" data-bot="660"><g class="in">
@@ -159,6 +180,20 @@ a{color:inherit}
       <g id="rotor"><rect x="-120" y="-92" width="240" height="5" rx="2.5" fill="#2a2a30"/></g>
     </g></g>
 
+
+    <!-- WLASCICIEL: ramie z prawej, dlon trzyma line -->
+    <g id="arm" style="visibility:hidden">
+      <line id="sleeveO" stroke="#0a0a0a" stroke-width="72" stroke-linecap="round"/>
+      <line id="sleeve" stroke="#24242b" stroke-width="64" stroke-linecap="round"/>
+      <line id="sleeveL" stroke="#33333c" stroke-width="6" stroke-linecap="round"/>
+      <g id="hand">
+        <rect x="20" y="-17" width="12" height="34" rx="3" fill="#f4f4f2" stroke="#0a0a0a" stroke-width="3"/>
+        <circle cx="26" cy="9" r="3" fill="#FF8900"/>
+        <ellipse cx="9" cy="0" rx="16" ry="13" fill="#e7b08a" stroke="#0a0a0a" stroke-width="3"/>
+        <ellipse cx="-1" cy="-11" rx="8" ry="5" fill="#e7b08a" stroke="#0a0a0a" stroke-width="3" transform="rotate(-20 -1 -11)"/>
+        <g fill="#e7b08a" stroke="#0a0a0a" stroke-width="2.5"><rect x="-10" y="-6" width="12" height="7" rx="3.5"/><rect x="-11" y="1" width="12" height="7" rx="3.5"/><rect x="-9" y="8" width="11" height="6.5" rx="3.2"/></g>
+      </g>
+    </g>
     <!-- pyl przy uderzeniu -->
     <g id="dust"></g>
   </g>
@@ -177,27 +212,38 @@ a{color:inherit}
   var info=blks.map(function(b,i){var bb=b.getBBox();return{el:b,inn:b.querySelector('.in'),t:START+i*EVERY,bot:+b.dataset.bot,cx:bb.x+bb.width/2,top:bb.y,w:bb.width,landed:false}});
   var HELI_T=START+blks.length*EVERY-.6,HPAD={x:570,y:182};
   // lina dzwigu
-  var rope=document.createElementNS(NS,'line');rope.setAttribute('stroke','#6a6a72');rope.setAttribute('stroke-width','3');rope.style.visibility='hidden';world.insertBefore(rope,world.firstChild.nextSibling);
+  var rope=document.createElementNS(NS,'line');rope.setAttribute('stroke','#6a6a72');rope.setAttribute('stroke-width','3');rope.style.visibility='hidden';world.insertBefore(rope,document.getElementById('arm'));
   var hook=document.createElementNS(NS,'rect');hook.setAttribute('width','18');hook.setAttribute('height','8');hook.setAttribute('fill','#FF8900');hook.style.visibility='hidden';world.appendChild(hook);
   function puff(x,y,n,big){for(var i=0;i<n;i++){var c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',(big?8:5)+Math.random()*6);c.setAttribute('fill','#55555e');dust.appendChild(c);
       (function(c,dx,dy){var t0=performance.now();(function f(n){var k=(n-t0)/700;if(k>=1){c.remove();return}c.setAttribute('transform','translate('+dx*k+' '+dy*k+')');c.setAttribute('opacity',(1-k)*.8);requestAnimationFrame(f)})(t0)})(c,(Math.random()*2-1)*(big?120:70),-10-Math.random()*30)}}
-  var shakeUntil=0;
+  var shakeUntil=0,A=null,arm=document.getElementById('arm'),sl=[document.getElementById('sleeveO'),document.getElementById('sleeve'),document.getElementById('sleeveL')],hand=document.getElementById('hand');
+  // ramie wlasciciela: wjezdza z prawej (0-.25 s), trzyma line, po puszczeniu odjezdza
+  function drawArm(a){
+    if(!a){arm.style.visibility='hidden';return}
+    var r=a.t<.25?1-a.t/.25:(a.t>SWING?(a.t-SWING)/.8:0);r=r*r*(3-2*r);
+    var hx=a.hx+r*820,hy=a.hy-r*40,sx=hx+620,sy=hy-46,ang=Math.atan2(sy-hy,sx-hx)*57.2958;
+    var wx=hx+Math.cos(ang/57.2958)*38,wy=hy+Math.sin(ang/57.2958)*38;
+    sl.forEach(function(l,i){l.setAttribute('x1',sx);l.setAttribute('y1',sy);l.setAttribute('x2',wx+(i==2?8:0));l.setAttribute('y2',wy+(i==2?-16:0))});
+    hand.setAttribute('transform','translate('+hx+' '+hy+') rotate('+ang+')');arm.style.visibility='visible';
+  }
   function render(T,live){
-    var ropeOn=false,maxStep=-1;
+    var ropeOn=false,maxStep=-1;A=null;
     info.forEach(function(b,i){
       var t=T-b.t;
       if(t<0){b.el.style.visibility='hidden';b.landed=false;return}
       b.el.style.visibility='visible';maxStep=i;
-      var dy0=-HANG,dist=HANG,fall=Math.sqrt(2*dist/G),x=0,y=0,sx=1,sy=1;
+      var hang=Math.min(HANG,b.top+10),dy0=-hang,dist=hang,fall=Math.sqrt(2*dist/G),x=0,y=0,sx=1,sy=1;
       if(t<SWING){x=Math.sin(t/SWING*Math.PI*2)*46*(1-t/SWING*.6);y=dy0;ropeOn=true;
-        rope.setAttribute('x1',b.cx+x*.2);rope.setAttribute('y1',-20);rope.setAttribute('x2',b.cx+x);rope.setAttribute('y2',b.top+y);
+        var hx=b.cx+x*.25,hy=Math.max(-80,b.top+y-120);A={hx:hx,hy:hy,t:t};rope.setAttribute('x1',hx);rope.setAttribute('y1',hy+4);rope.setAttribute('x2',b.cx+x);rope.setAttribute('y2',b.top+y);
         hook.setAttribute('x',b.cx+x-9);hook.setAttribute('y',b.top+y-8);}
       else if(t<SWING+fall){var k=(t-SWING)/fall;y=dy0*(1-k*k)}
+      if(t>=SWING&&t<SWING+.8){var hy2=Math.max(-80,b.top+dy0-120);A={hx:b.cx,hy:hy2,t:t}}
       else{var a=t-SWING-fall;if(a<.28){var q=Math.sin(a/.28*Math.PI)*(1-a/.28);sy=1-.07*q;sx=1+.04*q}
         if(!b.landed){b.landed=true;if(live){puff(b.cx-b.w/2,b.bot,6,b.w>200);puff(b.cx+b.w/2,b.bot,6,b.w>200);shakeUntil=performance.now()+220}}}
       b.inn.setAttribute('transform','translate('+x+' '+y+') translate('+b.cx+' '+b.bot+') scale('+sx+' '+sy+') translate('+(-b.cx)+' '+(-b.bot)+')');
     });
     rope.style.visibility=hook.style.visibility=ropeOn?'visible':'hidden';
+    drawArm(A);
     steps.forEach(function(s,i){s.classList.toggle('on',i<=maxStep)});
     // smiglowiec: przylot z prawej, zawis, ladowanie
     var h=T-HELI_T;
@@ -222,7 +268,7 @@ a{color:inherit}
   again.addEventListener('click',play);
   render(0,false);
   if('IntersectionObserver' in window)new IntersectionObserver(function(es,o){if(es[0].isIntersecting){o.disconnect();play()}},{threshold:.35}).observe(svg);else play();
-  window.__budujKlatka=function(s){cancelAnimationFrame(raf);render(s,false)}; // do testow
+  window.__budujKlatka=function(s,stop){if(stop){cancelAnimationFrame(raf);t0=-1e9}else t0=performance.now()-s*1000;render(s,false)}; // do testow
 })();
 </script>
 </body></html>
