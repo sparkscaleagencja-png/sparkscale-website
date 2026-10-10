@@ -1,0 +1,45 @@
+<!doctype html><html lang="pl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Spark Scale — animacja logo</title>
+<style>
+html,body{margin:0;height:100%;background:#fff}
+body{display:grid;place-items:center;font-family:system-ui,sans-serif}
+svg{height:min(70vh,520px);width:auto;cursor:pointer;overflow:visible}
+.b polygon{fill:#000;stroke:#000;stroke-width:.35;stroke-linejoin:miter} .o{fill:#ff8c00}
+p{position:fixed;bottom:14px;margin:0;color:#888;font-size:13px}
+</style></head><body>
+<svg id="logo" viewBox="30 20 140 215" role="img" aria-label="Spark Scale — logo"><g class="b" data-cy="67.5"><polygon points="46,66 101,35 101,69 46,100"/></g><g class="b" data-cy="67.5"><polygon points="101,66 156,35 156,69 101,100"/></g><g class="b" data-cy="110.0"><polygon points="101,90 68,110 101,130"/></g><g class="b" data-cy="146.0"><polygon points="101,126 134,146 101,166"/></g><g class="b" data-cy="189.5"><polygon points="46,188 101,157 101,191 46,222"/></g><g class="b" data-cy="189.5"><polygon points="101,188 156,157 156,191 101,222"/></g>
+<polygon id="oL" class="o" points="46,125 46,161 77,143"/><polygon id="oR" class="o" points="156,131 156,95 125,113"/></svg>
+<p>kliknij logo, aby odtworzyć ponownie</p>
+<script>
+(()=>{
+const C=127.5,bs=[...document.querySelectorAll('.b')],oL=document.getElementById('oL'),oR=document.getElementById('oR');
+const ease=t=>t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const back=t=>{const c=1.4;return 1+(c+1)*Math.pow(t-1,3)+c*Math.pow(t-1,2)};
+const clamp=x=>Math.max(0,Math.min(1,x));
+const DUR=1900,ST=140;
+const tris=[[oL,143,77,46],[oR,113,125,156]];
+function frame(T){
+  bs.forEach((g,i)=>{
+    // zewnętrzne pasy startują później -> rozkładanie od środka
+    const k=Math.abs(+g.dataset.cy-C)/45, d=k*ST;
+    const t=back(clamp((T-d)/(DUR-300)));
+    const b=+g.dataset.cy, s=.4+.6*Math.max(t,0);
+    g.setAttribute('transform',`matrix(1,0,0,${s},0,${b+(C-b)*(1-t)-b*s})`);
+  });
+  tris.forEach(([el,cy,tip,base],i)=>{
+    const t=ease(clamp((T-250)/(DUR-250)));
+    // start: wielki "kokardkowy" trójkąt na środku, czubki stykają się w x=101.5
+    const sx=1+(1-t)*1.2, dy=(C-cy)*(1-t);
+    const bx=base, dir=i?-1:1;
+    el.setAttribute('transform',`translate(0 ${dy}) translate(${bx} ${cy}) scale(${sx} ${1+(1-t)*.6}) translate(${-bx} ${-cy})`);
+  });
+}
+let raf,t0;
+function play(){cancelAnimationFrame(raf);t0=null;
+  const q=new URLSearchParams(location.search).get('t');if(q!==null){frame(+q);return}
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){frame(1e5);return}
+  const step=n=>{t0??=n;const T=n-t0;frame(T);if(T<DUR+ST*2)raf=requestAnimationFrame(step);else frame(1e5)};
+  raf=requestAnimationFrame(step)}
+document.getElementById('logo').addEventListener('click',play);play();
+})();
+</script></body></html>

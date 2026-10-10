@@ -1,0 +1,31 @@
+/* --- HERO: animowane logo, kontury logo w tle, gwiazdki --- */
+.ss-fx{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.ss-lines{position:absolute;left:-3%;top:-3%;width:106%;height:106%;fill:none;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.ss-far{transform:translate(calc(var(--mx,0)*-14px),calc(var(--my,0)*-10px));opacity:.38}
+.ss-near{transform:translate(calc(var(--mx,0)*-30px),calc(var(--my,0)*-22px));opacity:.28}
+.ss-lines .ln{stroke:var(--o);stroke-width:1.2;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;animation:ssDraw 2.4s var(--d,0s) cubic-bezier(.6,0,.2,1) forwards}
+.ss-lines .pl{stroke:#ffb35c;stroke-width:2.4;vector-effect:non-scaling-stroke;stroke-linecap:round;stroke-dasharray:.07 .93;stroke-dashoffset:1;opacity:0;filter:drop-shadow(0 0 4px #ff8900);animation:ssPulse var(--pd,7s) calc(3s + var(--p,0s)) linear infinite}
+.ss-lines .fl{transform-box:fill-box;transform-origin:center;animation:ssFloat var(--f,14s) var(--fd,0s) ease-in-out infinite alternate}
+@keyframes ssDraw{to{stroke-dashoffset:0}}
+@keyframes ssPulse{0%{stroke-dashoffset:1;opacity:0}8%{opacity:1}55%{opacity:1}70%,100%{stroke-dashoffset:0;opacity:0}}
+@keyframes ssFloat{0%{transform:translateY(-1.5%) rotate(-.6deg)}100%{transform:translateY(1.5%) rotate(.6deg)}}
+.ss-stars{position:absolute;inset:0}
+.ss-star{position:absolute;width:var(--s);height:var(--s);margin:calc(var(--s)/-2) 0 0 calc(var(--s)/-2);opacity:0;color:var(--c);filter:drop-shadow(0 0 calc(var(--s)*.22) var(--c));animation:ssTw var(--t) ease-in-out forwards}
+.ss-star svg{display:block;width:100%;height:100%;fill:currentColor}
+@keyframes ssTw{0%{opacity:0;transform:scale(.2) rotate(-25deg)}45%{opacity:.7;transform:scale(1) rotate(0)}60%{opacity:.7}100%{opacity:0;transform:scale(.5) rotate(20deg)}}
+.ss-hlogo{position:absolute;z-index:2;top:50%;right:max(48px,calc((100% - 1180px)/2 + 48px));height:min(60vh,540px);aspect-ratio:126/204;transform:translate(calc(var(--mx,0)*10px),calc(-50% + var(--my,0)*8px));transition:transform .6s cubic-bezier(.2,.7,.2,1);cursor:pointer}
+.ss-hlogo svg{position:relative;width:100%;height:100%;overflow:visible;animation:ssIdle 7s 2.4s ease-in-out infinite alternate}
+.ss-hlogo .hb{fill:#F4F4F2;stroke:#F4F4F2;stroke-width:.35;stroke-linejoin:miter}
+.ss-hlogo .ht{fill:var(--o)}
+.ss-hlogo-glow{position:absolute;inset:-20%;border-radius:50%;background:radial-gradient(circle,rgba(255,137,0,.20),transparent 62%);filter:blur(30px);opacity:0;transition:opacity 1.6s .8s}
+.ss-hlogo.on .ss-hlogo-glow{opacity:1}
+@keyframes ssIdle{0%{transform:translateY(-1.2%)}100%{transform:translateY(1.2%)}}
+@media(min-width:901px){.ss-hero .ss-main{padding-right:calc(48px + min(60vh,540px)*.62 + 40px)}}
+@media(max-width:900px){
+  .ss-hlogo{position:relative;top:auto;right:auto;transform:none;height:120px;margin:4px 0 0 22px;align-self:flex-start}
+  .ss-near{opacity:.18}.ss-far{opacity:.35}
+}
+@media(prefers-reduced-motion:reduce){
+  .ss-lines .ln{animation:none;stroke-dashoffset:0}.ss-lines .pl{display:none}
+  .ss-lines .fl,.ss-hlogo svg{animation:none}
+}
