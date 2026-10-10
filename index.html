@@ -35,7 +35,14 @@
   </section>
 
   <div class="ss-strip" role="presentation" aria-hidden="true"></div>
-  <div class="ss-orange" id="ssOrange"><!-- tu przyciski na podstrony --></div>
+  <div class="ss-orange" id="ssOrange"><div class="ss-strefy" id="ssStrefy">
+    <div class="ss-st-kick">(wybierz swoją)</div>
+    <h2 class="ss-st-h">Strefy Działalności</h2>
+    <div class="ss-st-ruler" aria-hidden="true"></div>
+    <div class="ss-st-grid">
+      <a class="ss-st-card" style="--c:0" href="#"><span class="ss-st-num">01</span><div><h3 class="ss-st-t">Dla biznesu</h3><p class="ss-st-d">Marka, strony, systemy i automatyzacje AI, które pozyskują klientów i skalują firmę.</p></div><span class="ss-st-go">Wejdź do strefy <span>→</span></span></a>
+      <a class="ss-st-card" style="--c:1" href="#"><span class="ss-st-num">02</span><div><h3 class="ss-st-t">Dla influencera</h3><p class="ss-st-d">Marka osobista, content i systemy, które zamieniają zasięgi w dochód.</p></div><span class="ss-st-go">Wejdź do strefy <span>→</span></span></a>
+    </div></div></div>
 
   <!-- MANIFEST (animacja na scroll) -->
   <section class="ss-manifest" id="ssManifest">
@@ -547,6 +554,29 @@
 .ss-strip{--h:clamp(40px,4.4vw,58px);--p:calc(var(--h)*1.2347);position:relative;z-index:3;height:var(--h);background:#fff url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 31 242 196%22%3E%3Cg transform=%22translate%28-40.5 0%29%22%3E%3Cpolygon points=%2246%2C66 101%2C35 101%2C69 46%2C100%22 fill=%22%230a0a0a%22 stroke=%22%230a0a0a%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%2246%2C188 101%2C157 101%2C191 46%2C222%22 fill=%22%230a0a0a%22 stroke=%22%230a0a0a%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C66 156%2C35 156%2C69 101%2C100%22 fill=%22%230a0a0a%22 stroke=%22%230a0a0a%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C188 156%2C157 156%2C191 101%2C222%22 fill=%22%230a0a0a%22 stroke=%22%230a0a0a%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C90 68%2C110 101%2C130%22 fill=%22%230a0a0a%22 stroke=%22%230a0a0a%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C126 134%2C146 101%2C166%22 fill=%22%230a0a0a%22 stroke=%22%230a0a0a%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%2246%2C125 46%2C161 77%2C143%22 fill=%22%23ff8900%22/%3E%3Cpolygon points=%22156%2C131 156%2C95 125%2C113%22 fill=%22%23ff8900%22/%3E%3C/g%3E%3Cg transform=%22translate%2880.5 0%29%22%3E%3Cpolygon points=%2246%2C66 101%2C35 101%2C69 46%2C100%22 fill=%22%23ff8900%22 stroke=%22%23ff8900%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%2246%2C188 101%2C157 101%2C191 46%2C222%22 fill=%22%23ff8900%22 stroke=%22%23ff8900%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C66 156%2C35 156%2C69 101%2C100%22 fill=%22%23ff8900%22 stroke=%22%23ff8900%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C188 156%2C157 156%2C191 101%2C222%22 fill=%22%23ff8900%22 stroke=%22%23ff8900%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C90 68%2C110 101%2C130%22 fill=%22%23ff8900%22 stroke=%22%23ff8900%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%22101%2C126 134%2C146 101%2C166%22 fill=%22%23ff8900%22 stroke=%22%23ff8900%22 stroke-width=%22.35%22/%3E%3Cpolygon points=%2246%2C125 46%2C161 77%2C143%22 fill=%22%23ff8900%22/%3E%3Cpolygon points=%22156%2C131 156%2C95 125%2C113%22 fill=%22%23ff8900%22/%3E%3C/g%3E%3C/svg%3E") 0 0/auto 100% repeat-x;animation:ssStrip 28s linear infinite}
 @keyframes ssStrip{to{background-position-x:calc(var(--p)*-1)}}
 .ss-orange{position:relative;z-index:3;background:var(--o);min-height:clamp(96px,12vw,150px);display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;padding:22px 24px}
+/* --- STREFY DZIALALNOSCI (pomaranczowy pas) --- */
+.ss-orange{display:block;min-height:0;padding:clamp(40px,6vw,84px) 24px clamp(48px,7vw,96px);overflow:hidden}
+.ss-strefy{max-width:1180px;margin:0 auto}
+.ss-st-kick{font-family:'Space Grotesk';font-weight:600;font-size:13px;letter-spacing:2.5px;color:#0a0a0a;opacity:.7;text-transform:uppercase}
+.ss-st-h{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.5px;line-height:1;font-size:clamp(34px,5.4vw,76px);color:#0a0a0a;margin:10px 0 0}
+.ss-st-ruler{display:flex;align-items:flex-end;justify-content:space-between;height:34px;margin:clamp(22px,3vw,36px) 0 0}
+.ss-st-ruler i{display:block;width:2px;height:100%;background:#0a0a0a;transform-origin:bottom;transform:scaleY(0);opacity:.9}
+.ss-st-ruler i:nth-child(5n+1){height:100%}.ss-st-ruler i:not(:nth-child(5n+1)){height:46%}
+.ss-st-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);margin-top:clamp(16px,2vw,26px)}
+.ss-st-card{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:clamp(220px,26vw,340px);padding:clamp(22px,2.6vw,38px);background:#0a0a0a;color:#f4f4f2;text-decoration:none;border:2px solid #0a0a0a;opacity:0;transform:scale(.5);transform-origin:50% 100%;overflow:hidden}
+.ss-st-card::before{content:"";position:absolute;inset:auto -10% -40% auto;width:70%;aspect-ratio:1;background:radial-gradient(circle,rgba(255,137,0,.35),transparent 65%);transition:transform .5s}
+.ss-st-num{position:relative;font-family:'Space Grotesk';font-weight:600;font-size:14px;letter-spacing:2.5px;color:var(--o)}
+.ss-st-t{position:relative;font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.5px;line-height:1;font-size:clamp(34px,4.6vw,64px);margin:18px 0 0}
+.ss-st-d{position:relative;max-width:420px;margin:12px 0 0;color:#b9b9b4;font-size:clamp(14px,1.3vw,17px);line-height:1.5}
+.ss-st-go{position:relative;display:flex;align-items:center;gap:10px;margin-top:22px;font-family:'Space Grotesk';font-weight:700;font-size:16px;color:var(--o)}
+.ss-st-go span{display:inline-block;transition:transform .3s}
+.ss-st-card:hover{background:#151517}.ss-st-card:hover .ss-st-go span{transform:translateX(8px)}.ss-st-card:hover::before{transform:scale(1.4)}
+.ss-strefy.on .ss-st-ruler i{animation:stTick .5s calc(var(--i)*16ms) cubic-bezier(.2,.8,.2,1) forwards}
+.ss-strefy.on .ss-st-card{animation:stScale .9s calc(.7s + var(--c)*.18s) cubic-bezier(.2,1.25,.3,1) forwards}
+@keyframes stTick{to{transform:scaleY(1)}}
+@keyframes stScale{0%{opacity:0;transform:scale(.5)}35%{opacity:1}100%{opacity:1;transform:scale(1)}}
+@media(max-width:720px){.ss-st-grid{grid-template-columns:1fr}.ss-st-ruler i:not(:nth-child(5n+1)){display:none}}
+@media(prefers-reduced-motion:reduce){.ss-st-card{opacity:1;transform:none}.ss-st-ruler i{transform:none}.ss-strefy.on .ss-st-card,.ss-strefy.on .ss-st-ruler i{animation:none}}
 @media(prefers-reduced-motion:reduce){.ss-strip{animation:none}}
 </style>
 <script>
@@ -594,6 +624,16 @@
   }
   for(var i=0;i<6;i++)setTimeout(spawn,600+i*260);
   setInterval(spawn,420);
+})();
+</script>
+<script>
+(function(){
+  var box=document.getElementById('ssStrefy');if(!box)return;
+  var r=box.querySelector('.ss-st-ruler'),n=61;
+  for(var i=0;i<n;i++){var t=document.createElement('i');t.style.setProperty('--i',i);r.appendChild(t);}
+  // linijka ma konczyc sie kreska "duza" na obu koncach: 61 = 12 odcinkow po 5 + 1
+  if(!('IntersectionObserver' in window)){box.classList.add('on');return}
+  new IntersectionObserver(function(es,o){if(es[0].isIntersecting){box.classList.add('on');o.disconnect()}},{threshold:.25}).observe(box);
 })();
 </script>
 </body></html>
