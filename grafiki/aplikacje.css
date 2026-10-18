@@ -1,0 +1,19 @@
+/* --- DEDYKOWANE APLIKACJE --- */
+.ss-apps .ss-app{max-width:1180px;margin:34px auto 0;display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(22px,4vw,56px);align-items:center;background:var(--pnl);border:1px solid var(--bd);border-radius:18px;padding:clamp(22px,3.4vw,44px)}
+.ss-app-txt h3{font-family:'Space Grotesk';font-size:clamp(28px,3.4vw,44px);font-weight:700;letter-spacing:-1px;margin:6px 0 12px}
+.ss-app-txt p{color:var(--mut2);line-height:1.6;margin-bottom:16px}
+.ss-app-txt ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+.ss-app-txt li{position:relative;padding-left:22px;color:var(--mut2);font-size:14.5px;line-height:1.5}
+.ss-app-txt li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:var(--o);transform:rotate(45deg)}
+.ss-app-txt li b{color:#EDEDEB;font-weight:600}
+.ss-app-ui{background:#0a0a0b;border:1px solid var(--bd);border-radius:14px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.ss-app-body{padding:16px;display:grid;gap:10px}
+.ss-app-cal{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:6px}
+.ss-app-cal b{grid-column:1/-1;font:600 11px 'Space Grotesk';letter-spacing:2px;color:var(--mut);margin-bottom:2px}
+.ss-app-cal span{height:20px;background:#15151a;border-radius:4px}.ss-app-cal span.on{background:rgba(255,137,0,.35);box-shadow:inset 0 0 0 1px rgba(255,137,0,.6)}
+.ss-app-row{display:flex;align-items:center;gap:12px;background:#111114;border:1px solid var(--bd);border-radius:10px;padding:11px 13px}
+.ss-app-row i{width:10px;height:10px;border-radius:50%;flex:none}
+.ss-app-row .s1{background:#ffb259}.ss-app-row .s2{background:#4da3ff}.ss-app-row .s3{background:#ff8900;box-shadow:0 0 0 3px rgba(255,137,0,.25)}.ss-app-row .s4{background:#3ddc84}
+.ss-app-row div{flex:1;min-width:0}.ss-app-row b{display:block;font-size:13.5px}.ss-app-row small{display:block;color:var(--mut);font-size:12px;margin-top:2px}
+.ss-app-row em{font-style:normal;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mut);white-space:nowrap}
+@media(max-width:900px){.ss-apps .ss-app{grid-template-columns:1fr}}
