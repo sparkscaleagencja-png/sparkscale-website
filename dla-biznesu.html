@@ -38,6 +38,28 @@ a{color:inherit}
 .lit{animation:lit 5s infinite}
 @keyframes lit{0%,100%{fill:#FFB259}50%{fill:#ffcf8f}}
 @media(max-width:900px){.hero{grid-template-columns:1fr;align-items:start;padding-top:96px}.copy{padding-bottom:10px}.steps{display:none}}
+
+/* --- APLIKACJE DLA FIRM --- */
+.apps{max-width:1180px;margin:0 auto;padding:clamp(70px,9vw,120px) clamp(18px,4vw,56px)}
+.apps .kick{margin-bottom:14px}
+.apps h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.4px;line-height:1.05;font-size:clamp(30px,4.2vw,58px);margin:0}
+.apps h2 em{font-style:normal;color:var(--o)}
+.apps .lead{margin:18px 0 0;color:var(--mut2);font-size:clamp(16px,1.3vw,19px);line-height:1.6;max-width:640px}
+.apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);margin-top:clamp(28px,4vw,52px)}
+.app-card{display:flex;flex-direction:column;background:#0F0F12;border:1px solid #1c1c20;border-radius:18px;padding:clamp(22px,3vw,38px)}
+.app-tag{font-family:'Space Grotesk';font-weight:600;font-size:12px;letter-spacing:2px;color:var(--o2);text-transform:uppercase}
+.app-card h3{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1px;font-size:clamp(26px,3vw,40px);margin:8px 0 12px}
+.app-card p{color:var(--mut2);line-height:1.6;margin:0 0 16px}
+.app-card ul{list-style:none;padding:0;margin:0 0 24px;display:grid;gap:10px}
+.app-card li{position:relative;padding-left:22px;color:var(--mut2);font-size:14.5px;line-height:1.5}
+.app-card li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:var(--o);transform:rotate(45deg)}
+.app-card li b{color:#EDEDEB;font-weight:600}
+.app-card .more{margin-top:auto;font-family:'Space Grotesk';font-weight:700;color:var(--o);text-decoration:none}
+.app-card .more:hover{text-decoration:underline}
+.apps-cta{margin-top:clamp(26px,3vw,40px);display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.apps-cta .ghost{color:var(--mut2);text-decoration:none;font-family:'Space Grotesk';font-weight:600}
+.apps-cta .ghost:hover{color:#fff}
+@media(max-width:900px){.apps-grid{grid-template-columns:1fr}}
 </style><script defer src="/_s/s.js"></script>
 </head><body>
 
@@ -207,6 +229,42 @@ a{color:inherit}
 </svg>
   </div>
 </main>
+
+<section class="apps" id="aplikacje">
+  <div class="kick">(aplikacje dla firm)</div>
+  <h2>Aplikacja szyta <em>pod Twój proces.</em></h2>
+  <p class="lead">Gdy gotowe narzędzia nie pasują do tego, jak pracuje Twoja firma, budujemy własne: od zera, pod Twoich ludzi i Twoje zasady. Działa w przeglądarce i na telefonie, instaluje się jak zwykła aplikacja.</p>
+  <div class="apps-grid">
+    <article class="app-card">
+      <span class="app-tag">Przykład · zarządzanie wykonami</span>
+      <h3>Revo Wykony</h3>
+      <p>Dla firmy, która zleca prace ekipom i wykonawcom w terenie. Zamiast telefonów, arkuszy i wiadomości w kilku komunikatorach: jedno miejsce, w którym widać, kto, gdzie i co robi.</p>
+      <ul>
+        <li><b>Kalendarz i mapa</b> wszystkich wykonów, z wyszukiwaniem po numerze umowy</li>
+        <li><b>Propozycje zleceń</b> wysyłane do kilku wykonawców naraz, z terminem na decyzję</li>
+        <li><b>Zdjęcia, raporty i protokoły odbioru</b> dodawane prosto z placu budowy</li>
+        <li><b>Powiadomienia push</b>, czat i osobne konta dla firmy, wykonawców i ekip</li>
+      </ul>
+      <a class="more" href="index.html#aplikacje">Zobacz podgląd aplikacji →</a>
+    </article>
+    <article class="app-card">
+      <span class="app-tag">Przykład · branża remontowa</span>
+      <h3>Aplikacja PAO Elite</h3>
+      <p>Do strony <a href="https://pao-elite.pl/" target="_blank" rel="noopener" style="color:var(--o2)">pao-elite.pl</a> zbudowaliśmy aplikację dla dyrektora firmy remontowej: narzędzia, które skracają drogę od zapytania klienta do gotowej oferty i protokołu odbioru.</p>
+      <ul>
+        <li><b>Wizualizacja remontu</b> na zdjęciu klienta: elewacja, dach, posadzka i schody, bez zmiany kształtu budynku</li>
+        <li><b>Sprawdzenie azbestu</b> na podstawie danych publicznych dla danego adresu</li>
+        <li><b>Odczyt umowy ze zdjęcia</b>: zamawiający, wykonawca, zakres, wartość i terminy trafiają do historii</li>
+        <li><b>Wyceny ze strony</b> z powiadomieniem oraz protokół odbioru do PDF</li>
+      </ul>
+      <a class="more" href="index.html#aplikacje">Zobacz podgląd aplikacji →</a>
+    </article>
+  </div>
+  <div class="apps-cta">
+    <a class="cta" href="index.html#kontakt">Chcę taką aplikację →</a>
+    <a class="ghost" href="index.html#realizacje">Zobacz realizacje</a>
+  </div>
+</section>
 
 <script>
 (function(){
