@@ -1,0 +1,203 @@
+<!DOCTYPE html><html lang="pl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sieć firmowa - SparkScale</title>
+<meta name="description" content="Cała firma pod ręką: jedna sieć narzędzi szyta pod Twój proces. Śledzenie pracy ekip, codzienne ułatwienia, agenci AI, plan i statystyki w jednym miejscu.">
+<link rel="canonical" href="https://spark-scale.pl/siec.html">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
+:root{--bg:#0A0A0B;--o:#FF8900;--o2:#FFB259;--mut:#8C8C88;--mut2:#B8B8B4;--pnl:#0F0F12;--bd:#1c1c20}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:#F4F4F2;font-family:'Inter',sans-serif;scroll-behavior:smooth}
+a{color:inherit}
+.top{position:fixed;inset:0 0 auto;z-index:20;display:flex;align-items:center;justify-content:space-between;padding:20px clamp(18px,4vw,48px);background:linear-gradient(rgba(10,10,11,.92),rgba(10,10,11,.6) 70%,transparent)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-family:'Space Grotesk';font-weight:700;font-size:18px;letter-spacing:-.3px}
+.brand svg{height:34px;width:auto}
+.back{font-family:'Space Grotesk';font-weight:600;font-size:14px;text-decoration:none;color:var(--mut2);padding:10px 16px;border:1px solid #2a2a30;border-radius:999px;background:rgba(10,10,11,.6)}
+.back:hover{color:#fff;border-color:var(--o)}
+.kick{font-family:'Space Grotesk';font-weight:600;font-size:13px;letter-spacing:2.5px;color:var(--o2);text-transform:uppercase}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(18px,4vw,56px)}
+.cta{display:inline-flex;padding:16px 26px;border-radius:999px;background:var(--o);color:#0a0a0a;font-family:'Space Grotesk';font-weight:700;text-decoration:none;box-shadow:0 10px 40px rgba(255,137,0,.35);transition:transform .25s}
+.cta:hover{transform:translateY(-2px)}
+.ghost{color:var(--mut2);text-decoration:none;font-family:'Space Grotesk';font-weight:600}
+.ghost:hover{color:#fff}
+
+/* HERO */
+.hero{position:relative;min-height:100vh;min-height:100svh;display:grid;grid-template-columns:1fr 1.05fr;align-items:center;gap:clamp(10px,3vw,40px);padding:110px clamp(18px,4vw,56px) 40px;max-width:1380px;margin:0 auto}
+.h1{font-family:'Space Grotesk';font-weight:700;letter-spacing:-2px;line-height:.98;font-size:clamp(40px,5.6vw,88px);margin:14px 0 0}
+.h1 em{font-style:normal;color:var(--o)}
+.sub{margin:22px 0 0;color:var(--mut2);font-size:clamp(16px,1.3vw,19px);line-height:1.6;max-width:540px}
+.sub b{color:#EDEDEB;font-weight:600}
+.acts{display:flex;flex-wrap:wrap;gap:18px;align-items:center;margin-top:28px}
+.net{width:100%;height:auto;max-height:78vh;overflow:visible}
+.net .ln{stroke:#3a2a14;stroke-width:1.4;fill:none}
+.net .fl{stroke:var(--o);stroke-width:2;fill:none;stroke-linecap:round;stroke-dasharray:14 186;stroke-dashoffset:200;opacity:.9;filter:drop-shadow(0 0 4px #ff8900);animation:flow 3.2s linear infinite;animation-delay:var(--d,0s)}
+@keyframes flow{to{stroke-dashoffset:0}}
+.net .nd{fill:#0F0F12;stroke:#2e2e36;stroke-width:1.6}
+.net .nd.on{stroke:var(--o)}
+.net .lb{font-family:'Space Grotesk';font-weight:600;font-size:15px;fill:#F4F4F2;text-anchor:middle}
+.net .sm{font-family:'Inter';font-size:11px;fill:#8C8C88;text-anchor:middle}
+.net .g{opacity:0;transform-origin:center;transform-box:fill-box;animation:pop .6s calc(var(--i)*.09s + .3s) cubic-bezier(.2,1.3,.3,1) forwards}
+@keyframes pop{from{opacity:0;transform:scale(.6)}to{opacity:1;transform:none}}
+.net .core{animation:core 3.5s ease-in-out infinite;transform-origin:300px 260px}
+@keyframes core{0%,100%{filter:drop-shadow(0 0 8px rgba(255,137,0,.35))}50%{filter:drop-shadow(0 0 22px rgba(255,137,0,.75))}}
+
+/* SECTIONS */
+.sec{padding:clamp(60px,8vw,110px) 0;border-top:1px solid var(--bd)}
+.sec h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.4px;line-height:1.05;font-size:clamp(30px,4vw,56px);margin:12px 0 0}
+.sec h2 em{font-style:normal;color:var(--o)}
+.lead{margin:18px 0 0;color:var(--mut2);font-size:clamp(16px,1.3vw,19px);line-height:1.6;max-width:680px}
+.three{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,2vw,26px);margin-top:clamp(28px,4vw,48px)}
+.pt{background:var(--pnl);border:1px solid var(--bd);border-radius:16px;padding:clamp(20px,2.4vw,30px)}
+.pt b{display:block;font-family:'Space Grotesk';font-size:20px;letter-spacing:-.4px;margin-bottom:8px}
+.pt p{margin:0;color:var(--mut2);line-height:1.55;font-size:15px}
+.ex{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);margin-top:clamp(28px,4vw,48px)}
+.card{display:flex;flex-direction:column;background:var(--pnl);border:1px solid var(--bd);border-radius:18px;padding:clamp(22px,3vw,38px)}
+.tag{font-family:'Space Grotesk';font-weight:600;font-size:12px;letter-spacing:2px;color:var(--o2);text-transform:uppercase}
+.card h3{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1px;font-size:clamp(26px,3vw,40px);margin:8px 0 6px}
+.card .t{font-family:'Space Grotesk';font-weight:600;color:var(--o);margin:0 0 14px;font-size:17px}
+.card p{color:var(--mut2);line-height:1.6;margin:0 0 16px}
+.card ul{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+.card li{position:relative;padding-left:22px;color:var(--mut2);font-size:14.5px;line-height:1.5}
+.card li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:var(--o);transform:rotate(45deg)}
+.card li b{color:#EDEDEB;font-weight:600}
+.card .quote{margin-top:auto;padding:14px 16px;border-left:3px solid var(--o);background:rgba(255,137,0,.07);color:#EDEDEB;font-size:15px;line-height:1.5;border-radius:0 10px 10px 0}
+.tools{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(28px,4vw,48px)}
+.tool{position:relative;background:var(--pnl);border:1px solid var(--bd);border-radius:14px;padding:20px 20px 22px;transition:border-color .25s,transform .25s}
+.tool:hover{border-color:var(--o);transform:translateY(-3px)}
+.tool i{position:absolute;right:16px;top:16px;width:12px;height:12px;background:var(--o);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.tool b{display:block;font-family:'Space Grotesk';font-size:18px;margin-bottom:6px;letter-spacing:-.3px}
+.tool p{margin:0;color:var(--mut2);font-size:14px;line-height:1.5}
+.final{text-align:center}
+.final .acts{justify-content:center}
+.foot{padding:30px 0 50px;text-align:center;color:var(--mut);font-size:13px}
+@media(max-width:900px){.hero{grid-template-columns:1fr;padding-top:100px;min-height:0}.net{max-height:none}.three,.ex,.tools{grid-template-columns:1fr}}
+@media(min-width:901px) and (max-width:1100px){.tools{grid-template-columns:repeat(2,1fr)}}
+@media(prefers-reduced-motion:reduce){.net .fl,.net .core{animation:none}.net .g{animation:none;opacity:1}}
+</style><script defer src="/_s/s.js"></script>
+</head><body>
+
+<header class="top">
+  <a class="brand" href="index.html" aria-label="SparkScale - strona główna"><svg viewBox="38 26 126 204" aria-hidden="true"><g fill="#F4F4F2"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g><g fill="#FF8900"><polygon points="46,125 46,161 77,143"/><polygon points="156,131 156,95 125,113"/></g></svg>sparkscale.</a>
+  <a class="back" href="index.html#aplikacje">← Aplikacje dla firm</a>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="kick">(ciekaw sieci?)</div>
+    <h1 class="h1">Cała firma.<br><em>Zawsze pod ręką.</em></h1>
+    <p class="sub">Jedna sieć narzędzi szyta pod Twój proces. <b>Widzisz, co robią ludzie i agenci AI, zlecasz pracę i masz odpowiedź</b> - na telefonie i na komputerze, bez dzwonienia i szukania w arkuszach.</p>
+    <div class="acts">
+      <a class="cta" href="index.html#kontakt">Chcę własną sieć →</a>
+      <a class="ghost" href="#narzedzia">Zobacz narzędzia ↓</a>
+    </div>
+  </div>
+  <svg class="net" viewBox="0 0 600 520" role="img" aria-label="Schemat sieci: pośrodku firma, wokół narzędzia połączone w jedno miejsce">
+    <g id="lines"></g>
+    <g id="nodes"></g>
+    <g class="core">
+      <circle cx="300" cy="260" r="62" fill="#0F0F12" stroke="#FF8900" stroke-width="2.4"/>
+      <g transform="translate(300 260) scale(.34) translate(-101 -128)"><g fill="#F4F4F2"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g><g fill="#FF8900"><polygon points="46,125 46,161 77,143"/><polygon points="156,131 156,95 125,113"/></g></g>
+    </g>
+  </svg>
+</section>
+
+<section class="sec">
+  <div class="wrap">
+    <div class="kick">(po co sieć)</div>
+    <h2>Mniej telefonów.<br><em>Więcej wiesz.</em></h2>
+    <p class="lead">Zamiast arkuszy, komunikatorów i pytania „a jak z tym zleceniem?" masz jedno miejsce, które zna stan całej firmy. Każdy widzi to, co potrzebuje, a Ty widzisz wszystko.</p>
+    <div class="three">
+      <div class="pt"><b>Jedno miejsce</b><p>Zlecenia, ludzie, dokumenty, statystyki i asystent AI w jednej aplikacji. Koniec z szukaniem, gdzie coś zapisano.</p></div>
+      <div class="pt"><b>Każdy widzi swoje</b><p>Osobne konta, a dla każdej osoby inny zestaw narzędzi. Ograniczenia opisujesz zwykłym zdaniem, a system je egzekwuje.</p></div>
+      <div class="pt"><b>Zawsze przy Tobie</b><p>Działa w przeglądarce i instaluje się jak zwykła aplikacja na telefonie. Powiadomienia dają znać, gdy coś czeka na Twoją decyzję.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="przyklady">
+  <div class="wrap">
+    <div class="kick">(dwa przykłady z życia)</div>
+    <h2>Śledzenie pracy <em>i codzienna wygoda.</em></h2>
+    <div class="ex">
+      <article class="card">
+        <span class="tag">Przykład · śledzenie pracy ludzi</span>
+        <h3>Revo Wykony</h3>
+        <p class="t">Wiesz, kto jest gdzie i co zrobił - bez telefonu do nikogo.</p>
+        <p>Dla firmy, która zleca prace ekipom i wykonawcom w terenie. Każdy wykon ma swój status, a cały postęp widać w jednym miejscu.</p>
+        <ul>
+          <li><b>Mapa i kalendarz</b> wszystkich wykonów, z wyszukiwaniem po numerze umowy</li>
+          <li><b>Statusy na żywo:</b> propozycja, w toku, do akceptacji, zrobione</li>
+          <li><b>Zdjęcia, raporty i protokoły odbioru</b> dodawane przez ekipę prosto z placu budowy</li>
+          <li><b>Lokalizacja ekipy</b> po jej włączeniu na telefonie</li>
+          <li><b>Powiadomienia i czat</b>, gdy wykon czeka na decyzję lub akceptację</li>
+        </ul>
+        <div class="quote">Zarząd nie pyta „jak idzie?". Otwiera aplikację i widzi.</div>
+      </article>
+      <article class="card">
+        <span class="tag">Przykład · codzienne ułatwienie</span>
+        <h3>PAO Elite</h3>
+        <p class="t">Narzędzia pod ręką zamiast kilku programów naraz.</p>
+        <p>Aplikacja dyrektora firmy remontowej, z której korzysta na co dzień: od zapytania klienta do gotowej oferty i protokołu odbioru.</p>
+        <ul>
+          <li><b>Wyceny ze strony</b> wpadają z powiadomieniem na telefon</li>
+          <li><b>Wizualizacja remontu</b> na zdjęciu klienta: elewacja, dach, posadzka, schody</li>
+          <li><b>Sprawdzenie azbestu</b> dla adresu, na danych publicznych</li>
+          <li><b>Odczyt umowy ze zdjęcia</b> - zamawiający, zakres, wartość i terminy trafiają do historii</li>
+          <li><b>Protokół odbioru do PDF</b> i asystent AI do pytań o firmę</li>
+        </ul>
+        <div class="quote">Rzeczy, które zajmowały wieczór, zajmują minutę.</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="narzedzia">
+  <div class="wrap">
+    <div class="kick">(narzędzia naszej sieci)</div>
+    <h2>Z tego korzystamy <em>sami, codziennie.</em></h2>
+    <p class="lead">To nasza własna sieć, w której pracujemy. Dla Ciebie zbudujemy podobną, ale tylko z tymi narzędziami, których potrzebuje Twoja firma.</p>
+    <div class="tools">
+      <div class="tool"><i></i><b>Biuro agentów AI</b><p>Agenci pogrupowani w działy. Widzisz, kto nad czym pracuje, i zlecasz im zadania.</p></div>
+      <div class="tool"><i></i><b>Zlecenia z bloków</b><p>Klikasz agentów, łączysz ich w kroki i zlecasz cały proces jednym przyciskiem.</p></div>
+      <div class="tool"><i></i><b>Jarvis</b><p>Asystent, z którym rozmawiasz z każdej strony sieci. Rozmowa zostaje, kiedy zmieniasz widok.</p></div>
+      <div class="tool"><i></i><b>Plan i poranny raport</b><p>Plan projektu i raport każdego ranka: co jest do zrobienia i za co zabrać się najpierw.</p></div>
+      <div class="tool"><i></i><b>Pracownia</b><p>Wizualizacje pomysłów i opinie wielu wyspecjalizowanych agentów o jednym projekcie.</p></div>
+      <div class="tool"><i></i><b>Merkury</b><p>Statystyki naszych stron i monitoring: czy działają, ilu mają gości i co klikają.</p></div>
+      <div class="tool"><i></i><b>SecuroServ</b><p>Żywy globus z danymi ze świata i analizą, która pomaga podejmować decyzje.</p></div>
+      <div class="tool"><i></i><b>Skrzynka</b><p>Wspólne miejsce na wyniki pracy ludzi i ich asystentów AI, z kartami do sprawdzenia.</p></div>
+      <div class="tool"><i></i><b>BOTSCOUT</b><p>Szuka firm, którym przyda się nowa strona, i prowadzi bazę leadów ze statusami rozmów.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec final">
+  <div class="wrap">
+    <div class="kick">(twoja sieć)</div>
+    <h2>Zbudujmy ją <em>pod Twoją firmę.</em></h2>
+    <p class="lead" style="margin-left:auto;margin-right:auto">Opowiedz nam, jak pracuje Twoja firma. Zaczniemy od jednego narzędzia, które oszczędza najwięcej czasu, a resztę dołożymy, gdy się sprawdzi.</p>
+    <div class="acts"><a class="cta" href="index.html#kontakt">Napisz do nas →</a><a class="ghost" href="index.html#aplikacje">Zobacz aplikacje</a></div>
+  </div>
+</section>
+</main>
+<div class="foot">© SparkScale · sieć narzędzi szytych pod firmę</div>
+
+<script>
+(function(){
+  var NS='http://www.w3.org/2000/svg',lines=document.getElementById('lines'),nodes=document.getElementById('nodes');
+  var items=[['Biuro','agenci AI'],['Zlecenia','bloki'],['Jarvis','asystent'],['Plan','raport'],['Pracownia','wizualizacje'],['Merkury','statystyki'],['SecuroServ','globus'],['Skrzynka','wyniki']];
+  var cx=300,cy=260,rx=235,ry=196;
+  function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);(p||nodes).appendChild(e);return e}
+  items.forEach(function(it,i){
+    var a=-Math.PI/2+i*2*Math.PI/items.length,x=cx+Math.cos(a)*rx,y=cy+Math.sin(a)*ry;
+    var dx=cx+(x-cx)*.27,dy=cy+(y-cy)*.27;      // zaczyna sie przy rdzeniu
+    el('line',{x1:dx,y1:dy,x2:x,y2:y,class:'ln'},lines);
+    var f=el('line',{x1:dx,y1:dy,x2:x,y2:y,class:'fl',pathLength:200},lines);f.style.setProperty('--d',(i*.4)+'s');
+    var g=el('g',{class:'g',style:'--i:'+i},nodes);
+    el('rect',{x:x-52,y:y-24,width:104,height:48,rx:12,class:'nd'+(i%3==0?' on':'')},g);
+    var t=el('text',{x:x,y:y-2,class:'lb'},g);t.textContent=it[0];
+    var s=el('text',{x:x,y:y+15,class:'sm'},g);s.textContent=it[1];
+  });
+})();
+</script>
+</body></html>
