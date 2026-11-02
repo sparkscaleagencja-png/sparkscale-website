@@ -31,7 +31,7 @@ a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;curso
 /* scena 3d */
 #stage{position:fixed;inset:0;perspective:1700px;perspective-origin:50% 50%;overflow:hidden}
 #world{position:absolute;left:0;top:0;width:0;height:0;transform-style:preserve-3d;opacity:0;will-change:transform}
-#card{position:absolute;left:0;top:0;width:1000px;height:1340px;transform-style:preserve-3d;will-change:transform}
+#card{position:absolute;left:0;top:0;width:1000px;height:1448px;transform-style:preserve-3d;will-change:transform}
 .lay{position:absolute;transform-style:flat}
 .slab{position:absolute;inset:0;border-radius:44px;background:linear-gradient(135deg,#6d4a2a,#54214a 50%,#27235e)}
 .halo{position:absolute;inset:-70px;border-radius:110px;background:conic-gradient(from 210deg,#ffd34d,#fa7e1e,#e1306c,#a23bd6,#5b5bff,#ffd34d);filter:blur(60px);opacity:.42;transform:translateZ(-34px);animation:hal 5s ease-in-out infinite alternate}
@@ -142,24 +142,24 @@ a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;curso
 .box{position:absolute;border:2px solid rgba(94,242,255,.5);border-radius:14px;background:rgba(10,7,18,.82);padding:12px 15px;font-size:15.5px;line-height:1.34;transform:translateZ(4px);overflow:hidden}
 .box h3{font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--neon);margin-bottom:5px}
 .rv{opacity:var(--v,1);transform:translateY(calc((1 - var(--v,1))*10px))}
-.opis{left:44px;top:944px;width:296px;height:190px;box-shadow:inset 0 0 22px rgba(225,48,108,.2)}
+.opis{left:44px;top:1044px;width:296px;height:190px;box-shadow:inset 0 0 22px rgba(225,48,108,.2)}
 /* cytat: duzy, bialy, z poswiata i cudzyslowem w kolorach Instagrama; kluczowa fraza zapala sie w czasie (.hl) */
 .opis q{display:block;quotes:none;position:relative;padding-left:19px;margin-bottom:7px;font-weight:800;font-size:18.5px;line-height:1.17;color:#fff;text-shadow:0 0 14px rgba(225,48,108,.5)}
-.opis q:before{content:"\201C";position:absolute;left:-1px;top:-7px;font:800 46px/1 "Bricolage Grotesque",serif;background:var(--ig);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none}
+.opis q:before{content:"\201C";position:absolute;left:-1px;top:-7px;font:800 46px/1 "Bricolage Grotesque",serif;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.5)}
 .opis .ot{font-size:14.5px;line-height:1.3}
 /* pogrubianie liter w czasie sekwencji: litera po literze (fala), bez zmiany szerokosci tekstu (kontur zamiast bold) */
 .hl{font-style:normal}
 .hl i{font-style:normal;--k:clamp(0,calc((var(--h,0)*var(--n) - var(--i))/5),1);color:color-mix(in srgb,#ffd34d calc(var(--k)*100%),var(--ink));-webkit-text-stroke:calc(var(--k)*.045em) #ffd34d;text-shadow:0 0 calc(var(--k)*10px) rgba(255,211,77,calc(var(--k)*.6))}
-.inf{left:352px;top:944px;width:186px;height:190px}.inf li{list-style:none;margin:0 0 2px;padding-left:14px;position:relative;font-size:14.5px;line-height:1.22}.inf li+li{margin-top:5px}.inf li:before{content:"";position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--ig-p)}
-.kpi{left:550px;top:944px;width:150px;height:190px;display:flex;flex-direction:column;justify-content:space-between}
+.inf{left:352px;top:1044px;width:186px;height:190px}.inf li{list-style:none;margin:0 0 2px;padding-left:14px;position:relative;font-size:14.5px;line-height:1.22}.inf li+li{margin-top:5px}.inf li:before{content:"";position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--ig-p)}
+.kpi{left:550px;top:1044px;width:150px;height:190px;display:flex;flex-direction:column;justify-content:space-between}
 .kpi div{line-height:1.08}.kpi b{display:block;font-size:30px;line-height:1.05}.kpi span{font-size:13px;color:var(--mut);display:block;line-height:1.14;margin-top:1px}
-.tab{left:44px;top:1142px;width:656px;height:170px;padding:9px 14px}
+.tab{left:44px;top:1248px;width:656px;height:170px;padding:9px 14px}
 .pb{display:block;min-width:64px;height:7px;border-radius:7px;background:rgba(255,255,255,.14);margin-top:4px;overflow:hidden;text-decoration:none}.pb i{display:block;height:100%;border-radius:7px;background:var(--c);box-shadow:0 0 8px var(--c)}
 table{width:100%;border-collapse:collapse;font-size:15.5px}th{font-size:11.5px;letter-spacing:.09em;color:var(--neon);text-align:right;padding:2px 5px 5px;font-weight:700;white-space:nowrap}td{padding:5px 5px 4px;border-top:1px solid rgba(255,255,255,.13);text-align:right;font-weight:500;white-space:nowrap}td:first-child,th:first-child{text-align:left;font-weight:700}
 .note{font-size:11px;color:var(--mut);margin-top:6px;line-height:1.2}
 
 /* telefon */
-.tel{position:absolute;left:728px;top:936px;width:206px;height:368px;border-radius:30px;background:#000;border:3px solid #fff;box-shadow:0 0 22px rgba(255,255,255,.26),0 0 0 2px #333 inset;transform-origin:30% 100%;transform:translateZ(calc(6px + var(--w,0)*50px)) scale(calc(1 + var(--w,0)*.32));padding:7px}
+.tel{position:absolute;left:728px;top:1046px;width:206px;height:368px;border-radius:30px;background:#000;border:3px solid #fff;box-shadow:0 0 22px rgba(255,255,255,.26),0 0 0 2px #333 inset;transform-origin:30% 100%;transform:translateZ(calc(6px + var(--w,0)*50px)) scale(calc(1 + var(--w,0)*.32));padding:7px}
 .scr{position:relative;width:100%;height:100%;border-radius:23px;overflow:hidden;background:#100a17}
 .tel:after{content:"";position:absolute;left:50%;top:13px;width:56px;height:9px;margin-left:-28px;border-radius:9px;background:#000;box-shadow:inset 0 0 0 1px #2a2a2a}
 .reel{position:absolute;inset:0;transition:transform .55s cubic-bezier(.65,0,.2,1)}
@@ -214,6 +214,12 @@ table{width:100%;border-collapse:collapse;font-size:15.5px}th{font-size:11.5px;l
 #segs button:focus-visible{outline:2px solid #fff;outline-offset:2px}
 #foot{position:fixed;left:24px;bottom:22px;z-index:9;width:210px;font-size:12.5px;line-height:1.35;color:var(--mut);transition:opacity .35s}
 .running #foot,.running #rt{opacity:0;pointer-events:none}
+/* w trakcie sekwencji ozywione tlo i ozdobne animacje stoja (mniej malowania, plynniej na telefonie) */
+.running #aurora i,.running .halo,.running .name,.running .ss svg{animation-play-state:paused}
+/* telefon: male cele dotyku (karta jest pomniejszona ok. 0,35x) — niewidoczne powiekszenia obszaru kliku */
+.m .prev:after{content:"";position:absolute;inset:-14px -34px -34px -34px}
+.m .soc a:after{content:"";position:absolute;inset:-14px -6px}
+.m .gz:after{content:"";position:absolute;inset:-34px -4px}
 #foot a{text-decoration:underline}
 #rt{position:fixed;right:24px;bottom:22px;z-index:9;display:flex;flex-direction:column;gap:9px;align-items:stretch;width:220px;transition:opacity .35s}
 /* przyciski wg strony glownej Spark Scale (.ss-cta): pelna pigulka, Space Grotesk 700, miekka poswiata, uniesienie przy hover */
@@ -243,6 +249,36 @@ table{width:100%;border-collapse:collapse;font-size:15.5px}th{font-size:11.5px;l
 .cpb{flex:none;min-width:112px;padding:0 16px;border-radius:12px;background:linear-gradient(180deg,#63b0ff,#2f7bff 55%,#1b55df);color:#fff;font-weight:800;font-size:14.5px;text-shadow:0 1px 2px rgba(0,25,100,.5)}
 .cpb:hover,.cpb:focus-visible{filter:brightness(1.12)}.cpb.ok{background:linear-gradient(180deg,#5be39a,#22b866)}
 .shm{min-height:20px;margin:8px 4px 0;font-size:13px;color:var(--mut)}
+/* dwa guziki na srodku karty: wzor = fizyczny przycisk (biala nakladka z ciemnoniebieskim okienkiem na stalowej podstawie) */
+.pbrow{left:252px;top:952px;width:496px}.pbrow>div{display:flex;gap:16px}
+.gz{position:relative;flex:1;height:60px;padding:0;border-radius:16px;background:linear-gradient(180deg,#4d6d84,#2c4458 62%,#213445);box-shadow:0 5px 0 #15232d,0 9px 16px rgba(0,0,0,.55),inset 0 1px 0 rgba(255,255,255,.28);cursor:pointer;transition:box-shadow .12s}
+.gz-cap{display:flex;align-items:center;gap:10px;height:52px;padding:0 12px 0 9px;border-radius:13px;background:linear-gradient(180deg,#fff 0%,#e6eef5 55%,#c5d4e0 100%);box-shadow:inset 0 2px 0 #fff,inset 0 -3px 5px rgba(60,90,115,.35),0 2px 0 rgba(0,0,0,.28);transition:transform .12s,filter .15s}
+.gz:hover .gz-cap,.gz:focus-visible .gz-cap{filter:brightness(1.05)}
+.gz:active .gz-cap{transform:translateY(4px)}
+.gz:active{box-shadow:0 1px 0 #15232d,0 3px 8px rgba(0,0,0,.5),inset 0 1px 0 rgba(255,255,255,.28)}
+.gz:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.gz-win{flex:none;display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;background:linear-gradient(180deg,#235676,#0f2c40);box-shadow:inset 0 2px 5px rgba(0,0,0,.65),0 1px 0 #fff}
+.gz-win svg{width:18px;height:18px;fill:#fff;filter:drop-shadow(0 0 4px rgba(120,200,255,.9))}
+.gz-t{font:800 14px/1.1 'Space Grotesk','DM Sans',sans-serif;color:#17364b;text-align:left;letter-spacing:.01em}
+/* okienka: korzysci dla marki, wyniki na tle rynku */
+.mp.wide{width:min(480px,100%)}
+.kl{list-style:none;margin:6px 0 0;padding:0}
+.kl li{display:flex;gap:12px;padding:11px 4px;border-top:1px solid rgba(255,255,255,.12)}.kl li:first-child{border-top:0}
+.kn{flex:none;width:26px;height:26px;border-radius:50%;background:var(--ig);color:#14060e;font:800 13px/26px "DM Sans",sans-serif;text-align:center}
+.kl h4{margin:0 0 3px;font:800 15.5px/1.2 "Bricolage Grotesque","DM Sans",sans-serif}
+.kl p{margin:0;font-size:14px;line-height:1.38;color:#dcd5e6}.kl b,.rwn b{color:#ffd34d}
+.mp .go,.m .mp .go{display:inline-block;margin:12px 4px 2px;padding:8px 16px;font-size:15.5px}
+.rb{margin:12px 4px 0}.rb-l{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px;font-size:12.5px;line-height:1.3;color:#dcd5e6}.rb-l b{flex:none;color:#fff;font-size:16px}
+.rb-t{height:14px;border-radius:9px;background:rgba(255,255,255,.12);overflow:hidden}
+.rb-t i{display:block;width:0;height:100%;border-radius:9px;transition:width 1.1s cubic-bezier(.2,.8,.2,1)}
+.rb.k i{background:var(--ig)}.rb.m i{background:#8d93a3}
+.ov.on .rb-t i{width:var(--w)}
+.rwn{margin:14px 4px 0;padding:12px 14px;border-radius:12px;background:rgba(255,211,77,.1);border:1px solid rgba(255,211,77,.4);font-size:14.5px;line-height:1.38}
+.ft{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:12px 4px 0}
+.ft div{padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14)}
+.ft b{display:block;font:800 28px/1 "Bricolage Grotesque","DM Sans",sans-serif;background:var(--ig);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ft span{display:block;margin-top:4px;font-size:12px;line-height:1.3;color:var(--mut)}
+.rz{margin:12px 4px 0;font-size:11.5px;line-height:1.4;color:var(--mut)}
 .mh{display:flex;align-items:center;gap:10px;margin-bottom:6px}.mh .ml svg{display:block;width:22px}.mh b{flex:1;font-size:17px}
 .mx{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);font-size:24px;line-height:1}.mx:hover,.mx:focus-visible{background:rgba(255,255,255,.26);outline:none}
 .mt{font-size:11px;letter-spacing:.16em;color:var(--neon);font-weight:700;margin:16px 4px 2px}
@@ -278,6 +314,8 @@ body.embed{background:#0a0805}
 <div id="sharem" class="ov" hidden><div class="mbg" data-close></div><div class="mp" role="dialog" aria-modal="true" aria-label="Udostępnij kartę"><div class="mh"><span class="ml" id="shlogo"></span><b>Udostępnij kartę</b><button class="mx" type="button" data-close aria-label="Zamknij">×</button></div>
 <p class="shn">Zeskanuj kod telefonem albo skopiuj link do karty profilu.</p><div class="qrw" id="qrbox"></div>
 <div class="lnk"><input id="shurl" type="text" readonly aria-label="Link do karty"><button class="cpb" id="shcopy" type="button">Kopiuj</button></div><div class="shm" id="shmsg" role="status" aria-live="polite"></div></div></div>
+<div id="korm" class="ov" hidden><div class="mbg" data-close></div><div class="mp wide" role="dialog" aria-modal="true" aria-label="Korzyści dla marki"><div class="mh"><span class="ml" id="korlogo"></span><b>Korzyści dla marki</b><button class="mx" type="button" data-close aria-label="Zamknij">×</button></div><div id="korbody"></div></div></div>
+<div id="rynm" class="ov" hidden><div class="mbg" data-close></div><div class="mp wide" role="dialog" aria-modal="true" aria-label="Wyniki na tle rynku"><div class="mh"><span class="ml" id="rynlogo"></span><b>Wyniki na tle rynku</b><button class="mx" type="button" data-close aria-label="Zamknij">×</button></div><div id="rynbody"></div></div></div>
 <div id="loader"><svg viewBox="1316.2 55.5 1207.7 2049" aria-hidden="true"><use href="#ssp"/></svg><div class="tr"><i id="lb"></i></div><small>ŁADUJĘ KARTĘ</small></div>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
 <g id="ssp"><path fill="#FF8900" transform="matrix(1,0,0,-1,1316.1538,1031.1862)" d="M0 0V-420.977L364.577-210.489Z"/><path fill="#fff" transform="matrix(1,0,0,-1,1916.2494,1724.7395)" d="M0 0V270.774L363.511 479.64 7.501 688.89V944.44L600.096 1286.57V1659.161L7.501 1317.032V1669.264L-600.096 1318.473V944.233L-7.501 1286.363V1045.678L-362.696 836.508 0 627.72V350.01L-600.096 3.55V-374.587L0-28.128V-379.785L607.597-28.994V350.792Z"/><path fill="#FF8900" transform="matrix(1,0,0,-1,2516.345,681.6301)" d="M0 0-363.776-210.027 0-420.053Z"/></g>
@@ -331,6 +369,22 @@ const DANE={
   opis:'Krystian mówi to, co piszesz na grupce. {{35.6|Produkt jest częścią żartu}}, a nie przerwą w filmie.',
   // najczesciej ogladana rolka miesiaca: indeksy w DANE.filmy (IG, TikTok) — uzupelniac co miesiac z paneli; dopoki brak danych miesiecznych, to filmy z najwieksza liczba wyswietlen z listy ponizej
   rolki:{ig:2,tt:0},
+  // okienko "Korzysci dla marki" (guzik na srodku karty): same fakty z danych powyzej, bez obietnic wynikow sprzedazowych
+  korzysci:[
+    {h:'Zasięg, którego nie trzeba budować od zera',p:'<b>57 mln</b> wyświetleń na TikToku w 60 dni i <b>3,57 mln</b> na Instagramie w 90 dni.'},
+    {h:'Treści, które ludzie przesyłają dalej',p:'Jedno udostępnienie na <b>13</b> wyświetleń: <b>4,4 mln</b> udostępnień w 60 dni.'},
+    {h:'Nowi odbiorcy, nie tylko obserwujący',p:'<b>87,3%</b> wyświetleń na Instagramie pochodzi od osób, które jeszcze nie obserwują.'},
+    {h:'Odbiorca, do którego mówi marka',p:'Głównie kobiety (<b>73–79%</b>), wiek 18–34 (ok. <b>77%</b>), z Polski (<b>94,5%</b> odbiorców na Instagramie).'},
+    {h:'Produkt jest częścią żartu',p:'Integracja w filmie zamiast przerwy reklamowej. Dostępne: rolka + TikTok, stylizacja i moda, lokalnie w Poznaniu, pakiet 3 filmów.'},
+    {h:'Sprawdzony we współpracach z markami',p:'Buzzwear, KumamTo, Pan Ziemniak, CAT Footwear.'},
+    {h:'Całość po stronie agencji',p:'Współpracę prowadzi Spark Scale. Materiały reklamowe oznaczamy zgodnie z wytycznymi UOKiK.'}],
+  // okienko "Wyniki na tle rynku": jedyna zweryfikowana srednia to TikTok (Socialinsider); dla Instagrama brak wiarygodnej, jednoznacznej sredniej, wiec jej nie podajemy
+  rynek:{lead:'Porównanie ze średnią rynku TikToka dla kont 100 tys. – 1 mln obserwujących.',
+    k:{l:'Krystian: same udostępnienia ÷ wyświetlenia (4,4 mln / 57 mln, 60 dni)',v:7.7},
+    m:{l:'Średnia rynku: całe zaangażowanie ÷ wyświetlenia (polubienia, komentarze, udostępnienia i zapisy)',v:3.95},
+    wniosek:'<b>Same udostępnienia</b> Krystiana (7,7%) są prawie <b>2 razy wyższe</b> niż <b>całe</b> zaangażowanie średniej rynku (3,95%).',
+    fakty:[{v:'129×',l:'wyświetleń na jednego obserwującego, TikTok, 60 dni'},{v:'67×',l:'wyświetleń na jednego obserwującego, Instagram, 90 dni'}],
+    zrodlo:'Średnia rynku: Socialinsider, TikTok Benchmarks (dane z 2025 r.; posty organiczne kont marek, średnia z filmów, więc wartość orientacyjna dla twórcy). Wyniki Krystiana: panele TikToka 2.09–31.10.2026, Instagram 90 dni do 1.11.2026.'},
   info:['Integracja w filmie','Rolka + TikTok','Stylizacja i moda','Lokalnie w Poznaniu','Pakiet 3 filmów'],
   kpi:[{v:'1 na 13',o:'udostępnienie na wyświetlenia'},{v:'57 mln',o:'wyświetleń TikTok, 60 dni'},{v:'116,9 mln',o:'polubień łącznie, 2 konta'}],
   tabela:{g:['','OBSERWUJĄCY','WYŚWIETLENIA','KOBIETY','18-34','POLSKA'],w:[
@@ -359,6 +413,8 @@ tt:'<svg viewBox="0 0 24 24"><path d="M16.600 5.820A4.280 4.280 0 0 1 15.540 3h-
 play:'<svg viewBox="0 0 24 24"><path d="M6 3.500v17l15-8.500z"/></svg>',pause:'<svg viewBox="0 0 24 24"><path d="M6 3h4.500v18H6zM13.500 3H18v18h-4.500z"/></svg>',
 share:'<svg viewBox="0 0 24 24"><path d="M18 16.080c-.76 0-1.440.3-1.960.77L8.910 12.700c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.050-4.110c.54.5 1.250.81 2.040.81 1.660 0 3-1.340 3-3s-1.340-3-3-3-3 1.340-3 3c0 .24.04.47.09.7L8.040 9.810C7.500 9.310 6.790 9 6 9c-1.660 0-3 1.340-3 3s1.340 3 3 3c.79 0 1.500-.31 2.040-.81l7.120 4.160c-.05.21-.08.43-.08.65 0 1.610 1.310 2.920 2.920 2.920s2.920-1.310 2.920-2.920-1.310-2.920-2.920-2.920z"/></svg>'};
 const SS='<svg viewBox="1316.2 55.5 1207.7 2049" aria-label="Spark Scale"><use href="#ssp"/></svg>';
+ICO.star='<svg viewBox="0 0 24 24"><path d="M12 2l2.900 6.600 7.100.6-5.400 4.700 1.600 7-6.200-3.700-6.200 3.700 1.600-7L2 9.200l7.100-.6z"/></svg>';
+ICO.chart='<svg viewBox="0 0 24 24"><path d="M4 20V10h4v10zm6 0V4h4v16zm6 0v-7h4v7z"/></svg>';
 
 // skala zegara = najblizsza "ladna" okragla liczba nad suma obserwujacych (np. 494,1 tys. -> 500 tys.), liczy sie sama dla kazdej osoby
 const TOTAL=[...DANE.ig.wiersze,...DANE.tt.wiersze].reduce((a,r)=>a+(r.suma||0),0);
@@ -368,7 +424,7 @@ const GMAX=niceMax(TOTAL);
 /* ---------- budowa karty ---------- */
 const card=$('#card');
 let html='';
-for(let i=1;i<=14;i++)html+=`<div class="slab" style="transform:translateZ(${-i*2.2}px)"></div>`;
+for(let i=1;i<=7;i++)html+=`<div class="slab" style="transform:translateZ(${-i*4.4}px)"></div>`;   // 7 warstw zamiast 14: ta sama grubosc, mniej kosztownych warstw na telefonie
 html+=`<div class="halo"></div><div class="back">${SS}</div><div class="rim"><i></i></div><div class="face"><div class="sheen" id="sheen"></div></div>
 <div class="in ava"><b></b></div>
 <div class="in who"><div class="nick"><span class="gt">${DANE.nick}</span></div><div class="name d">${DANE.imie}</div>
@@ -388,6 +444,7 @@ html+=`<div class="halo"></div><div class="back">${SS}</div><div class="rim"><i>
 <div class="in gg" id="gg"><svg viewBox="0 0 200 112"><path d="M16 100a84 84 0 0 1 168 0" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="11" stroke-linecap="round"/><path id="ga" d="M16 100a84 84 0 0 1 168 0" fill="none" stroke="url(#igh)" stroke-width="11" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/><text x="16" y="116" class="gl">0</text><text x="184" y="116" class="gl" text-anchor="end">cel ${fmt(GMAX,0)} tys.</text><g class="nd" id="nd"><path d="M2 100l30-5v10z" fill="#fff" style="filter:drop-shadow(0 0 4px #fff)"/></g></svg><b class="d" id="sum"></b><small>obserwujących<br>łącznie</small></div>
 <div class="box opis"><div class="rv" data-rv="31"><h3>OPIS</h3><q class="d">${hl(DANE.opisCytat)}</q><div class="ot">${hl(DANE.opis)}</div></div></div>
 ${reel('rkIg','ig','#ffd34d')}${reel('rkTt','tt','#c06bff')}
+<div class="in pbrow"><div class="rv" data-rv="30.4"><button class="gz" id="pbKor" type="button" aria-haspopup="dialog"><span class="gz-cap"><span class="gz-win">${ICO.star}</span><span class="gz-t">Korzyści dla marki</span></span></button><button class="gz" id="pbRyn" type="button" aria-haspopup="dialog"><span class="gz-cap"><span class="gz-win">${ICO.chart}</span><span class="gz-t">Wyniki vs rynek</span></span></button></div></div>
 <div class="box inf"><div class="rv" data-rv="33"><h3>INFO WSPÓŁPRACY</h3><ul>${DANE.info.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
 <div class="in kpi">${DANE.kpi.map((k,i)=>`<div class="rv" data-rv="${35+i}"><b class="d gt">${k.v}</b><span>${k.o}</span></div>`).join('')}</div>
 <div class="box tab"><table><tr class="rv" data-rv="38">${DANE.tabela.g.map(x=>`<th>${x}</th>`).join('')}</tr>${DANE.tabela.w.map((r,i)=>`<tr class="rv" data-rv="${39+i}" style="--c:${i?'#ffd34d':'#c06bff'}">${r.map((x,j)=>j==0?`<td style="color:var(--c)">${x}</td>`:j>=3?`<td>${x}<u class="pb"><i style="width:calc(var(--v,1)*${pct(x)}%)"></i></u></td>`:`<td>${x}</td>`).join('')}</tr>`).join('')}</table><div class="note rv" data-rv="41">${DANE.tabela.p} Słupki: środek podanego zakresu.</div></div>
@@ -416,13 +473,13 @@ const fit=(cx,cy,vW,vH,rx=0,ry=0)=>({cx,cy,z:Math.min(w/vW,h/vH),rx,ry});
 const fitT=(cx,top,vW,vH,rx=0,ry=0)=>{const z=Math.min(w/vW,h/vH);return{cx,cy:top+h/(2*z),z,rx,ry}};
 function layout(){
   w=innerWidth;h=innerHeight;mobile=w<820&&h>w;document.body.classList.toggle('m',mobile);
-  const idle=mobile?fit(500,670,1050,1760):fit(500,670,1090,1400);
+  const idle=mobile?fit(500,724,1050,1868):fit(500,724,1090,1508);
   if(!mobile){KEYS=[[TMIN,{...idle,ry:360}],[.1,fit(500,128,1070,430)],[4.6,fit(500,136,1040,430)],[6,fitT(520,205,1500,820)],[19,fitT(520,205,1480,820)],
-    [20.7,fit(270,775,783,783,20,-TILT)],[28.8,fit(640,755,783,783,20,-TILT)],[30.3,fit(525,1100,1130,720)],[49.4,fit(525,1104,1110,720)],[TMAX,idle]];VID={a:30,s:3.4};}
+    [20.7,fit(270,775,783,783,20,-TILT)],[28.8,fit(640,755,783,783,20,-TILT)],[30.3,fit(525,1205,1130,760)],[49.4,fit(525,1209,1110,760)],[TMAX,idle]];VID={a:30,s:3.4};}
   else{KEYS=[[TMIN,{...idle,ry:360}],[.1,fit(500,128,1040,600)],[4.6,fit(500,130,1020,600)],[6,fit(500,740,900,1500)],[19.2,fit(500,740,900,1500)],
     [20.7,fit(230,780,609,1087,16,-TILT*.72)],[24.3,fit(240,780,609,1087,16,-TILT*.72)],[25.2,fit(760,780,609,1087,16,-TILT*.72)],[28.8,fit(770,780,609,1087,16,-TILT*.72)],
-    [30.3,fit(192,1040,335,500)],[33.4,fit(192,1040,330,500)],[34.2,fit(445,1040,220,500)],[36.4,fit(445,1040,216,500)],[37.1,fit(625,1040,180,500)],[39.4,fit(625,1040,176,500)],[40.2,fit(372,1225,680,500)],[42.8,fit(372,1225,670,500)],[43.6,fit(830,1110,440,850)],[49.6,fit(830,1110,430,850)],[TMAX,idle]];VID={a:43.6,s:3};}
-  if(EMBED){const E=fit(500,670,990,1325);KEYS=[[TMIN,E],[TMAX,E]];}
+    [30.3,fit(192,1144,335,500)],[33.4,fit(192,1144,330,500)],[34.2,fit(445,1144,220,500)],[36.4,fit(445,1144,216,500)],[37.1,fit(625,1144,180,500)],[39.4,fit(625,1144,176,500)],[40.2,fit(372,1335,680,500)],[42.8,fit(372,1335,670,500)],[43.6,fit(830,1220,440,850)],[49.6,fit(830,1220,430,850)],[TMAX,idle]];VID={a:43.6,s:3};}
+  if(EMBED){const E=fit(500,724,990,1433);KEYS=[[TMIN,E],[TMAX,E]];}   // podglad (?embed): cala karta (wysokosc 1448) w kadrze
   // bloki z prawej: desktop narastajaco, mobile po kolei
   $$('.bkr').forEach((el,i)=>{el.dataset.win=mobile?`${12.2+i*1.5},${i==4?19.5:13.6+i*1.5}`:`${9.2+i*1.5},19.5`});
   const c=$('#dust');c.width=w*DPR;c.height=h*DPR;
@@ -497,7 +554,7 @@ function apply(t,now){
 }
 function stat(el,sh,rows,data,inn,t,q,left,width){
   const up=q*(mobile?60:110),bottom=906;
-  el.style.left=left+'px';el.style.width=width+'px';el.style.bottom=(1340-bottom)+'px';
+  el.style.left=left+'px';el.style.width=width+'px';el.style.bottom=(1448-bottom)+'px';
   el.style.transform=`translateZ(${5+q*135}px) translateY(${-up}px)`;
   set(el,'--q',q);
   sh.style.left=left+'px';sh.style.width=width+'px';sh.style.top=(420+(1-q)*300)+'px';sh.style.height=(490-(1-q)*300)+'px';set(sh,'--q',q*.6);
@@ -534,7 +591,7 @@ let ty0=null;
 addEventListener('touchstart',e=>{ty0=e.touches[0].clientY},{passive:true});
 addEventListener('touchmove',e=>{if(ty0===null||menuOpened())return;const y=e.touches[0].clientY;scrub((ty0-y)*.03);ty0=y;e.preventDefault()},{passive:false});
 addEventListener('keydown',e=>{
-  if(menuOpened()){if(e.key==='Escape')ovClose();else if(e.key==='Tab'&&ovEl){const f=[...ovEl.querySelectorAll('a.mi,button.mx,button.cpb,input')],a=document.activeElement;
+  if(menuOpened()){if(e.key==='Escape')ovClose();else if(e.key==='Tab'&&ovEl){const f=[...ovEl.querySelectorAll('a.mi,a.go,button.mx,button.cpb,input')],a=document.activeElement;
     if(e.shiftKey&&(a===f[0]||!ovEl.contains(a))){f[f.length-1].focus();e.preventDefault()}else if(!e.shiftKey&&(a===f[f.length-1]||!ovEl.contains(a))){f[0].focus();e.preventDefault()}}return}
   if(e.key==='ArrowDown'||e.key==='PageDown'){scrub(2);e.preventDefault()}
   if(e.key==='ArrowUp'||e.key==='PageUp'){scrub(-2);e.preventDefault()}
@@ -584,6 +641,22 @@ async function copyLink(){const i=$('#shurl'),b=$('#shcopy');let ok=false;
   $('#shmsg').textContent=ok?'Link skopiowany do schowka.':'Nie udało się skopiować automatycznie. Zaznacz link i skopiuj go ręcznie.';
   if(ok){b.textContent='Skopiowano ✓';b.classList.add('ok');clearTimeout(copyLink.t);copyLink.t=setTimeout(()=>{b.textContent='Kopiuj';b.classList.remove('ok')},2200)}}
 $('#share').addEventListener('click',shareOpen);$('#shcopy').addEventListener('click',copyLink);$('#shurl').addEventListener('focus',e=>e.target.select());
+
+/* ---------- okienka: korzysci dla marki, wyniki na tle rynku (guziki na srodku karty) ---------- */
+$('#korlogo').innerHTML=ICO.star;$('#rynlogo').innerHTML=ICO.chart;
+for(const id of ['korlogo','rynlogo'])$('#'+id).firstChild.style.cssText='display:block;width:22px;fill:#ffd34d';
+const mailto=`mailto:${DANE.mail}?subject=${encodeURIComponent(DANE.temat)}`;
+$('#korbody').innerHTML=`<ol class="kl">${DANE.korzysci.map((k,i)=>`<li><span class="kn">${i+1}</span><div><h4>${k.h}</h4><p>${k.p}</p></div></li>`).join('')}</ol><a class="go" href="${mailto}">Podeślemy 2-3 pomysły</a>`;
+{const R=DANE.rynek,mx=Math.max(R.k.v,R.m.v)*1.08;
+$('#rynbody').innerHTML=`<p class="shn">${R.lead}</p>
+<div class="rb k" style="--w:${(R.k.v/mx*100).toFixed(1)}%"><div class="rb-l"><span>${R.k.l}</span><b>${fmt(R.k.v,1)}%</b></div><div class="rb-t"><i></i></div></div>
+<div class="rb m" style="--w:${(R.m.v/mx*100).toFixed(1)}%"><div class="rb-l"><span>${R.m.l}</span><b>${fmt(R.m.v,2)}%</b></div><div class="rb-t"><i></i></div></div>
+<div class="rwn">${R.wniosek}</div>
+<div class="ft">${R.fakty.map(f=>`<div><b>${f.v}</b><span>${f.l}</span></div>`).join('')}</div>
+<p class="rz">${R.zrodlo}</p><a class="go" href="${mailto}">Porozmawiajmy o współpracy</a>`}
+function korOpen(){ovOpen($('#korm'));$('#korm .mx').focus()}
+function rynOpen(){const m=$('#rynm');m.classList.remove('on');ovOpen(m);requestAnimationFrame(()=>requestAnimationFrame(()=>m.classList.add('on')));m.querySelector('.mx').focus()}
+$('#pbKor').addEventListener('click',korOpen);$('#pbRyn').addEventListener('click',rynOpen);
 $('#tap').addEventListener('click',()=>{const v=DANE.filmy[Math.max(lastVid,0)];if(!v.mp4){open(v.url,'_blank','noopener');return}
   sound=!sound;if(sound){paused=true;ppIcon()}setVid(lastVid)});
 const SHORT=['Profil','Kim jest','Staty','Filmy','Karta'];
