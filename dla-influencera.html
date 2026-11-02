@@ -159,6 +159,13 @@ a{color:inherit}
 .k-ph.live .k-cap{text-align:center;padding:0 0 3.5%}
 .k-ph.live .k-ln{margin-top:0;padding:8px 16px;font-size:12px;background:rgba(14,10,4,.82);color:#ffe7a1;border:1.5px solid #e0a82e;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.6)}
 .k-ph.live .k-ln:hover{background:#e0a82e;color:#1b1306}
+.k-ph.live .k-ln{position:relative;padding:12px 24px;font-size:14.5px;pointer-events:auto}
+.k-ph.live .k-ln::before{content:'';position:absolute;inset:-12px}
+.k-ph.live .k-cap{pointer-events:none;padding-bottom:4.5%}
+.k-cap{pointer-events:none}.k-ln{pointer-events:auto}
+.k:not(.flip) .k-fr{pointer-events:none}
+.k.flip .k-f:not(.k-fr){pointer-events:none}
+.k.flip,.k.flip:hover,.k.flip:focus-visible{transform:rotate(0deg) translateY(var(--y,0))}
 .k-ph.live{border-radius:20px}
 .k-live{position:absolute;inset:0;overflow:hidden;z-index:0;background:#0b0804}
 .k-live iframe{position:absolute;left:0;top:0;width:400px;border:0;transform-origin:0 0;pointer-events:none;background:#000}
