@@ -66,36 +66,31 @@
     <div class="ss-mline"><span id="ssMline"></span></div>
   </section>
 
-  <!-- FILARY: holograficzny ekran z 8-ramienna gwiazda (scroll) -->
+  <!-- OFERTA: holograficzny przezroczysty ekran z 8-ramienna gwiazda (samoczynna animacja) -->
   <section class="ss-holo" id="filary" aria-labelledby="holoH">
-    <div class="holo-track">
-      <div class="holo-stick">
-        <div class="holo-head">
-          <div class="ss-kicker">01 - OFERTA</div>
-          <h2 class="ss-h2" id="holoH">Pięć filarów jednego systemu wzrostu</h2>
-          <p class="ss-lead">Każdy filar działa osobno. Razem tworzą ekosystem, który buduje markę, pozyskuje klientów i skaluje biznes.</p>
-        </div>
-        <div class="holo-wrap">
-          <div class="holo-stage" id="holoStage">
-            <div class="holo-glass"></div>
-            <svg class="holo-svg" id="holoSvg" aria-hidden="true" focusable="false"></svg>
-            <div class="holo-labs">
-              <button type="button" class="holo-lab" data-pillar="brand"><i>01</i><b>Brand</b><span>Marka, którą się zapamiętuje</span></button>
-              <button type="button" class="holo-lab" data-pillar="growth"><i>02</i><b>Growth</b><span>Kampanie, które pozyskują klientów</span></button>
-              <button type="button" class="holo-lab" data-pillar="systems"><i>03</i><b>Systems</b><span>Strony, aplikacje, platformy</span></button>
-              <button type="button" class="holo-lab" data-pillar="ai"><i>04</i><b>AI</b><span>Agenci i automatyzacje</span></button>
-              <button type="button" class="holo-lab" data-pillar="scale"><i>05</i><b>Scale</b><span>Partner, który rośnie z Tobą</span></button>
-              <button type="button" class="holo-lab holo-zas" data-pillar="partner"><i>zasada</i><b>Jeden partner</b><span>Nie pięciu podwykonawców</span></button>
-              <button type="button" class="holo-lab holo-zas" data-pillar="wynik"><i>zasada</i><b>Wynik</b><span>Realnie pomaga sprzedawać</span></button>
-              <button type="button" class="holo-lab holo-zas" data-pillar="jasnosc"><i>zasada</i><b>Jasność</b><span>Widełki, zakres, termin</span></button>
-            </div>
-            <div class="holo-hint" aria-hidden="true">przewijaj ↓</div>
-          </div>
-          <div class="holo-base" aria-hidden="true"></div>
-        </div>
-        <p class="holo-legend"><span class="lg-o"></span>filar oferty (kliknij, by zobaczyć zakres)<span class="lg-c"></span>zasada naszej pracy</p>
-      </div>
+    <div class="holo-head">
+      <div class="ss-kicker">01 - OFERTA</div>
+      <h2 class="ss-h2" id="holoH">Osiem odnóg jednego systemu wzrostu</h2>
+      <p class="ss-lead">Każda odnoga działa osobno. Razem tworzą system, który buduje markę, pozyskuje klientów i skaluje biznes.</p>
     </div>
+    <div class="holo-wrap">
+      <div class="holo-stage" id="holoStage">
+        <div class="holo-glass"></div>
+        <svg class="holo-svg" id="holoSvg" aria-hidden="true" focusable="false"></svg>
+        <div class="holo-labs">
+          <button type="button" class="holo-lab" data-pillar="scale"><i>01</i><b>Scalowanie</b><span>Rośniemy razem z Twoim biznesem</span></button>
+          <button type="button" class="holo-lab" data-pillar="ai"><i>02</i><b>Automatyzacje AI</b><span>Agenci i procesy bez ręcznej pracy</span></button>
+          <button type="button" class="holo-lab" data-pillar="apps"><i>03</i><b>Aplikacje dla firm</b><span>Szyte pod Twój proces</span></button>
+          <button type="button" class="holo-lab" data-pillar="web"><i>04</i><b>Strony internetowe</b><span>Strony i sklepy, które sprzedają</span></button>
+          <button type="button" class="holo-lab" data-pillar="seo"><i>05</i><b>Widoczność w internecie</b><span>SEO, treści, analityka</span></button>
+          <button type="button" class="holo-lab" data-pillar="social"><i>06</i><b>Social media</b><span>Obecność i zasięgi</span></button>
+          <button type="button" class="holo-lab" data-pillar="marketing"><i>07</i><b>Skuteczny marketing</b><span>Kampanie nastawione na wynik</span></button>
+          <button type="button" class="holo-lab" data-pillar="brand"><i>08</i><b>Marka i branding</b><span>Marka, którą się zapamiętuje</span></button>
+        </div>
+      </div>
+      <div class="holo-base" aria-hidden="true"></div>
+    </div>
+    <p class="holo-legend"><span class="lg-o"></span>kliknij odnogę, by zobaczyć zakres<button type="button" class="holo-replay" id="holoReplay">↻ odtwórz ponownie</button></p>
   </section>
 
   <!-- PROCES -->
@@ -592,6 +587,21 @@
       list:['Nie „ładna strona dla samej strony”','Liczy się, czy klient dzwoni i kupuje'],who:''},
     jasnosc:{n:'zasada',t:'Transparentność',tag:'Od pierwszej rozmowy.',
       list:['Jasne widełki, jasny zakres, jasny termin','Wiesz, na czym stoisz, zanim cokolwiek zamówisz'],who:''}
+    ,apps:{n:'03',t:'Aplikacje dla firm',tag:'Szyte pod Twój proces.',
+      list:['Aplikacje webowe i platformy','Integracje (CRM, ERP, e-commerce)','Design system i UX/UI','Utrzymanie i dalszy rozwój'],
+      who:'firm, którym gotowe narzędzia nie pasują do sposobu pracy.'},
+    web:{n:'04',t:'Strony internetowe',tag:'Strony i sklepy, które sprzedają.',
+      list:['Strony i sklepy internetowe','Landing page pod konwersję','Design system i UX/UI','Utrzymanie i dalszy rozwój'],
+      who:'firm, które potrzebują solidnej wizytówki albo sklepu.'},
+    seo:{n:'05',t:'Widoczność w internecie',tag:'Żeby klienci Cię znajdowali.',
+      list:['SEO i treści','Analityka i optymalizacja wyników','Landing page pod konwersję'],
+      who:'firm, które chcą być wyżej w wynikach wyszukiwania.'},
+    social:{n:'06',t:'Social media',tag:'Obecność i zasięgi tam, gdzie są Twoi klienci.',
+      list:['Strategia obecności w social mediach','Kampanie Meta Ads','Szablony i materiały marketingowe'],
+      who:'firm, które chcą budować zasięg i społeczność.'},
+    marketing:{n:'07',t:'Skuteczny marketing',tag:'Kampanie nastawione na wynik.',
+      list:['Strategia pozyskiwania klientów','Kampanie Google i Meta Ads','Analityka i optymalizacja wyników'],
+      who:'firm, które chcą więcej zapytań i sprzedaży.'}
   };
   var modal=document.getElementById('ssModal');
   function openModal(key){var d=PIL[key];if(!d||!modal)return;
@@ -735,82 +745,68 @@
 .ss-app-tiles b{display:block;font:700 15px 'Space Grotesk';margin-bottom:4px}.ss-app-tiles small{color:var(--mut);font-size:12px;line-height:1.4}
 @media(max-width:900px){.ss-apps .ss-app-rev{grid-template-columns:1fr}.ss-apps .ss-app-rev .ss-app-ui{order:2}}
 
-/* --- FILARY: holograficzny, przezroczysty ekran + 8-ramienna gwiazda --- */
-.ss-holo{--h:#58d0ff;--h2:#2f7bff;--hg:rgba(88,208,255,.55);position:relative;background:radial-gradient(110% 70% at 50% 42%,#0b1a36 0%,#070d1c 52%,#0A0A0B 100%);border-top:1px solid #0f1f3d;border-bottom:1px solid #0f1f3d}
-.holo-track{position:relative;height:380vh}
-.holo-stick{position:sticky;top:0;height:100vh;height:100svh;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;padding:clamp(64px,9vh,88px) 16px 12px;overflow:hidden}
-.holo-head{text-align:center;max-width:780px;flex:none}
-.holo-head .ss-kicker{margin-bottom:8px;color:var(--h)}
-.holo-head .ss-h2{margin:0;font-size:clamp(24px,3.2vw,42px)}
-.holo-head .ss-lead{margin:10px auto 0;font-size:clamp(13px,1.2vw,16px);max-width:640px;color:#a9bad1}
-.holo-wrap{flex:1;min-height:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.holo-stage{--sh:calc(100svh - 330px);position:relative;aspect-ratio:1000/660;height:auto;width:min(100%,calc(var(--sh)*1000/660),1100px);min-width:min(100%,520px);color:#EAF6FF}
-.holo-stage[data-m="1"]{aspect-ratio:600/760;width:min(100%,calc(var(--sh)*600/760),480px);min-width:0}
+/* --- OFERTA: duzy, holograficzny, przezroczysty ekran + 8-ramienna gwiazda z runami --- */
+.ss-holo{--h:#58d0ff;--h2:#2f7bff;--hg:rgba(88,208,255,.55);position:relative;padding:clamp(70px,8vw,110px) 0 clamp(36px,5vw,70px);background:radial-gradient(110% 70% at 50% 52%,#0b1a36 0%,#070d1c 55%,#0A0A0B 100%);border-top:1px solid #0f1f3d;border-bottom:1px solid #0f1f3d;overflow:hidden}
+.holo-head{text-align:center;max-width:820px;margin:0 auto;padding:0 20px}
+.holo-head .ss-kicker{margin-bottom:10px;color:var(--h)}
+.holo-head .ss-h2{margin:0;font-size:clamp(28px,4vw,54px)}
+.holo-head .ss-lead{margin:12px auto 0;font-size:clamp(14px,1.3vw,18px);max-width:640px;color:#a9bad1}
+.holo-wrap{width:100%;margin-top:clamp(20px,3vw,40px);display:flex;flex-direction:column;align-items:center;padding:0 2vw}
+.holo-stage{position:relative;aspect-ratio:1000/690;width:min(96vw,1620px);color:#EAF6FF}
+.holo-stage[data-m="1"]{aspect-ratio:600/760;width:min(94vw,560px)}
 /* szklo */
-.holo-glass{position:absolute;inset:0;border:1px solid rgba(110,205,255,calc(.12 + var(--on,0)*.4));border-radius:8px;
+.holo-glass{position:absolute;inset:0;border:1px solid rgba(110,205,255,calc(.14 + var(--on,0)*.42));border-radius:10px;
   background:
-    linear-gradient(115deg,rgba(255,255,255,.00) 30%,rgba(130,210,255,.07) 46%,rgba(255,255,255,0) 60%),
-    radial-gradient(circle at 1px 1px,rgba(120,210,255,.55) .8px,transparent 1.2px) 0 0/15px 15px,
-    linear-gradient(160deg,rgba(60,130,255,.09),rgba(20,50,110,.04) 45%,rgba(80,200,255,.07));
-  -webkit-mask:radial-gradient(ellipse at center,#000 40%,rgba(0,0,0,.45) 100%);mask:radial-gradient(ellipse at center,#000 40%,rgba(0,0,0,.45) 100%);
-  box-shadow:inset 0 0 70px rgba(47,123,255,calc(var(--on,0)*.18)),0 0 70px rgba(47,123,255,calc(var(--on,0)*.18));
-  opacity:calc(.35 + var(--on,0)*.65);overflow:hidden}
+    linear-gradient(115deg,rgba(255,255,255,0) 30%,rgba(130,210,255,.07) 46%,rgba(255,255,255,0) 60%),
+    radial-gradient(circle at 1px 1px,rgba(120,210,255,.55) .9px,transparent 1.3px) 0 0/16px 16px,
+    linear-gradient(160deg,rgba(60,130,255,.10),rgba(20,50,110,.04) 45%,rgba(80,200,255,.08));
+  -webkit-mask:radial-gradient(ellipse at center,#000 55%,rgba(0,0,0,.5) 100%);mask:radial-gradient(ellipse at center,#000 55%,rgba(0,0,0,.5) 100%);
+  box-shadow:inset 0 0 90px rgba(47,123,255,calc(var(--on,0)*.2)),0 0 90px rgba(47,123,255,calc(var(--on,0)*.2));
+  opacity:calc(.3 + var(--on,0)*.7);overflow:hidden}
 .holo-glass::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(130,215,255,.06) 0 1px,transparent 1px 3px);opacity:var(--on,0)}
-.holo-glass::after{content:"";position:absolute;left:0;right:0;height:22%;top:-25%;background:linear-gradient(180deg,transparent,rgba(120,215,255,.14),transparent);animation:holoScan 6s linear infinite;opacity:var(--on,0)}
-.holo-stage:before,.holo-stage:after{content:"";position:absolute;width:28px;height:28px;border:2px solid var(--h);opacity:calc(var(--on,0)*.9);filter:drop-shadow(0 0 6px var(--hg));pointer-events:none}
-.holo-stage:before{left:-1px;top:-1px;border-right:0;border-bottom:0;border-top-left-radius:8px}
-.holo-stage:after{right:-1px;bottom:-1px;border-left:0;border-top:0;border-bottom-right-radius:8px}
+.holo-glass::after{content:"";position:absolute;left:0;right:0;height:20%;top:-25%;background:linear-gradient(180deg,transparent,rgba(120,215,255,.15),transparent);animation:holoScan 7s linear infinite;opacity:var(--on,0)}
+.holo-stage:before,.holo-stage:after{content:"";position:absolute;width:34px;height:34px;border:2px solid var(--h);opacity:calc(var(--on,0)*.9);filter:drop-shadow(0 0 6px var(--hg));pointer-events:none}
+.holo-stage:before{left:-1px;top:-1px;border-right:0;border-bottom:0;border-top-left-radius:10px}
+.holo-stage:after{right:-1px;bottom:-1px;border-left:0;border-top:0;border-bottom-right-radius:10px}
 @keyframes holoScan{to{top:105%}}
-/* podstawa jak w ekranach LED-glass */
-.holo-base{width:min(104%,1140px);height:12px;margin-top:-1px;border-radius:0 0 6px 6px;background:linear-gradient(180deg,#26324a,#0d1220 60%,#05070d);box-shadow:0 12px 40px rgba(47,123,255,.22),inset 0 1px 0 rgba(160,220,255,.45);position:relative;flex:none;max-width:100%}
-.holo-base::after{content:"";position:absolute;left:8%;right:8%;top:100%;height:26px;background:radial-gradient(ellipse at top,rgba(70,160,255,.32),transparent 70%);filter:blur(3px)}
+.holo-base{width:min(98vw,1700px);height:14px;margin-top:-1px;border-radius:0 0 8px 8px;background:linear-gradient(180deg,#26324a,#0d1220 60%,#05070d);box-shadow:0 14px 50px rgba(47,123,255,.25),inset 0 1px 0 rgba(160,220,255,.45);position:relative;max-width:100%}
+.holo-base::after{content:"";position:absolute;left:8%;right:8%;top:100%;height:30px;background:radial-gradient(ellipse at top,rgba(70,160,255,.34),transparent 70%);filter:blur(3px)}
 /* SVG */
 .holo-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
 .holo-svg .ring{fill:none;stroke:var(--h);stroke-linecap:round;transform-box:fill-box;transform-origin:center}
 .holo-svg .ring.r1{stroke-width:1;stroke-dasharray:2 9;opacity:.5;animation:holoSpin 40s linear infinite}
-.holo-svg .ring.r2{stroke-width:5;stroke-dasharray:90 320;opacity:.55;animation:holoSpin 26s linear infinite reverse}
-.holo-svg .ring.r3{stroke-width:2;stroke-dasharray:30 120;opacity:.5;animation:holoSpin 18s linear infinite}
+.holo-svg .ring.r2{stroke-width:5;stroke-dasharray:110 380;opacity:.5;animation:holoSpin 28s linear infinite reverse}
+.holo-svg .ring.r3{stroke-width:2;stroke-dasharray:34 140;opacity:.45;animation:holoSpin 20s linear infinite}
 @keyframes holoSpin{to{transform:rotate(360deg)}}
 .holo-svg .flash{fill:none;stroke:#fff;stroke-width:3;opacity:0}
-.holo-stage.fl .holo-svg .flash{animation:holoFlash 1.1s ease-out}
-@keyframes holoFlash{0%{opacity:.9;r:30}100%{opacity:0;r:260}}
-.holo-svg .ray .pt{transition:r .2s}
+.holo-stage.fl .holo-svg .flash{animation:holoFlash 1.2s ease-out}
+@keyframes holoFlash{0%{opacity:.9;r:30}100%{opacity:0;r:300}}
+.holo-svg .logo-hit{cursor:pointer}
 .holo-stage.full .holo-svg .rays{animation:holoGlow 4.5s ease-in-out infinite}
-@keyframes holoGlow{50%{filter:drop-shadow(0 0 14px rgba(88,208,255,.85))}}
+@keyframes holoGlow{50%{filter:drop-shadow(0 0 16px rgba(88,208,255,.9))}}
 /* etykiety */
 .holo-labs{position:absolute;inset:0;pointer-events:none}
-.holo-lab{all:unset;box-sizing:border-box;position:absolute;left:var(--x);top:var(--y);display:block;max-width:var(--lw,200px);padding:6px 8px;color:#EAF6FF;font-family:'Space Grotesk';cursor:pointer;opacity:0;transform:var(--tr) translateY(8px);transition:opacity .45s,transform .45s,text-shadow .2s;pointer-events:none;text-shadow:0 0 12px rgba(88,208,255,.65)}
+.holo-lab{all:unset;box-sizing:border-box;position:absolute;left:var(--x);top:var(--y);display:block;width:max-content;max-width:var(--lw,260px);padding:6px 8px;color:#EAF6FF;font-family:'Space Grotesk';cursor:pointer;opacity:0;transform:var(--tr) translateY(10px);transition:opacity .5s,transform .5s,text-shadow .2s;pointer-events:none;text-shadow:0 0 14px rgba(88,208,255,.7)}
 .holo-lab.on{opacity:1;transform:var(--tr);pointer-events:auto}
-.holo-lab i{display:block;font-style:normal;font-weight:600;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--o)}
-.holo-lab b{display:block;font-weight:700;font-size:clamp(15px,1.7vw,22px);letter-spacing:-.3px;line-height:1.1;margin-top:2px}
-.holo-lab span{display:block;margin-top:4px;font-size:clamp(11px,1vw,13.5px);line-height:1.35;color:#b9d6ee;font-family:Inter,sans-serif}
-.holo-lab.holo-zas i{color:var(--h)}
-.holo-lab:hover,.holo-lab:focus-visible{text-shadow:0 0 18px rgba(130,220,255,1)}
+.holo-lab i{display:block;font-style:normal;font-weight:600;font-size:clamp(10px,.9vw,13px);letter-spacing:3px;color:var(--o)}
+.holo-lab b{display:block;font-weight:700;font-size:clamp(15px,1.9vw,28px);letter-spacing:-.4px;line-height:1.1;margin-top:3px}
+.holo-lab span{display:block;margin-top:5px;font-size:clamp(11px,1.05vw,15px);line-height:1.35;color:#b9d6ee;font-family:Inter,sans-serif}
+.holo-lab:hover,.holo-lab:focus-visible{text-shadow:0 0 20px rgba(130,220,255,1)}
 .holo-lab:focus-visible{outline:2px solid var(--h);outline-offset:2px;border-radius:4px}
 .holo-lab[data-d="n"]{--tr:translate(-50%,-100%);text-align:center}.holo-lab[data-d="s"]{--tr:translate(-50%,0);text-align:center}
 .holo-lab[data-d="e"]{--tr:translate(0,-50%)}.holo-lab[data-d="w"]{--tr:translate(-100%,-50%);text-align:right}
 .holo-lab[data-d="ne"]{--tr:translate(0,-100%)}.holo-lab[data-d="se"]{--tr:translate(0,0)}
 .holo-lab[data-d="sw"]{--tr:translate(-100%,0);text-align:right}.holo-lab[data-d="nw"]{--tr:translate(-100%,-100%);text-align:right}
-.holo-hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font:600 11px 'Space Grotesk';letter-spacing:3px;text-transform:uppercase;color:var(--h);opacity:calc(.9 - var(--p,0)*6);animation:holoBlink 1.6s ease-in-out infinite}
-@keyframes holoBlink{50%{opacity:.25}}
-.holo-legend{flex:none;margin:12px 0 0;font:500 12.5px 'Space Grotesk';letter-spacing:.4px;color:#9fb6d0;text-align:center}
-.holo-legend span{display:inline-block;width:9px;height:9px;transform:rotate(45deg);margin:0 8px 1px 18px}
-.holo-legend span:first-child{margin-left:0}
-.lg-o{background:var(--o);box-shadow:0 0 8px var(--o)}.lg-c{background:var(--h);box-shadow:0 0 8px var(--h)}
-/* tryb statyczny: bez przypinania (reduced motion / bez JS) */
-.ss-holo.holo-static .holo-track{height:auto}
-.ss-holo.holo-static .holo-stick{position:relative;height:auto;min-height:0;padding-bottom:40px}
-.ss-holo.holo-static .holo-wrap{flex:none;margin-top:24px}
-.ss-holo.holo-static .holo-hint{display:none}
+.holo-legend{margin:16px 0 0;font:500 13px 'Space Grotesk';letter-spacing:.4px;color:#9fb6d0;text-align:center}
+.holo-legend .lg-o{display:inline-block;width:9px;height:9px;transform:rotate(45deg);margin:0 8px 1px 0;background:var(--o);box-shadow:0 0 8px var(--o)}
+.holo-replay{all:unset;cursor:pointer;margin-left:22px;color:var(--h);font:600 12px 'Space Grotesk';letter-spacing:1.5px;text-transform:uppercase}
+.holo-replay:hover,.holo-replay:focus-visible{text-decoration:underline;outline:none}
 @media(max-width:720px){
-  .holo-track{height:330vh}
-  .holo-stick{padding-top:68px}
-  .holo-stage{--sh:calc(100svh - 300px)}
-  .holo-lab{padding:3px 4px}.holo-lab span{display:none}.holo-lab i{font-size:9px;letter-spacing:1.5px}.holo-lab b{font-size:13px}
-  .holo-legend{font-size:11px;padding:0 10px}.holo-legend span{margin-left:10px}
-  .holo-head .ss-lead{display:none}
+  .ss-holo{padding-top:64px}
+  .holo-lab{padding:3px 4px}.holo-lab span{display:none}.holo-lab i{font-size:9px;letter-spacing:1.5px}.holo-lab b{font-size:12.5px;line-height:1.12}
+  .holo-head .ss-lead{display:none}.holo-legend{font-size:11.5px;padding:0 10px}
 }
-@media(prefers-reduced-motion:reduce){.holo-glass::after,.holo-svg .ring,.holo-hint,.holo-stage.full .holo-svg .rays{animation:none}}
+@media(prefers-reduced-motion:reduce){.holo-glass::after,.holo-svg .ring,.holo-stage.full .holo-svg .rays{animation:none}}
 </style>
 <script>
 (function(){
@@ -1039,13 +1035,23 @@
   if(!sec||!stage||!svg)return;
   var NS='http://www.w3.org/2000/svg',labs=[].slice.call(stage.querySelectorAll('.holo-lab')),DIR=['n','ne','e','se','s','sw','w','nw'];
   var LAYOUT={
-    d:{W:1000,H:660,cx:500,cy:330,R:205,inner:46,w:15,lw:230,ls:.40},
-    m:{W:600,H:760,cx:300,cy:380,R:166,inner:42,w:13,lw:120,ls:.34}
+    d:{W:1000,H:690,cx:500,cy:345,R:236,inner:50,w:42,lw:300,rs:1.25,gap:22},
+    m:{W:600,H:760,cx:300,cy:380,R:150,inner:38,w:27,lw:150,rs:.72,gap:30}
   };
+  // runy odnog: kolejno Scalowanie, AI, Aplikacje, Strony, Widocznosc, Social, Marketing, Marka (siatka 24x24, same proste kreski)
+  var RUNES=[
+    'M12 22V4M5 11L12 4L19 11M6 18L12 12L18 18',
+    'M12 2L21 12L12 22L3 12ZM12 8V16M8 12H16',
+    'M4 3V21M20 3V21M4 3L12 13L20 3',
+    'M8 3V21M8 7L18 12L8 17',
+    'M2 12L12 4L22 12L12 20ZM12 9V15',
+    'M4 4L20 20M20 4L4 20M12 4V20',
+    'M12 22V3M12 12L5 5M12 12L19 5',
+    'M5 3V21M19 3V21M5 3L19 21M19 3L5 21'
+  ];
   var RM=matchMedia('(prefers-reduced-motion:reduce)').matches,force=/[?&]holo=([\d.]+)/.exec(location.search);
-  var mode=null,L=null,els=null,landed=false,full=false;
+  var mode=null,L=null,els=null,landed=false,full=false,cur=0;
   function el(n,a,p){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e;}
-  // geometria logo SS (te same figury co w nagłówku/hero)
   var BARS=[[[46,66],[101,35],[101,69],[46,100]],[[101,66],[156,35],[156,69],[101,100]],[[101,90],[68,110],[101,130]],[[101,126],[134,146],[101,166]],[[46,188],[101,157],[101,191],[46,222]],[[101,188],[156,157],[156,191],[101,222]]];
   var TRIS=[[[46,125],[46,161],[77,143]],[[156,131],[156,95],[125,113]]];
   function pts(a){return a.map(function(p){return p.join(',')}).join(' ');}
@@ -1053,79 +1059,80 @@
     var m=matchMedia('(max-width:720px)').matches?'m':'d';if(m===mode)return;mode=m;L=LAYOUT[m];
     stage.setAttribute('data-m',m==='m'?'1':'0');
     svg.setAttribute('viewBox','0 0 '+L.W+' '+L.H);svg.innerHTML='';
-    var defs=el('defs',{},svg);
-    for(var i=0;i<2;i++){var g=el('linearGradient',{id:'hg'+i,gradientUnits:'userSpaceOnUse',x1:0,y1:-L.inner,x2:0,y2:-L.R},defs);
-      el('stop',{offset:'0','stop-color':'#58d0ff','stop-opacity':'.04'},g);
-      el('stop',{offset:'1','stop-color':i?'#8fe3ff':'#58d0ff','stop-opacity':i?'.42':'.55'},g);}
+    var defs=el('defs',{},svg),g0=el('linearGradient',{id:'hg0',gradientUnits:'userSpaceOnUse',x1:0,y1:-L.inner,x2:0,y2:-L.R},defs);
+    el('stop',{offset:'0','stop-color':'#58d0ff','stop-opacity':'.05'},g0);el('stop',{offset:'1','stop-color':'#58d0ff','stop-opacity':'.5'},g0);
     var ringsG=el('g',{transform:'translate('+L.cx+' '+L.cy+')'},svg);
-    el('circle',{class:'ring r1',r:L.inner+30,cx:0,cy:0},ringsG);
-    el('circle',{class:'ring r2',r:L.R*.62,cx:0,cy:0},ringsG);
-    el('circle',{class:'ring r3',r:L.R*.86,cx:0,cy:0},ringsG);
-    var rays=el('g',{class:'rays',style:'filter:drop-shadow(0 0 7px rgba(88,208,255,.55))'},svg);
+    el('circle',{class:'ring r1',r:L.inner+34,cx:0,cy:0},ringsG);
+    el('circle',{class:'ring r2',r:L.R*.6,cx:0,cy:0},ringsG);
+    el('circle',{class:'ring r3',r:L.R*.88,cx:0,cy:0},ringsG);
+    var rays=el('g',{class:'rays',style:'filter:drop-shadow(0 0 8px rgba(88,208,255,.55))'},svg);
     els={rays:[]};
     for(var i=0;i<8;i++){
-      var g=el('g',{class:'ray',transform:'translate('+L.cx+' '+L.cy+') rotate('+(i*45)+')'},rays),pil=i<5;
-      var kite='0,'+(-L.R)+' '+L.w+','+(-L.R*.42)+' 0,'+(-L.inner)+' '+(-L.w)+','+(-L.R*.42);
-      var poly=el('polygon',{points:kite,fill:'url(#hg'+(pil?0:1)+')',stroke:pil?'#7fdcff':'#a6ecff','stroke-width':pil?1.6:1.2,'stroke-linejoin':'round',pathLength:1,'stroke-dasharray':1,'stroke-dashoffset':1,'fill-opacity':0},g);
-      var ax=el('line',{x1:0,y1:-L.inner,x2:0,y2:-L.R,stroke:'#cdf3ff','stroke-width':1,'stroke-dasharray':'1 6','stroke-linecap':'round',opacity:0},g);
-      var tip=el('circle',{class:'pt',cx:0,cy:-L.R,r:0,fill:pil?'#FF8900':'#58d0ff'},g);
-      els.rays.push({poly:poly,ax:ax,tip:tip,pil:pil});
-      var lab=labs[i],a=i*45*Math.PI/180,rr=L.R+(m==='m'?10:20);
+      var ang=i*45,g=el('g',{transform:'translate('+L.cx+' '+L.cy+') rotate('+ang+')'},rays);
+      var kite='0,'+(-L.R)+' '+L.w+','+(-L.R*.40)+' 0,'+(-L.inner)+' '+(-L.w)+','+(-L.R*.40);
+      var poly=el('polygon',{points:kite,fill:'url(#hg0)',stroke:'#7fdcff','stroke-width':1.8,'stroke-linejoin':'round',pathLength:1,'stroke-dasharray':1,'stroke-dashoffset':1,'fill-opacity':0},g);
+      var ax=el('line',{x1:0,y1:-L.inner,x2:0,y2:-L.R,stroke:'#cdf3ff','stroke-width':1,'stroke-dasharray':'1 7','stroke-linecap':'round',opacity:0},g);
+      var tip=el('circle',{cx:0,cy:-L.R,r:0,fill:'#FF8900'},g);
+      // runa wewnatrz odnogi (zawsze pionowo, niezaleznie od obrotu odnogi)
+      var rg=el('g',{transform:'translate(0 '+(-L.R*.5)+') rotate('+(-ang)+') scale('+L.rs+')',opacity:0},g);
+      el('circle',{r:19,fill:'rgba(5,12,28,.55)',stroke:'rgba(127,220,255,.55)','stroke-width':1.2},rg);
+      el('path',{d:RUNES[i],transform:'translate(-12 -12)',fill:'none',stroke:'#EAF6FF','stroke-width':2.3,'stroke-linecap':'round','stroke-linejoin':'round'},rg);
+      els.rays.push({poly:poly,ax:ax,tip:tip,rune:rg});
+      var lab=labs[i],a=ang*Math.PI/180,rr=L.R+L.gap;
       lab.setAttribute('data-d',DIR[i]);
-      lab.style.left=((L.cx+rr*Math.sin(a))/L.W*100)+'%';lab.style.top=((L.cy-rr*Math.cos(a))/L.H*100)+'%';
       lab.style.setProperty('--x',((L.cx+rr*Math.sin(a))/L.W*100)+'%');lab.style.setProperty('--y',((L.cy-rr*Math.cos(a))/L.H*100)+'%');
-      lab.style.setProperty('--lw',(L.lw/L.W*stage.clientWidth||L.lw)+'px');
+      var room=(i===2||i===6)?(L.W-(L.cx+L.R+L.gap)-10):L.lw;lab.style.setProperty('--lw',(Math.min(L.lw,room)/L.W*100)+'%');
     }
-    // logo w srodku: 3 warstwy (duchy + wlasciwe)
     els.logo=[];
     for(var k=0;k<3;k++){
-      var lg=el('g',{class:'lg'+k,opacity:0},svg);
+      var lg=el('g',{opacity:0},svg);
       BARS.forEach(function(b){el('polygon',{points:pts(b),fill:k?'none':'#EAF6FF',stroke:k?'#58d0ff':'#EAF6FF','stroke-width':k?2.2:.4,'stroke-linejoin':'miter'},lg);});
       TRIS.forEach(function(t){el('polygon',{points:pts(t),fill:k?'none':'#FF8900',stroke:k?'#FF8900':'none','stroke-width':k?2.2:0},lg);});
       els.logo.push(lg);
     }
     els.flash=el('circle',{class:'flash',cx:L.cx,cy:L.cy,r:30},svg);
-    setP(cur);
+    setT(cur);
   }
-  var cur=0;
   function cl(x){return x<0?0:x>1?1:x}
   function eo(t){return 1-Math.pow(1-t,3)}
-  function setP(p){
-    cur=p;if(!els)return;
-    stage.style.setProperty('--p',p.toFixed(3));
-    var on=cl(p/.1);stage.style.setProperty('--on',on.toFixed(3));
-    // logo "wlatuje" na ekran i zostaje nieruchomo
-    var t=cl((p-.1)/.24),e=eo(t),base=(mode==='m'?.34:.4),s=base*(1+5*(1-e));
+  var T_RAY0=2000,T_STEP=520,T_DRAW=850,T_END=T_RAY0+7*T_STEP+T_DRAW;
+  // os czasu animacji (ms od startu): ekran wlacza sie -> logo wlatuje -> odnogi pojawiaja sie po kolei
+  function setT(ms){
+    cur=ms;if(!els)return;
+    stage.style.setProperty('--on',cl(ms/800).toFixed(3));
+    var t=cl((ms-500)/1400),e=eo(t),base=(mode==='m'?.42:.5),s=base*(1+5*(1-e));
     els.logo.forEach(function(g,k){
       var sc=k===0?s:s*(1+.45*k*(1-e)+.2*k),al=k===0?cl(t*2.4):(1-e)*(.5-.18*k)*cl(t*3);
       g.setAttribute('transform','translate('+L.cx+' '+L.cy+') scale('+sc+') translate(-101 -128)');
-      g.setAttribute('opacity',al.toFixed(3));
-      if(k)g.style.display=t<=0?'none':'';
+      g.setAttribute('opacity',al.toFixed(3));if(k)g.style.display=t<=0?'none':'';
     });
-    var nl=p>=.34;if(nl!==landed){landed=nl;if(nl&&!RM){stage.classList.remove('fl');void stage.offsetWidth;stage.classList.add('fl');}}
-    // promienie po kolei
+    var nl=ms>=1900;if(nl!==landed){landed=nl;if(nl&&!RM){stage.classList.remove('fl');void stage.offsetWidth;stage.classList.add('fl');}}
     els.rays.forEach(function(r,i){
-      var k=cl((p-(.36+i*.075))/.09),kk=eo(k);
+      var k=cl((ms-(T_RAY0+i*T_STEP))/T_DRAW),kk=eo(k);
       r.poly.setAttribute('stroke-dashoffset',(1-kk).toFixed(3));r.poly.setAttribute('fill-opacity',kk.toFixed(3));
-      r.ax.setAttribute('opacity',(kk*.8).toFixed(3));r.tip.setAttribute('r',(kk*(r.pil?5.5:4.5)).toFixed(2));
-      labs[i].classList.toggle('on',k>.6);
+      r.ax.setAttribute('opacity',(kk*.8).toFixed(3));r.tip.setAttribute('r',(kk*6).toFixed(2));
+      r.rune.setAttribute('opacity',cl((k-.35)/.5).toFixed(3));
+      labs[i].classList.toggle('on',k>.55);
     });
-    var f=p>=.97;if(f!==full){full=f;stage.classList.toggle('full',f);}
+    var f=ms>=T_END;if(f!==full){full=f;stage.classList.toggle('full',f);}
   }
-  function pFromScroll(){
-    var tr=sec.querySelector('.holo-track'),r=tr.getBoundingClientRect(),vh=window.innerHeight,span=tr.offsetHeight-vh;
-    return span<=0?1:cl(-r.top/span/.9);   // pelny efekt na ~90% przewijania, reszta = chwila z gotowym ekranem
+  var raf=0,t0=0;
+  function play(){
+    cancelAnimationFrame(raf);landed=false;full=false;stage.classList.remove('full');
+    if(RM){setT(1e6);return;}
+    setT(0);t0=0;
+    (function step(n){if(!t0)t0=n;var ms=n-t0;setT(ms);if(ms<T_END+200)raf=requestAnimationFrame(step);else setT(1e6);})(performance.now());
   }
-  var tick=false;
-  function onScroll(){if(tick)return;tick=true;requestAnimationFrame(function(){tick=false;setP(pFromScroll());});}
-  // klik w etykiete = modal filaru/zasady
   labs.forEach(function(b){b.addEventListener('click',function(){if(window.ssOpenPillar)window.ssOpenPillar(b.getAttribute('data-pillar'));});});
+  var rp=document.getElementById('holoReplay');if(rp)rp.addEventListener('click',play);
   build();
-  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){build();setP(force?+force[1]:pFromScroll());},120);});
-  if(force){sec.classList.add('holo-static');setP(+force[1]);document.documentElement.style.scrollBehavior='auto';setTimeout(function(){sec.scrollIntoView();document.querySelectorAll('.reveal').forEach(function(n){n.classList.add('in')});},30);return;}
-  if(RM){sec.classList.add('holo-static');setP(1);return;}
-  window.addEventListener('scroll',onScroll,{passive:true});setP(pFromScroll());
-  window.__holoP=setP;window.__holoSync=function(){setP(pFromScroll())}; // do testow
+  var rt;window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(function(){var was=cur;build();setT(was);},120);});
+  window.__holoT=setT; // do testow
+  if(force){document.documentElement.style.scrollBehavior='auto';setT(+force[1]<=1?+force[1]*T_END:+force[1]);setTimeout(function(){sec.scrollIntoView();document.querySelectorAll('.reveal').forEach(function(n){n.classList.add('in')});},30);return;}
+  setT(0);
+  if(!('IntersectionObserver' in window)){setT(1e6);return;}
+  var started=false;
+  new IntersectionObserver(function(es,o){if(!started&&es[0].isIntersecting){started=true;o.disconnect();play();}},{threshold:.3}).observe(stage);
 })();
 </script>
 </body></html>
