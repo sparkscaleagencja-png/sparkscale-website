@@ -1,14 +1,17 @@
 [
  {
-  "slug": "olisi",
+  "slug": "olisie",
   "nazwa": "Olisie",
-  "ksywka": "",
-  "url": "/tworca-olisie.html",
-  "zdjecie": "/img/karta-placeholder.svg",
+  "ksywka": "OSIEDLE",
+  "url": "/olisie/",
+  "zdjecie": "/olisie/img/avatar.png",
   "kanal": "@olisie.official",
-  "platformy": "Instagram",
-  "opis": "Twórca z Instagrama. 4,1 tys. obserwujących.",
-  "duza": true
+  "platformy": "YouTube · TikTok · Instagram",
+  "opis": "Ekipa z Poznania, filmy z osiedla. 6,6 mln wyświetleń w miesiąc.",
+  "foto": "/olisie/img/dzieci.jpg",
+  "podglad": true,
+  "obraz": "/olisie/img/karta.webp",
+  "landing": "/olisie/"
  },
  {
   "slug": "krystian-mazur",
