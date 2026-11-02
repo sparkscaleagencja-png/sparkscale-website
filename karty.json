@@ -3,8 +3,8 @@
   "slug": "olisi",
   "nazwa": "Olisie",
   "ksywka": "",
-  "url": "",
-  "zdjecie": "",
+  "url": "/tworca-olisie.html",
+  "zdjecie": "/img/karta-placeholder.svg",
   "kanal": "@olisie.official",
   "platformy": "Instagram",
   "opis": "Twórca z Instagrama. 4,1 tys. obserwujących.",
@@ -14,12 +14,13 @@
   "slug": "krystian-mazur",
   "nazwa": "Krystian Mazur",
   "ksywka": "KRYSPIN",
-  "url": "/krystian-mazur/",
+  "url": "/tworca-krystian-mazur.html",
   "zdjecie": "/krystian-mazur/img/ig-avatar.jpg",
   "kanal": "@mkryspin",
   "platformy": "TikTok · Instagram",
   "opis": "Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.",
   "foto": "/krystian-mazur/img/portret1.jpg",
-  "podglad": true
+  "podglad": true,
+  "landing": "/krystian-mazur/"
  }
 ]

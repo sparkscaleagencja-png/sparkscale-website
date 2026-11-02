@@ -156,8 +156,10 @@ a{color:inherit}
 .k-ln:hover{background:#fff1b8}
 .k-crn2{position:absolute;top:9px;left:50%;width:15%;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
 .k-ph.live::after,.k-ph.live .k-crn2,.k-ph.live .k-nm,.k-ph.live .k-nk{display:none}
-.k-ph.live .k-cap{text-align:center;padding-bottom:4%}
-.k-ph.live .k-ln{margin-top:0;box-shadow:0 6px 20px rgba(0,0,0,.6)}
+.k-ph.live .k-cap{text-align:center;padding:0 0 3.5%}
+.k-ph.live .k-ln{margin-top:0;padding:8px 16px;font-size:12px;background:rgba(14,10,4,.82);color:#ffe7a1;border:1.5px solid #e0a82e;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(0,0,0,.6)}
+.k-ph.live .k-ln:hover{background:#e0a82e;color:#1b1306}
+.k-ph.live{border-radius:20px}
 .k-live{position:absolute;inset:0;overflow:hidden;z-index:0;background:#0b0804}
 .k-live iframe{position:absolute;left:0;top:0;width:400px;border:0;transform-origin:0 0;pointer-events:none;background:#000}
 .k-new{cursor:default}
@@ -449,7 +451,7 @@ a{color:inherit}
 <script>(function(){document.querySelectorAll('.snw').forEach(function(w){var b=w.querySelector('.sn-burger');b.addEventListener('click',function(){var o=w.classList.toggle('open');b.setAttribute('aria-expanded',o);});w.querySelectorAll('.sn a').forEach(function(a){a.addEventListener('click',function(){w.classList.remove('open');b.setAttribute('aria-expanded','false');});});});})();</script><script>(function(){
 var row=document.getElementById('kRow');if(!row)return;
 var CR='<svg class="@C" viewBox="0 0 40 26" aria-hidden="true"><defs><linearGradient id="kg@I" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#e0a82e"/><stop offset="1" stop-color="#9a6612"/></linearGradient></defs><path d="M2 24L5 6l9 9L20 2l6 13 9-9 3 18z" fill="url(#kg@I)" stroke="#6b4508" stroke-width="1" stroke-linejoin="round"/><circle cx="5" cy="5" r="2" fill="#fff3c4"/><circle cx="20" cy="2" r="2" fill="#fff3c4"/><circle cx="35" cy="5" r="2" fill="#fff3c4"/></svg>';
-var FALL=[{nazwa:'Krystian Mazur',ksywka:'KRYSPIN',url:'/krystian-mazur/',zdjecie:'/krystian-mazur/img/ig-avatar.jpg',foto:'/krystian-mazur/img/portret1.jpg',kanal:'@mkryspin',platformy:'TikTok · Instagram',opis:'Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.',podglad:true}];
+var FALL=[{nazwa:'Krystian Mazur',ksywka:'KRYSPIN',url:'/tworca-krystian-mazur.html',zdjecie:'/krystian-mazur/img/ig-avatar.jpg',foto:'/krystian-mazur/img/portret1.jpg',kanal:'@mkryspin',platformy:'TikTok · Instagram',opis:'Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.',podglad:true,landing:'/krystian-mazur/'}];
 function ok(u){return typeof u==='string'&&(/^\/[^\/]/.test(u)||u.indexOf('https://spark-scale.pl/')===0);}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
 function crown(c,i){var d=document.createElement('div');d.innerHTML=CR.replace(/@C/g,c).replace(/@I/g,i);return d.firstChild;}
@@ -468,7 +470,7 @@ function card(k,i){
   var cap=el('div','k-cap');cap.appendChild(el('div','k-nm',k.nazwa||''));if(k.ksywka)cap.appendChild(el('div','k-nk',k.ksywka));
   if(ok(k.url)){var a=el('a','k-ln','Zobacz pełną kartę →');a.href=k.url;a.tabIndex=-1;a.addEventListener('click',function(e){e.stopPropagation();});cap.appendChild(a);w._a=a;}
   var lv=null,fr=null;
-  if(ok(k.url)&&k.podglad){lv=el('div','k-live');fr=document.createElement('iframe');fr.title='Podgląd karty: '+(k.nazwa||'');fr.tabIndex=-1;fr.setAttribute('aria-hidden','true');fr.setAttribute('data-src',k.url+'?embed');ph.classList.add('live');lv.appendChild(fr);ph.insertBefore(lv,ph.firstChild);}
+  if(ok(k.landing)&&k.podglad){lv=el('div','k-live');fr=document.createElement('iframe');fr.title='Podgląd karty: '+(k.nazwa||'');fr.tabIndex=-1;fr.setAttribute('aria-hidden','true');fr.setAttribute('data-src',k.landing+'?embed');ph.classList.add('live');lv.appendChild(fr);ph.insertBefore(lv,ph.firstChild);}
   function fit(){if(!fr)return;var sc=lv.clientWidth/400;if(!sc)return;fr.style.transform='scale('+sc+')';fr.style.height=(lv.clientHeight/sc)+'px';}
   ph.appendChild(cap);f.appendChild(ph);inn.appendChild(f);w.appendChild(inn);
   function tog(){var on=w.classList.toggle('flip');w.setAttribute('aria-pressed',on);if(w._a)w._a.tabIndex=on?0:-1;if(on&&fr){fit();if(!fr.getAttribute('src'))fr.src=fr.getAttribute('data-src');}}
