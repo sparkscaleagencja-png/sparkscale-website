@@ -481,7 +481,7 @@ function card(k,i){
   function fit(){if(!fr)return;var sc=lv.clientWidth/400;if(!sc)return;fr.style.transform='scale('+sc+')';fr.style.height=(lv.clientHeight/sc)+'px';}
   ph.appendChild(cap);f.appendChild(ph);inn.appendChild(f);w.appendChild(inn);
   function tog(){var on=w.classList.toggle('flip');w.setAttribute('aria-pressed',on);if(w._a)w._a.tabIndex=on?0:-1;if(on&&fr){fit();if(!fr.getAttribute('src'))fr.src=fr.getAttribute('data-src');}}
-  if(fr)window.addEventListener('resize',fit);
+  if(fr){window.addEventListener('resize',fit);w._fit=fit;}
   w.addEventListener('click',tog);
   w.addEventListener('keydown',function(e){if(e.target===w&&(e.key==='Enter'||e.key===' ')){e.preventDefault();tog();}});
   return w;}
@@ -492,7 +492,8 @@ function neu(){
   bk.appendChild(el('p','k-ds','Zasięgi to nie wszystko. Zrobimy z Ciebie markę.'));
   var a=el('a','k-go','Porozmawiajmy →');a.href='index.html#kontakt';bk.appendChild(a);
   b.appendChild(bk);inn.appendChild(b);w.appendChild(inn);return w;}
-function draw(l){row.textContent='';l.slice(0,4).forEach(function(k,i){row.appendChild(card(k,i));});row.appendChild(neu());}
+var pio=('IntersectionObserver' in window)?new IntersectionObserver(function(es){es.forEach(function(e){if(!e.isIntersecting)return;var f=e.target,k=f.closest('.k');if(k&&k._fit)k._fit();if(!f.getAttribute('src'))f.src=f.getAttribute('data-src');pio.unobserve(f);});},{rootMargin:'400px'}):null;
+function draw(l){row.textContent='';l.slice(0,4).forEach(function(k,i){row.appendChild(card(k,i));});row.appendChild(neu());if(pio)row.querySelectorAll('iframe').forEach(function(f){pio.observe(f);});}
 draw(FALL);
 fetch('karty.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(l){if(Array.isArray(l)&&l.length)draw(l);}).catch(function(){});
 })();</script>

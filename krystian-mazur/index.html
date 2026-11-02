@@ -265,7 +265,7 @@ a.mi:hover,a.mi:focus-visible{border-color:#fff;background:rgba(255,255,255,.12)
 .m #segs .f{display:none}.m #segs .s{display:inline}.m #segs button{font-size:12.5px}.m #segs button b{margin-right:4px}
 .m #hud{bottom:calc(12px + env(safe-area-inset-bottom))}
 @media (prefers-reduced-motion:reduce){#aurora i,.rim i,.halo,.name,.ss svg,.prev,.prev span{animation:none!important}}
-body.embed #foot,body.embed #rt,body.embed #hint,body.embed #hud,body.embed #aurora,body.embed #dust,body.embed #flash{display:none!important}
+body.embed #foot,body.embed #rt,body.embed #hint,body.embed #hud,body.embed #aurora,body.embed #dust,body.embed #flash,body.embed #loader{display:none!important}
 body.embed{background:#0a0805}
 </style></head><body>
 <div id="aurora"><i></i><i></i><i></i></div>
@@ -436,7 +436,7 @@ function camAt(t){
 
 /* ---------- stan ---------- */
 const world=$('#world'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
-let T=TMIN,shown=TMIN,playing=false,paused=false,lastScrub=-1e9,enter=0,ready=false,idleW=1,px=0,py=0,tx=0,ty=0,slideOff=0,lastSlide=-1,vidOff=0,lastVid=-1,sound=false,armedAt=0;
+let T=TMIN,shown=TMIN,playing=false,paused=false,lastScrub=-1e9,enter=EMBED?1:0,ready=false,idleW=1,px=0,py=0,tx=0,ty=0,slideOff=0,lastSlide=-1,vidOff=0,lastVid=-1,sound=false,armedAt=0;
 const windows=$$('[data-win]'),rvs=$$('[data-rv]'),ksL=$$('#ks span'),socL=$$('.soc a');
 const rwIg=$$('#stIg .rw'),rwTt=$$('#stTt .rw');
 const IGIN=[22,23,23.9,24.8],TTIN=[24.4,24.7,25.6,26.4,26.7,27.6];
@@ -624,8 +624,8 @@ function frame(now){
   layout();
   const urls=[...new Set(DANE.zdjecia.map(z=>z.src))];let done=0;const tot=urls.length+1,tick=()=>{done++;$('#lb').style.width=done/tot*100+'%'};
   const fonts=(document.fonts?document.fonts.load('800 40px "Bricolage Grotesque"').then(()=>document.fonts.ready):Promise.resolve()).catch(()=>{}).then(tick);
-  await Promise.race([Promise.all([fonts,...urls.map(u=>new Promise(r=>{const i=new Image();i.onload=i.onerror=()=>{tick();r()};i.src=u}))]),new Promise(r=>setTimeout(r,6000))]);
-  await new Promise(r=>setTimeout(r,650));
+  if(!EMBED)await Promise.race([Promise.all([fonts,...urls.map(u=>new Promise(r=>{const i=new Image();i.onload=i.onerror=()=>{tick();r()};i.src=u}))]),new Promise(r=>setTimeout(r,3000))]);
+  if(!EMBED)await new Promise(r=>setTimeout(r,650));
   const q=new URLSearchParams(location.search);
   $('#loader').style.opacity=0;setTimeout(()=>$('#loader').remove(),650);
   ready=true;document.body.classList.add('show-hint');armedAt=performance.now();
