@@ -112,6 +112,116 @@ a{color:inherit}
  .sn .sn-cta{margin:6px 0 0;justify-content:center}
  .sn-top i{display:none}
 }
+
+/* --- KARTY INFLUENCEROW --- */
+.k-sec{position:relative;z-index:6;display:flex;gap:clamp(24px,4vw,72px);align-items:flex-start;justify-content:space-between;padding:clamp(48px,7vh,90px) clamp(18px,5vw,72px) clamp(90px,14vh,170px)}
+.k-txt{max-width:420px;flex:0 1 420px}
+.k-txt h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.2px;line-height:1.02;font-size:clamp(30px,3.6vw,52px);margin:14px 0 0}
+.k-txt h2 em{font-style:normal;background:linear-gradient(100deg,#fff1b8,#e0a82e 45%,#b9791a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.k-txt p{margin:18px 0 0;color:var(--mut2);font-size:clamp(15px,1.3vw,18px);line-height:1.55}
+.k-txt .kick{color:#f2cf75}
+.k-row{display:flex;gap:clamp(14px,2vw,28px);margin-top:calc(-1*clamp(90px,19vh,210px));padding:20px 14px 28px;perspective:1400px}
+.k{--w:clamp(210px,18vw,262px);position:relative;flex:none;width:var(--w);aspect-ratio:400/540;cursor:pointer;transform:rotate(var(--r,0deg)) translateY(var(--y,0));transition:transform .35s;outline:none;-webkit-tap-highlight-color:transparent;animation:kUp .8s both;animation-delay:var(--d,0s)}
+.k:nth-child(1){--r:-4deg;--y:0px}.k:nth-child(2){--r:1.5deg;--y:26px;--d:.12s}.k:nth-child(3){--r:5deg;--y:6px;--d:.24s}.k:nth-child(4){--r:-2deg;--y:20px;--d:.36s}
+.k:hover,.k:focus-visible{transform:rotate(0deg) translateY(-10px)}
+.k:focus-visible .k-in{box-shadow:0 0 0 3px #fff,0 0 0 6px #d9a227}
+@keyframes kUp{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
+.k-in{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .8s cubic-bezier(.2,.8,.2,1);border-radius:24px;box-shadow:0 30px 60px rgba(0,0,0,.55),0 0 50px rgba(217,162,39,.16)}
+.k.flip .k-in{transform:rotateY(180deg)}
+.k-f{position:absolute;inset:0;border-radius:24px;padding:3px;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;
+ background:linear-gradient(135deg,#fff3c4,#e0a82e 24%,#8a5a10 48%,#f6d36b 72%,#a8741b)}
+.k-f::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:linear-gradient(115deg,transparent 35%,rgba(255,255,255,.35) 50%,transparent 65%) -160% 0/250% 100% no-repeat;animation:kShine 5.5s infinite}
+@keyframes kShine{0%,55%{background-position:-160% 0}100%{background-position:160% 0}}
+.k-bk{display:flex;flex-direction:column;align-items:center;height:100%;border-radius:21px;padding:6% 8% 7%;text-align:center;position:relative;overflow:hidden;
+ background:radial-gradient(ellipse at 50% 18%,rgba(240,196,80,.22),transparent 60%),linear-gradient(170deg,#241a08,#0c0804 70%)}
+.k-bk::before{content:'';position:absolute;inset:0;opacity:.5;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='46'%3E%3Cpath d='M23 9l2.2 11.8L37 23l-11.8 2.2L23 37l-2.2-11.8L9 23l11.8-2.2z' fill='%23e0a82e' fill-opacity='.10'/%3E%3C/svg%3E")}
+.k-bk>*{position:relative;z-index:1}
+.k-crown{width:34%;height:auto;margin-bottom:-4%;filter:drop-shadow(0 4px 10px rgba(240,196,80,.45));z-index:2}
+.k-av{position:relative;width:54%;aspect-ratio:1;border-radius:50%;padding:4px;background:conic-gradient(from 0deg,#fff1b8,#e0a82e,#ff8900,#d6336c,#e0a82e,#fff1b8);animation:kSpin 9s linear infinite}
+.k-av>div{width:100%;height:100%;border-radius:50%;border:3px solid #120c04;background:#1b1306 center/cover no-repeat;animation:kSpinR 9s linear infinite;display:grid;place-items:center}
+@keyframes kSpin{to{transform:rotate(360deg)}}@keyframes kSpinR{to{transform:rotate(-360deg)}}
+.k-ch{margin-top:7%;font:700 clamp(15px,1.35vw,18px)/1.1 'Space Grotesk';letter-spacing:.3px;color:#ffe7a1}
+.k-pl{margin-top:4px;font:600 10.5px/1 'Space Grotesk';letter-spacing:2px;text-transform:uppercase;color:#b8975a}
+.k-ds{margin:5% 0 0;font-size:clamp(12.5px,1.05vw,14px);line-height:1.45;color:#e6dcc4}
+.k-go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px/50%;border:1.5px solid #e0a82e;color:#ffe7a1;font:700 12.5px 'Space Grotesk';letter-spacing:.3px;background:rgba(224,168,46,.1);box-shadow:inset 0 0 14px rgba(224,168,46,.18),0 0 18px rgba(224,168,46,.2);animation:kPulse 2.4s infinite}
+@keyframes kPulse{50%{box-shadow:inset 0 0 14px rgba(224,168,46,.3),0 0 28px rgba(224,168,46,.5)}}
+.k-fr{transform:rotateY(180deg)}
+.k-ph{position:relative;height:100%;border-radius:21px;overflow:hidden;background:#120c04 center/cover no-repeat}
+.k-ph::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(8,5,1,.95) 0,rgba(8,5,1,.55) 32%,transparent 62%)}
+.k-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:0 8% 7%;text-align:left}
+.k-nm{font:700 clamp(19px,1.8vw,25px)/1 'Space Grotesk';letter-spacing:-.4px;color:#fff}
+.k-nk{margin-top:5px;font:700 12px 'Space Grotesk';letter-spacing:3px;color:#f2cf75}
+.k-ln{display:inline-flex;margin-top:12px;padding:9px 16px;border-radius:999px;background:linear-gradient(135deg,#f6d36b,#d9a227);color:#1b1306;font:700 12.5px 'Space Grotesk';text-decoration:none}
+.k-ln:hover{background:#fff1b8}
+.k-crn2{position:absolute;top:9px;left:50%;width:15%;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
+.k-new{cursor:default}
+.k-new .k-bk{border:2px dashed rgba(224,168,46,.7);border-radius:24px;justify-content:center;gap:8px}
+.k-new .k-plus{width:54%;aspect-ratio:1;border-radius:50%;border:2px dashed #e0a82e;display:grid;place-items:center;font:300 56px/1 'Space Grotesk';color:#f2cf75}
+.k-new .k-go{margin-top:14px;text-decoration:none;animation:none}
+@media(max-width:900px){
+ .k-sec{flex-direction:column;padding-top:40px}
+ .k-row{margin-top:-24px;width:calc(100% + 36px);margin-left:-18px;padding:20px 18px 34px;overflow-x:auto;scroll-snap-type:x mandatory}
+ .k{--w:min(66vw,250px);scroll-snap-align:center}
+}
+@media(prefers-reduced-motion:reduce){.k,.k-f::after,.k-av,.k-av>div,.k-go{animation:none}.k-in{transition-duration:.01s}}
+
+/* --- WSPOLPRACA / KROKI / CTA --- */
+.cta2{background:transparent;color:#F4F4F2;border:1.5px solid rgba(255,137,0,.7);box-shadow:none;margin-left:12px}
+.cta2:hover{background:rgba(255,137,0,.14)}
+.belt-lead{margin:18px 0 0;max-width:560px;color:var(--mut2);font-size:clamp(15px,1.3vw,18px);line-height:1.55}
+.w-sec,.s-sec,.f-sec{position:relative;z-index:2;max-width:1240px;margin:0 auto;padding:clamp(70px,10vw,130px) clamp(18px,5vw,72px) 0}
+.w-head h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.5px;line-height:1;font-size:clamp(32px,4.8vw,64px);margin:14px 0 0}
+.w-head h2 em{font-style:normal;color:var(--o)}
+.w-lead{max-width:640px;margin:20px 0 0;color:var(--mut2);font-size:clamp(16px,1.4vw,19px);line-height:1.55}
+.w-link{display:flex;align-items:center;justify-content:center;margin:clamp(34px,5vw,56px) 0 clamp(26px,4vw,40px)}
+.w-node{font:700 14px 'Space Grotesk';letter-spacing:1.5px;text-transform:uppercase;padding:12px 22px;border-radius:999px;border:1.5px solid #e0a82e;color:#ffe7a1;background:rgba(224,168,46,.08)}
+.w-node:last-child{border-color:var(--o);color:var(--o2);background:rgba(255,137,0,.08)}
+.w-core{display:grid;place-items:center;width:62px;height:62px;padding:0;border-color:#3a3a42;background:#121214;box-shadow:0 0 30px rgba(255,137,0,.25)}
+.w-core svg{width:26px;height:auto}
+.w-wire{flex:1;max-width:240px;height:2px;position:relative;background:linear-gradient(90deg,#e0a82e,#3a3a42);overflow:hidden}
+.w-wire2{background:linear-gradient(90deg,#3a3a42,var(--o))}
+.w-wire::after{content:'';position:absolute;top:-2px;left:-30%;width:30%;height:6px;border-radius:3px;background:#fff;filter:blur(3px);opacity:.9;animation:wGo 2.4s linear infinite}
+.w-wire2::after{animation-delay:1.2s}
+@keyframes wGo{to{left:110%}}
+.w-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2.4vw,32px)}
+.w-card{position:relative;padding:clamp(24px,3vw,40px);border-radius:22px;background:linear-gradient(170deg,#141417,#0d0d0f);border:1px solid #26262a;overflow:hidden}
+.w-card::before{content:'';position:absolute;left:0;top:0;right:0;height:3px}
+.w-cr::before{background:linear-gradient(90deg,#fff1b8,#e0a82e,#8a5a10)}
+.w-br::before{background:linear-gradient(90deg,#ffb259,var(--o),#b85c00)}
+.w-cr{box-shadow:0 0 60px rgba(224,168,46,.07)}.w-br{box-shadow:0 0 60px rgba(255,137,0,.08)}
+.w-tag{font:700 12px 'Space Grotesk';letter-spacing:2.5px;text-transform:uppercase}
+.w-cr .w-tag{color:#f2cf75}.w-br .w-tag{color:var(--o2)}
+.w-card h3{font:700 clamp(22px,2.3vw,32px)/1.1 'Space Grotesk';letter-spacing:-.8px;margin:12px 0 22px}
+.w-card ul{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.w-card li{position:relative;padding-left:30px;color:var(--mut2);font-size:15px;line-height:1.5}
+.w-card li b{color:#F4F4F2;font-weight:600}
+.w-card li::before{content:'';position:absolute;left:0;top:.3em;width:15px;height:15px;background:currentColor;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+.w-cr li::before{color:#e0a82e}.w-br li::before{color:var(--o)}
+.w-quote{margin:clamp(34px,5vw,60px) 0 0;padding:0 0 0 clamp(16px,2vw,28px);border-left:3px solid var(--o);font:600 clamp(20px,2.4vw,32px)/1.25 'Space Grotesk';letter-spacing:-.6px;max-width:860px}
+.s-steps{list-style:none;margin:clamp(28px,4vw,48px) 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,26px);counter-reset:s}
+.s-steps li{position:relative;padding:26px 22px;border-radius:18px;border:1px solid #26262a;background:#0f0f12}
+.s-steps li::after{content:'';position:absolute;top:44px;right:-22px;width:18px;height:2px;background:var(--o);opacity:.7}
+.s-steps li:last-child::after{display:none}
+.s-steps i{font:700 38px/1 'Space Grotesk';font-style:normal;color:var(--o);letter-spacing:-1px}
+.s-steps h3{font:700 20px 'Space Grotesk';margin:14px 0 8px;letter-spacing:-.4px}
+.s-steps p{margin:0;color:var(--mut2);font-size:14.5px;line-height:1.5}
+.f-sec{padding-bottom:clamp(70px,9vw,120px);padding-top:clamp(30px,5vw,60px)}
+.f-box{text-align:center;padding:clamp(36px,6vw,80px) clamp(18px,4vw,60px);border-radius:28px;border:1px solid rgba(255,137,0,.4);background:radial-gradient(ellipse at 50% 0,rgba(255,137,0,.18),transparent 65%),#0d0d0f;box-shadow:0 0 80px rgba(255,137,0,.1)}
+.f-box h2{font:700 clamp(28px,4.2vw,56px)/1.02 'Space Grotesk';letter-spacing:-1.4px;margin:14px auto 0;max-width:840px}
+.f-box h2 em{font-style:normal;color:var(--o)}
+.f-box p{margin:18px auto 0;color:var(--mut2);font-size:clamp(15px,1.3vw,18px)}
+.f-btns{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:28px}
+.f-btns .cta{margin:0}
+.rvj .rv{opacity:0;transform:translateY(26px);transition:opacity .7s var(--d,0s),transform .7s var(--d,0s)}
+.rvj .rv.in{opacity:1;transform:none}
+@media(max-width:900px){
+ .w-grid{grid-template-columns:1fr}
+ .s-steps{grid-template-columns:1fr 1fr}.s-steps li::after{display:none}
+ .cta2{margin-left:0;margin-top:14px}
+ .f-btns .cta2{margin-top:0}
+}
+@media(max-width:520px){.s-steps{grid-template-columns:1fr}.w-node{padding:10px 14px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){.w-wire::after{animation:none}.rvj .rv{opacity:1;transform:none;transition:none}}
 </style><script defer src="/_s/s.js"></script>
 </head><body>
 
@@ -132,15 +242,78 @@ a{color:inherit}
   <div class="copy">
     <div class="kick">(strefa: influencer)</div>
     <h1 class="h1">Tysiące profili.<br><em>Jedna twarz.</em></h1>
-    <p class="sub">Większość twórców ginie w tłumie identycznych okienek - jedni trochę więksi, ale tak samo nijacy. <b>Robimy z Ciebie markę, której nie da się przewinąć.</b></p>
-    <a class="cta" href="index.html#kontakt">Porozmawiajmy →</a>
+    <p class="sub">Większość twórców ginie w tłumie identycznych okienek. My budujemy z Ciebie markę z charakterem, a marki dostają kogoś, kogo <b>nie da się przewinąć.</b></p>
+    <a class="cta" href="index.html#kontakt">Porozmawiajmy →</a><a class="cta cta2" href="#karty">Poznaj naszych twórców ↓</a>
   </div>
 </main>
+
+<section class="k-sec" id="karty" aria-label="Karty influencerów">
+  <div class="k-txt">
+    <div class="kick">(Karty influencerów)</div>
+    <h2>Nie zbieramy twórców. <em>Wybieramy charaktery.</em></h2>
+    <p>Nasi to charakterne sztuki: z własnym stylem i widownią, która im ufa. Każdy ma u nas kartę. Dotknij, żeby ją odwrócić, a potem wejdź w pełną wersję z liczbami i współpracami.</p>
+  </div>
+  <div class="k-row" id="kRow"></div>
+</section>
+
+<section class="w-sec" id="wspolpraca" aria-labelledby="wH">
+  <div class="w-head rv">
+    <div class="kick">(współpraca)</div>
+    <h2 id="wH">Dwie strony. <em>Jeden system.</em></h2>
+    <p class="w-lead">SparkScale stoi pomiędzy twórcą a marką. Twórca robi to, w czym jest najlepszy. Marka dostaje wynik zamiast zgadywania. Resztę spinamy my.</p>
+  </div>
+  <div class="w-link rv" aria-hidden="true">
+    <span class="w-node">Twórca</span><i class="w-wire"></i>
+    <span class="w-node w-core"><svg viewBox="38 26 126 204"><g fill="#F4F4F2"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g><g fill="#FF8900"><polygon points="46,128 74,110 74,146"/><polygon points="156,128 128,110 128,146"/></g></svg></span>
+    <i class="w-wire w-wire2"></i><span class="w-node">Marka</span>
+  </div>
+  <div class="w-grid">
+    <article class="w-card w-cr rv">
+      <div class="w-tag">Dla twórcy</div>
+      <h3>Zostajesz sobą. Resztą zajmujemy się my.</h3>
+      <ul>
+        <li><b>Marka zamiast przypadkowych postów.</b> Ustawiamy pozycjonowanie, wygląd i linię treści, żeby od razu było wiadomo, kim jesteś.</li>
+        <li><b>Współprace dopasowane do Ciebie.</b> Szukamy marek pasujących do Twojej widowni i negocjujemy warunki. Bez „współpracy za rozgłos”.</li>
+        <li><b>Karta i media kit.</b> Twoje liczby, widownia i dotychczasowe współprace w jednym miejscu, gotowe do wysłania.</li>
+        <li><b>Porządek zamiast chaosu.</b> Oferty, terminy i rozliczenia w jednym systemie, a nie w wiadomościach prywatnych i arkuszach.</li>
+        <li><b>Coś, co zostaje Twoje.</b> Strona, sklep, newsletter, aplikacja: aktywa, które działają nawet wtedy, gdy zmieni się algorytm.</li>
+        <li><b>Więcej czasu na tworzenie.</b> Harmonogram, analitykę i automatyzacje bierzemy na siebie.</li>
+      </ul>
+    </article>
+    <article class="w-card w-br rv" style="--d:.12s">
+      <div class="w-tag">Dla marki</div>
+      <h3>Twórcy z charakterem, nie z katalogu.</h3>
+      <ul>
+        <li><b>Charakter, który sprzedaje.</b> Pracujemy z twórcami wybranymi ręcznie: z własnym stylem i widownią, która im ufa.</li>
+        <li><b>Wiesz, za co płacisz.</b> Zanim zaczniemy, widzisz kartę twórcy: zasięgi, strukturę widowni i poprzednie współprace.</li>
+        <li><b>Jeden partner, jedna umowa.</b> Brief, dobór twórców, produkcja, publikacja i rozliczenie przechodzą przez nas.</li>
+        <li><b>Treści, które nie wyglądają jak reklama.</b> Pomysł powstaje razem z twórcą i w jego języku, a Ty zachowujesz kontrolę nad przekazem.</li>
+        <li><b>Wynik, nie tylko zasięg.</b> Mierzymy efekt kampanii i mówimy wprost, co zadziałało, a co nie.</li>
+        <li><b>Dalej niż jedna publikacja.</b> Strona, sklep, reklamy i automatyzacje pod kampanię: cały system SparkScale w jednym miejscu.</li>
+      </ul>
+    </article>
+  </div>
+  <blockquote class="w-quote rv">Nasi twórcy to charakterne sztuki. Dlatego ich widownia słucha, a marki nie muszą jej przekonywać.</blockquote>
+</section>
+
+<section class="s-sec" id="jak" aria-labelledby="sH">
+  <div class="w-head rv">
+    <div class="kick">(jak to działa)</div>
+    <h2 id="sH">Cztery kroki. <em>Zero chaosu.</em></h2>
+  </div>
+  <ol class="s-steps">
+    <li class="rv"><i>01</i><h3>Rozmowa</h3><p>Poznajemy twórcę albo markę, cel i oczekiwania. Bez audytów i bez formularzy na pięć stron.</p></li>
+    <li class="rv" style="--d:.08s"><i>02</i><h3>Karta i dobór</h3><p>Twórca dostaje kartę i media kit. Marka dostaje krótką listę twórców, którzy naprawdę pasują.</p></li>
+    <li class="rv" style="--d:.16s"><i>03</i><h3>Kampania</h3><p>Pomysł, produkcja, zgody i publikacja. Jeden kontakt po naszej stronie i jasne terminy.</p></li>
+    <li class="rv" style="--d:.24s"><i>04</i><h3>Wyniki</h3><p>Raport, rozliczenie i wnioski. Potem decydujemy razem, co skalować dalej.</p></li>
+  </ol>
+</section>
 
 <section class="belt-sec" aria-label="Maszyna SparkScale">
   <div class="belt-head">
     <div class="kick">(maszyna sparkscale)</div>
     <h2>Wjeżdżasz jako małpka.<br><em>Wyjeżdżasz jako goryl biznesu.</em></h2>
+    <p class="belt-lead">Tak wygląda nasza praca: bierzemy twórcę z tłumu i oddajemy go z marką, systemem i klientami.</p>
   </div>
   <div class="scene" id="scene" aria-hidden="true">
     <div class="chars" id="chars"></div>
@@ -148,6 +321,16 @@ a{color:inherit}
     <div class="belt"><div class="belt-surface" id="beltSurf"></div><div class="rollers" id="rollers"></div></div>
   </div>
 </section>
+
+<section class="f-sec" id="start" aria-labelledby="fH">
+  <div class="f-box rv">
+    <div class="kick">(następny ruch)</div>
+    <h2 id="fH">Masz charakter? Albo markę, która <em>go potrzebuje?</em></h2>
+    <p>Napisz do nas jednym zdaniem. Odpowiadamy po ludzku i bez zobowiązań.</p>
+    <div class="f-btns"><a class="cta" href="index.html#kontakt">Jestem twórcą →</a><a class="cta cta2" href="index.html#kontakt">Jestem marką →</a></div>
+  </div>
+</section>
+
 
 <script>
 (function(){
@@ -255,4 +438,42 @@ a{color:inherit}
   window.__tasmaKlatka=function(sec){measure();for(var k=0;k<Math.round(sec*30);k++)step(1/30)}; // do testow
 })();
 </script>
-<script>(function(){document.querySelectorAll('.snw').forEach(function(w){var b=w.querySelector('.sn-burger');b.addEventListener('click',function(){var o=w.classList.toggle('open');b.setAttribute('aria-expanded',o);});w.querySelectorAll('.sn a').forEach(function(a){a.addEventListener('click',function(){w.classList.remove('open');b.setAttribute('aria-expanded','false');});});});})();</script></body></html>
+<script>(function(){document.querySelectorAll('.snw').forEach(function(w){var b=w.querySelector('.sn-burger');b.addEventListener('click',function(){var o=w.classList.toggle('open');b.setAttribute('aria-expanded',o);});w.querySelectorAll('.sn a').forEach(function(a){a.addEventListener('click',function(){w.classList.remove('open');b.setAttribute('aria-expanded','false');});});});})();</script><script>(function(){
+var row=document.getElementById('kRow');if(!row)return;
+var CR='<svg class="@C" viewBox="0 0 40 26" aria-hidden="true"><defs><linearGradient id="kg@I" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#e0a82e"/><stop offset="1" stop-color="#9a6612"/></linearGradient></defs><path d="M2 24L5 6l9 9L20 2l6 13 9-9 3 18z" fill="url(#kg@I)" stroke="#6b4508" stroke-width="1" stroke-linejoin="round"/><circle cx="5" cy="5" r="2" fill="#fff3c4"/><circle cx="20" cy="2" r="2" fill="#fff3c4"/><circle cx="35" cy="5" r="2" fill="#fff3c4"/></svg>';
+var FALL=[{nazwa:'Krystian Mazur',ksywka:'KRYSPIN',url:'/krystian-mazur/',zdjecie:'/krystian-mazur/img/ig-avatar.jpg',foto:'/krystian-mazur/img/portret1.jpg',kanal:'@mkryspin',platformy:'TikTok · Instagram',opis:'Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.'}];
+function ok(u){return typeof u==='string'&&(/^\/[^\/]/.test(u)||u.indexOf('https://spark-scale.pl/')===0);}
+function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
+function crown(c,i){var d=document.createElement('div');d.innerHTML=CR.replace(/@C/g,c).replace(/@I/g,i);return d.firstChild;}
+function card(k,i){
+  var w=el('div','k');w.tabIndex=0;w.setAttribute('role','button');w.setAttribute('aria-pressed','false');w.setAttribute('aria-label','Karta: '+(k.kanal||k.nazwa)+'. Odwróć kartę');
+  var inn=el('div','k-in'),b=el('div','k-f'),bk=el('div','k-bk');
+  bk.appendChild(crown('k-crown','b'+i));
+  var av=el('div','k-av'),avi=el('div');if(ok(k.zdjecie))avi.style.backgroundImage='url("'+k.zdjecie+'")';av.appendChild(avi);bk.appendChild(av);
+  bk.appendChild(el('div','k-ch',k.kanal||k.nazwa));
+  bk.appendChild(el('div','k-pl',k.platformy||''));
+  bk.appendChild(el('p','k-ds',k.opis||''));
+  bk.appendChild(el('span','k-go','Odwróć kartę ↻'));
+  b.appendChild(bk);inn.appendChild(b);
+  var f=el('div','k-f k-fr'),ph=el('div','k-ph');if(ok(k.foto||k.zdjecie))ph.style.backgroundImage='url("'+(k.foto||k.zdjecie)+'")';
+  ph.appendChild(crown('k-crn2','f'+i));
+  var cap=el('div','k-cap');cap.appendChild(el('div','k-nm',k.nazwa||''));cap.appendChild(el('div','k-nk',k.ksywka||''));
+  if(ok(k.url)){var a=el('a','k-ln','Zobacz pełną kartę →');a.href=k.url;a.tabIndex=-1;a.addEventListener('click',function(e){e.stopPropagation();});cap.appendChild(a);w._a=a;}
+  ph.appendChild(cap);f.appendChild(ph);inn.appendChild(f);w.appendChild(inn);
+  function tog(){var on=w.classList.toggle('flip');w.setAttribute('aria-pressed',on);if(w._a)w._a.tabIndex=on?0:-1;}
+  w.addEventListener('click',tog);
+  w.addEventListener('keydown',function(e){if(e.target===w&&(e.key==='Enter'||e.key===' ')){e.preventDefault();tog();}});
+  return w;}
+function neu(){
+  var w=el('div','k k-new'),inn=el('div','k-in'),b=el('div','k-f'),bk=el('div','k-bk');
+  bk.appendChild(crown('k-crown','n'));bk.appendChild(el('div','k-plus','+'));
+  bk.appendChild(el('div','k-ch','Twoja karta'));
+  bk.appendChild(el('p','k-ds','Zasięgi to nie wszystko. Zrobimy z Ciebie markę.'));
+  var a=el('a','k-go','Porozmawiajmy →');a.href='index.html#kontakt';bk.appendChild(a);
+  b.appendChild(bk);inn.appendChild(b);w.appendChild(inn);return w;}
+function draw(l){row.textContent='';l.slice(0,3).forEach(function(k,i){row.appendChild(card(k,i));});row.appendChild(neu());}
+draw(FALL);
+fetch('karty.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(l){if(Array.isArray(l)&&l.length)draw(l);}).catch(function(){});
+})();</script>
+<script>(function(){var els=document.querySelectorAll('.rv');if(!('IntersectionObserver' in window)||!els.length)return;document.documentElement.classList.add('rvj');var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -6% 0px'});els.forEach(function(e){io.observe(e);});})();</script>
+</body></html>

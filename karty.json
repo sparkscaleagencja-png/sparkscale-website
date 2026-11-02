@@ -1,3 +1,13 @@
 [
-  {"slug":"krystian-mazur","nazwa":"Krystian Mazur","ksywka":"KRYSPIN","url":"/krystian-mazur/","zdjecie":"/krystian-mazur/img/ig-avatar.jpg"}
+ {
+  "slug": "krystian-mazur",
+  "nazwa": "Krystian Mazur",
+  "ksywka": "KRYSPIN",
+  "url": "/krystian-mazur/",
+  "zdjecie": "/krystian-mazur/img/ig-avatar.jpg",
+  "kanal": "@mkryspin",
+  "platformy": "TikTok · Instagram",
+  "opis": "Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.",
+  "foto": "/krystian-mazur/img/portret1.jpg"
+ }
 ]
