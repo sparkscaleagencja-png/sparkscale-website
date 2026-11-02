@@ -1,0 +1,76 @@
+/* --- FILARY: holograficzny, przezroczysty ekran + 8-ramienna gwiazda --- */
+.ss-holo{--h:#58d0ff;--h2:#2f7bff;--hg:rgba(88,208,255,.55);position:relative;background:radial-gradient(110% 70% at 50% 42%,#0b1a36 0%,#070d1c 52%,#0A0A0B 100%);border-top:1px solid #0f1f3d;border-bottom:1px solid #0f1f3d}
+.holo-track{position:relative;height:380vh}
+.holo-stick{position:sticky;top:0;height:100vh;height:100svh;box-sizing:border-box;display:flex;flex-direction:column;align-items:center;padding:clamp(64px,9vh,88px) 16px 12px;overflow:hidden}
+.holo-head{text-align:center;max-width:780px;flex:none}
+.holo-head .ss-kicker{margin-bottom:8px;color:var(--h)}
+.holo-head .ss-h2{margin:0;font-size:clamp(24px,3.2vw,42px)}
+.holo-head .ss-lead{margin:10px auto 0;font-size:clamp(13px,1.2vw,16px);max-width:640px;color:#a9bad1}
+.holo-wrap{flex:1;min-height:0;width:100%;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.holo-stage{--sh:calc(100svh - 330px);position:relative;aspect-ratio:1000/660;height:auto;width:min(100%,calc(var(--sh)*1000/660),1100px);min-width:min(100%,520px);color:#EAF6FF}
+.holo-stage[data-m="1"]{aspect-ratio:600/760;width:min(100%,calc(var(--sh)*600/760),480px);min-width:0}
+/* szklo */
+.holo-glass{position:absolute;inset:0;border:1px solid rgba(110,205,255,calc(.12 + var(--on,0)*.4));border-radius:8px;
+  background:
+    linear-gradient(115deg,rgba(255,255,255,.00) 30%,rgba(130,210,255,.07) 46%,rgba(255,255,255,0) 60%),
+    radial-gradient(circle at 1px 1px,rgba(120,210,255,.55) .8px,transparent 1.2px) 0 0/15px 15px,
+    linear-gradient(160deg,rgba(60,130,255,.09),rgba(20,50,110,.04) 45%,rgba(80,200,255,.07));
+  -webkit-mask:radial-gradient(ellipse at center,#000 40%,rgba(0,0,0,.45) 100%);mask:radial-gradient(ellipse at center,#000 40%,rgba(0,0,0,.45) 100%);
+  box-shadow:inset 0 0 70px rgba(47,123,255,calc(var(--on,0)*.18)),0 0 70px rgba(47,123,255,calc(var(--on,0)*.18));
+  opacity:calc(.35 + var(--on,0)*.65);overflow:hidden}
+.holo-glass::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,rgba(130,215,255,.06) 0 1px,transparent 1px 3px);opacity:var(--on,0)}
+.holo-glass::after{content:"";position:absolute;left:0;right:0;height:22%;top:-25%;background:linear-gradient(180deg,transparent,rgba(120,215,255,.14),transparent);animation:holoScan 6s linear infinite;opacity:var(--on,0)}
+.holo-stage:before,.holo-stage:after{content:"";position:absolute;width:28px;height:28px;border:2px solid var(--h);opacity:calc(var(--on,0)*.9);filter:drop-shadow(0 0 6px var(--hg));pointer-events:none}
+.holo-stage:before{left:-1px;top:-1px;border-right:0;border-bottom:0;border-top-left-radius:8px}
+.holo-stage:after{right:-1px;bottom:-1px;border-left:0;border-top:0;border-bottom-right-radius:8px}
+@keyframes holoScan{to{top:105%}}
+/* podstawa jak w ekranach LED-glass */
+.holo-base{width:min(104%,1140px);height:12px;margin-top:-1px;border-radius:0 0 6px 6px;background:linear-gradient(180deg,#26324a,#0d1220 60%,#05070d);box-shadow:0 12px 40px rgba(47,123,255,.22),inset 0 1px 0 rgba(160,220,255,.45);position:relative;flex:none;max-width:100%}
+.holo-base::after{content:"";position:absolute;left:8%;right:8%;top:100%;height:26px;background:radial-gradient(ellipse at top,rgba(70,160,255,.32),transparent 70%);filter:blur(3px)}
+/* SVG */
+.holo-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.holo-svg .ring{fill:none;stroke:var(--h);stroke-linecap:round;transform-box:fill-box;transform-origin:center}
+.holo-svg .ring.r1{stroke-width:1;stroke-dasharray:2 9;opacity:.5;animation:holoSpin 40s linear infinite}
+.holo-svg .ring.r2{stroke-width:5;stroke-dasharray:90 320;opacity:.55;animation:holoSpin 26s linear infinite reverse}
+.holo-svg .ring.r3{stroke-width:2;stroke-dasharray:30 120;opacity:.5;animation:holoSpin 18s linear infinite}
+@keyframes holoSpin{to{transform:rotate(360deg)}}
+.holo-svg .flash{fill:none;stroke:#fff;stroke-width:3;opacity:0}
+.holo-stage.fl .holo-svg .flash{animation:holoFlash 1.1s ease-out}
+@keyframes holoFlash{0%{opacity:.9;r:30}100%{opacity:0;r:260}}
+.holo-svg .ray .pt{transition:r .2s}
+.holo-stage.full .holo-svg .rays{animation:holoGlow 4.5s ease-in-out infinite}
+@keyframes holoGlow{50%{filter:drop-shadow(0 0 14px rgba(88,208,255,.85))}}
+/* etykiety */
+.holo-labs{position:absolute;inset:0;pointer-events:none}
+.holo-lab{all:unset;box-sizing:border-box;position:absolute;left:var(--x);top:var(--y);display:block;max-width:var(--lw,200px);padding:6px 8px;color:#EAF6FF;font-family:'Space Grotesk';cursor:pointer;opacity:0;transform:var(--tr) translateY(8px);transition:opacity .45s,transform .45s,text-shadow .2s;pointer-events:none;text-shadow:0 0 12px rgba(88,208,255,.65)}
+.holo-lab.on{opacity:1;transform:var(--tr);pointer-events:auto}
+.holo-lab i{display:block;font-style:normal;font-weight:600;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--o)}
+.holo-lab b{display:block;font-weight:700;font-size:clamp(15px,1.7vw,22px);letter-spacing:-.3px;line-height:1.1;margin-top:2px}
+.holo-lab span{display:block;margin-top:4px;font-size:clamp(11px,1vw,13.5px);line-height:1.35;color:#b9d6ee;font-family:Inter,sans-serif}
+.holo-lab.holo-zas i{color:var(--h)}
+.holo-lab:hover,.holo-lab:focus-visible{text-shadow:0 0 18px rgba(130,220,255,1)}
+.holo-lab:focus-visible{outline:2px solid var(--h);outline-offset:2px;border-radius:4px}
+.holo-lab[data-d="n"]{--tr:translate(-50%,-100%);text-align:center}.holo-lab[data-d="s"]{--tr:translate(-50%,0);text-align:center}
+.holo-lab[data-d="e"]{--tr:translate(0,-50%)}.holo-lab[data-d="w"]{--tr:translate(-100%,-50%);text-align:right}
+.holo-lab[data-d="ne"]{--tr:translate(0,-100%)}.holo-lab[data-d="se"]{--tr:translate(0,0)}
+.holo-lab[data-d="sw"]{--tr:translate(-100%,0);text-align:right}.holo-lab[data-d="nw"]{--tr:translate(-100%,-100%);text-align:right}
+.holo-hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);font:600 11px 'Space Grotesk';letter-spacing:3px;text-transform:uppercase;color:var(--h);opacity:calc(.9 - var(--p,0)*6);animation:holoBlink 1.6s ease-in-out infinite}
+@keyframes holoBlink{50%{opacity:.25}}
+.holo-legend{flex:none;margin:12px 0 0;font:500 12.5px 'Space Grotesk';letter-spacing:.4px;color:#9fb6d0;text-align:center}
+.holo-legend span{display:inline-block;width:9px;height:9px;transform:rotate(45deg);margin:0 8px 1px 18px}
+.holo-legend span:first-child{margin-left:0}
+.lg-o{background:var(--o);box-shadow:0 0 8px var(--o)}.lg-c{background:var(--h);box-shadow:0 0 8px var(--h)}
+/* tryb statyczny: bez przypinania (reduced motion / bez JS) */
+.ss-holo.holo-static .holo-track{height:auto}
+.ss-holo.holo-static .holo-stick{position:relative;height:auto;min-height:0;padding-bottom:40px}
+.ss-holo.holo-static .holo-wrap{flex:none;margin-top:24px}
+.ss-holo.holo-static .holo-hint{display:none}
+@media(max-width:720px){
+  .holo-track{height:330vh}
+  .holo-stick{padding-top:68px}
+  .holo-stage{--sh:calc(100svh - 300px)}
+  .holo-lab{padding:3px 4px}.holo-lab span{display:none}.holo-lab i{font-size:9px;letter-spacing:1.5px}.holo-lab b{font-size:13px}
+  .holo-legend{font-size:11px;padding:0 10px}.holo-legend span{margin-left:10px}
+  .holo-head .ss-lead{display:none}
+}
+@media(prefers-reduced-motion:reduce){.holo-glass::after,.holo-svg .ring,.holo-hint,.holo-stage.full .holo-svg .rays{animation:none}}
