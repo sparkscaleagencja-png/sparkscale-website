@@ -1,5 +1,6 @@
   <!-- OFERTA: holograficzny przezroczysty ekran z 8-ramienna gwiazda (samoczynna animacja) -->
   <section class="ss-holo" id="filary" aria-labelledby="holoH">
+    <div class="holo-haze" aria-hidden="true"></div>
     <div class="holo-head">
       <div class="ss-kicker">01 - OFERTA</div>
       <h2 class="ss-h2" id="holoH">Osiem odnóg jednego systemu wzrostu</h2>
@@ -7,7 +8,16 @@
     </div>
     <div class="holo-wrap">
       <div class="holo-stage" id="holoStage">
+        <div class="holo-bg"></div>
+        <div class="holo-mist"></div>
+        <div class="holo-sg holo-sg1"></div><div class="holo-sg holo-sg2"></div>
+        <canvas class="holo-fx" id="holoFx"></canvas>
         <div class="holo-glass"></div>
+        <div class="holo-frame"></div>
+        <i class="hc tl"><svg viewBox="0 0 60 60"><path d="M2 58V16L16 2H58"/><path class="f" d="M10 58V24L24 10H58"/><path class="f" d="M26 26l6 6-6 6-6-6z"/><circle cx="16" cy="2" r="2.6"/><circle cx="2" cy="16" r="2.6"/></svg></i>
+        <i class="hc tr"><svg viewBox="0 0 60 60"><path d="M2 58V16L16 2H58"/><path class="f" d="M10 58V24L24 10H58"/><path class="f" d="M26 26l6 6-6 6-6-6z"/><circle cx="16" cy="2" r="2.6"/><circle cx="2" cy="16" r="2.6"/></svg></i>
+        <i class="hc bl"><svg viewBox="0 0 60 60"><path d="M2 58V16L16 2H58"/><path class="f" d="M10 58V24L24 10H58"/><path class="f" d="M26 26l6 6-6 6-6-6z"/><circle cx="16" cy="2" r="2.6"/><circle cx="2" cy="16" r="2.6"/></svg></i>
+        <i class="hc br"><svg viewBox="0 0 60 60"><path d="M2 58V16L16 2H58"/><path class="f" d="M10 58V24L24 10H58"/><path class="f" d="M26 26l6 6-6 6-6-6z"/><circle cx="16" cy="2" r="2.6"/><circle cx="2" cy="16" r="2.6"/></svg></i>
         <svg class="holo-svg" id="holoSvg" aria-hidden="true" focusable="false"></svg>
         <div class="holo-labs">
           <button type="button" class="holo-lab" data-pillar="scale"><i>01</i><b>Scalowanie</b><span>Rośniemy razem z Twoim biznesem</span></button>
