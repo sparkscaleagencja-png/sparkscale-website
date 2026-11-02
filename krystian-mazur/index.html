@@ -304,6 +304,13 @@ a.mi:hover,a.mi:focus-visible{border-color:#fff;background:rgba(255,255,255,.12)
 body.embed #foot,body.embed #rt,body.embed #hint,body.embed #hud,body.embed #aurora,body.embed #dust,body.embed #flash,body.embed #loader{display:none!important}
 body.embed{background:#0a0805}
 body.embed .pbrow{display:none!important}   /* podglad (?embed) bez guzikow Korzysci/Wyniki */
+/* TELEFON / TABLET (iOS Safari): bez ciezkich efektow - will-change na karcie 1000x1448, blur(60px) halo, aurory i rozmycia tla zjadaly pamiec i Safari zamykal strone */
+.t #world,.t #card,.t #aurora i{will-change:auto}
+.t #aurora,.t .halo{display:none}
+.t .sl .bg{filter:brightness(.55)}
+.t .ov .mbg{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(5,4,10,.9)}
+.t .back svg,.t #loader svg{filter:none;animation:none}
+.t .sheen,.t .rim i{animation:none}
 </style></head><body>
 <div id="aurora"><i></i><i></i><i></i></div>
 <div id="stage"><div id="world"><div id="card"></div></div></div>
@@ -425,7 +432,8 @@ const GMAX=niceMax(TOTAL);
 /* ---------- budowa karty ---------- */
 const card=$('#card');
 let html='';
-for(let i=1;i<=7;i++)html+=`<div class="slab" style="transform:translateZ(${-i*4.4}px)"></div>`;   // 7 warstw zamiast 14: ta sama grubosc, mniej kosztownych warstw na telefonie
+const TOUCH=matchMedia('(pointer:coarse)').matches||/iPhone|iPad|iPod/.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);document.body.classList.toggle('t',TOUCH);   // telefon/tablet: lzejsza wersja (iOS Safari ubijal strone przy duzych warstwach 3D)
+for(let i=1;i<=(TOUCH?3:7);i++)html+=`<div class="slab" style="transform:translateZ(${-i*(TOUCH?10.3:4.4)}px)"></div>`;   // 7 warstw zamiast 14: ta sama grubosc, mniej kosztownych warstw na telefonie
 html+=`<div class="halo"></div><div class="back">${SS}</div><div class="rim"><i></i></div><div class="face"><div class="sheen" id="sheen"></div></div>
 <div class="in ava"><b></b></div>
 <div class="in who"><div class="nick"><span class="gt">${DANE.nick}</span></div><div class="name d">${DANE.imie}</div>
@@ -666,7 +674,7 @@ $('#segs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b
 addEventListener('resize',layout);
 
 /* ---------- pyl i wybuch ---------- */
-const DPR=Math.min(devicePixelRatio||1,1.5),dc=$('#dust').getContext('2d');let dust=[],sparks=[];
+const DPR=document.body.classList.contains('t')?1:Math.min(devicePixelRatio||1,1.5),dc=$('#dust').getContext('2d');let dust=[],sparks=[];
 function dustSeed(){dust=[];const n=mobile?45:110;for(let i=0;i<n;i++)dust.push({x:Math.random()*w,y:Math.random()*h,d:.25+Math.random()*.9,s:.5+Math.random()*1.5,o:Math.random()*6.28})}
 function burst(x,y,n,col,sp){for(let i=0;i<n;i++){const a=Math.random()*6.283,v=sp*(.25+Math.random());sparks.push({x,y,vx:Math.cos(a)*v*1.5,vy:Math.sin(a)*v*1.5,l:1,c:col[i%col.length],r:1+Math.random()*2.4})}}
 function drawDust(now,cam,dt){
