@@ -1,5 +1,16 @@
 [
  {
+  "slug": "olisi",
+  "nazwa": "Olisi",
+  "ksywka": "",
+  "url": "",
+  "zdjecie": "",
+  "kanal": "Olisi",
+  "platformy": "",
+  "opis": "Karta w przygotowaniu.",
+  "duza": true
+ },
+ {
   "slug": "krystian-mazur",
   "nazwa": "Krystian Mazur",
   "ksywka": "KRYSPIN",
@@ -8,6 +19,7 @@
   "kanal": "@mkryspin",
   "platformy": "TikTok · Instagram",
   "opis": "Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.",
-  "foto": "/krystian-mazur/img/portret1.jpg"
+  "foto": "/krystian-mazur/img/portret1.jpg",
+  "podglad": true
  }
 ]

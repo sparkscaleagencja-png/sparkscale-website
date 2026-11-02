@@ -115,14 +115,15 @@ a{color:inherit}
 
 /* --- KARTY INFLUENCEROW --- */
 .k-sec{position:relative;z-index:6;display:flex;gap:clamp(24px,4vw,72px);align-items:flex-start;justify-content:space-between;padding:clamp(48px,7vh,90px) clamp(18px,5vw,72px) clamp(90px,14vh,170px)}
-.k-txt{max-width:420px;flex:0 1 420px}
-.k-txt h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.2px;line-height:1.02;font-size:clamp(30px,3.6vw,52px);margin:14px 0 0}
+.k-txt{max-width:330px;flex:0 1 330px}
+.k-txt h2{font-family:'Space Grotesk';font-weight:700;letter-spacing:-1.2px;line-height:1.02;font-size:clamp(28px,2.9vw,44px);margin:14px 0 0}
 .k-txt h2 em{font-style:normal;background:linear-gradient(100deg,#fff1b8,#e0a82e 45%,#b9791a);-webkit-background-clip:text;background-clip:text;color:transparent}
 .k-txt p{margin:18px 0 0;color:var(--mut2);font-size:clamp(15px,1.3vw,18px);line-height:1.55}
 .k-txt .kick{color:#f2cf75}
 .k-row{display:flex;gap:clamp(14px,2vw,28px);margin-top:calc(-1*clamp(90px,19vh,210px));padding:20px 14px 28px;perspective:1400px}
-.k{--w:clamp(210px,18vw,262px);position:relative;flex:none;width:var(--w);aspect-ratio:400/540;cursor:pointer;transform:rotate(var(--r,0deg)) translateY(var(--y,0));transition:transform .35s;outline:none;-webkit-tap-highlight-color:transparent;animation:kUp .8s both;animation-delay:var(--d,0s)}
-.k:nth-child(1){--r:-4deg;--y:0px}.k:nth-child(2){--r:1.5deg;--y:26px;--d:.12s}.k:nth-child(3){--r:5deg;--y:6px;--d:.24s}.k:nth-child(4){--r:-2deg;--y:20px;--d:.36s}
+.k{--w:clamp(220px,18.5vw,268px);position:relative;flex:none;width:var(--w);aspect-ratio:400/540;cursor:pointer;transform:rotate(var(--r,0deg)) translateY(var(--y,0));transition:transform .35s;outline:none;-webkit-tap-highlight-color:transparent;animation:kUp .8s both;animation-delay:var(--d,0s)}
+.k-big{--w:clamp(270px,22.5vw,340px)}
+.k:nth-child(1){--r:-3deg;--y:0px}.k:nth-child(2){--r:1.5deg;--y:26px;--d:.12s}.k:nth-child(3){--r:5deg;--y:6px;--d:.24s}.k:nth-child(4){--r:-2deg;--y:20px;--d:.36s}
 .k:hover,.k:focus-visible{transform:rotate(0deg) translateY(-10px)}
 .k:focus-visible .k-in{box-shadow:0 0 0 3px #fff,0 0 0 6px #d9a227}
 @keyframes kUp{from{opacity:0;translate:0 40px}to{opacity:1;translate:0 0}}
@@ -154,14 +155,18 @@ a{color:inherit}
 .k-ln{display:inline-flex;margin-top:12px;padding:9px 16px;border-radius:999px;background:linear-gradient(135deg,#f6d36b,#d9a227);color:#1b1306;font:700 12.5px 'Space Grotesk';text-decoration:none}
 .k-ln:hover{background:#fff1b8}
 .k-crn2{position:absolute;top:9px;left:50%;width:15%;transform:translateX(-50%);z-index:3;filter:drop-shadow(0 2px 6px rgba(0,0,0,.6))}
+.k-live{position:absolute;inset:0;overflow:hidden;z-index:0;background:#0b0804}
+.k-live iframe{position:absolute;left:0;top:0;width:400px;border:0;transform-origin:0 0;pointer-events:none;background:#000}
 .k-new{cursor:default}
 .k-new .k-bk{border:2px dashed rgba(224,168,46,.7);border-radius:24px;justify-content:center;gap:8px}
 .k-new .k-plus{width:54%;aspect-ratio:1;border-radius:50%;border:2px dashed #e0a82e;display:grid;place-items:center;font:300 56px/1 'Space Grotesk';color:#f2cf75}
 .k-new .k-go{margin-top:14px;text-decoration:none;animation:none}
-@media(max-width:900px){
+@media(max-width:1180px){
  .k-sec{flex-direction:column;padding-top:40px}
  .k-row{margin-top:-24px;width:calc(100% + 36px);margin-left:-18px;padding:20px 18px 34px;overflow-x:auto;scroll-snap-type:x mandatory}
  .k{--w:min(66vw,250px);scroll-snap-align:center}
+ .k-big{--w:min(74vw,300px)}
+ .k-txt{max-width:560px;flex:none}
 }
 @media(prefers-reduced-motion:reduce){.k,.k-f::after,.k-av,.k-av>div,.k-go{animation:none}.k-in{transition-duration:.01s}}
 
@@ -441,26 +446,30 @@ a{color:inherit}
 <script>(function(){document.querySelectorAll('.snw').forEach(function(w){var b=w.querySelector('.sn-burger');b.addEventListener('click',function(){var o=w.classList.toggle('open');b.setAttribute('aria-expanded',o);});w.querySelectorAll('.sn a').forEach(function(a){a.addEventListener('click',function(){w.classList.remove('open');b.setAttribute('aria-expanded','false');});});});})();</script><script>(function(){
 var row=document.getElementById('kRow');if(!row)return;
 var CR='<svg class="@C" viewBox="0 0 40 26" aria-hidden="true"><defs><linearGradient id="kg@I" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#fff3c4"/><stop offset=".5" stop-color="#e0a82e"/><stop offset="1" stop-color="#9a6612"/></linearGradient></defs><path d="M2 24L5 6l9 9L20 2l6 13 9-9 3 18z" fill="url(#kg@I)" stroke="#6b4508" stroke-width="1" stroke-linejoin="round"/><circle cx="5" cy="5" r="2" fill="#fff3c4"/><circle cx="20" cy="2" r="2" fill="#fff3c4"/><circle cx="35" cy="5" r="2" fill="#fff3c4"/></svg>';
-var FALL=[{nazwa:'Krystian Mazur',ksywka:'KRYSPIN',url:'/krystian-mazur/',zdjecie:'/krystian-mazur/img/ig-avatar.jpg',foto:'/krystian-mazur/img/portret1.jpg',kanal:'@mkryspin',platformy:'TikTok · Instagram',opis:'Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.'}];
+var FALL=[{nazwa:'Krystian Mazur',ksywka:'KRYSPIN',url:'/krystian-mazur/',zdjecie:'/krystian-mazur/img/ig-avatar.jpg',foto:'/krystian-mazur/img/portret1.jpg',kanal:'@mkryspin',platformy:'TikTok · Instagram',opis:'Twórca z TikToka i Instagrama. 57 mln wyświetleń w 60 dni.',podglad:true}];
 function ok(u){return typeof u==='string'&&(/^\/[^\/]/.test(u)||u.indexOf('https://spark-scale.pl/')===0);}
 function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e;}
 function crown(c,i){var d=document.createElement('div');d.innerHTML=CR.replace(/@C/g,c).replace(/@I/g,i);return d.firstChild;}
 function card(k,i){
-  var w=el('div','k');w.tabIndex=0;w.setAttribute('role','button');w.setAttribute('aria-pressed','false');w.setAttribute('aria-label','Karta: '+(k.kanal||k.nazwa)+'. Odwróć kartę');
+  var w=el('div','k'+(k.duza?' k-big':''));w.tabIndex=0;w.setAttribute('role','button');w.setAttribute('aria-pressed','false');w.setAttribute('aria-label','Karta: '+(k.kanal||k.nazwa)+'. Odwróć kartę');
   var inn=el('div','k-in'),b=el('div','k-f'),bk=el('div','k-bk');
   bk.appendChild(crown('k-crown','b'+i));
-  var av=el('div','k-av'),avi=el('div');if(ok(k.zdjecie))avi.style.backgroundImage='url("'+k.zdjecie+'")';av.appendChild(avi);bk.appendChild(av);
+  var av=el('div','k-av'),avi=el('div');if(ok(k.zdjecie))avi.style.backgroundImage='url("'+k.zdjecie+'")';else avi.innerHTML='<svg viewBox="38 26 126 204" style="width:34%;opacity:.85" aria-hidden="true"><g fill="#e8c36a"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g></svg>';av.appendChild(avi);bk.appendChild(av);
   bk.appendChild(el('div','k-ch',k.kanal||k.nazwa));
-  bk.appendChild(el('div','k-pl',k.platformy||''));
+  if(k.platformy)bk.appendChild(el('div','k-pl',k.platformy));
   bk.appendChild(el('p','k-ds',k.opis||''));
   bk.appendChild(el('span','k-go','Odwróć kartę ↻'));
   b.appendChild(bk);inn.appendChild(b);
   var f=el('div','k-f k-fr'),ph=el('div','k-ph');if(ok(k.foto||k.zdjecie))ph.style.backgroundImage='url("'+(k.foto||k.zdjecie)+'")';
   ph.appendChild(crown('k-crn2','f'+i));
-  var cap=el('div','k-cap');cap.appendChild(el('div','k-nm',k.nazwa||''));cap.appendChild(el('div','k-nk',k.ksywka||''));
+  var cap=el('div','k-cap');cap.appendChild(el('div','k-nm',k.nazwa||''));if(k.ksywka)cap.appendChild(el('div','k-nk',k.ksywka));
   if(ok(k.url)){var a=el('a','k-ln','Zobacz pełną kartę →');a.href=k.url;a.tabIndex=-1;a.addEventListener('click',function(e){e.stopPropagation();});cap.appendChild(a);w._a=a;}
+  var lv=null,fr=null;
+  if(ok(k.url)&&k.podglad){lv=el('div','k-live');fr=document.createElement('iframe');fr.title='Podgląd karty: '+(k.nazwa||'');fr.tabIndex=-1;fr.setAttribute('aria-hidden','true');fr.setAttribute('data-src',k.url);lv.appendChild(fr);ph.insertBefore(lv,ph.firstChild);}
+  function fit(){if(!fr)return;var sc=lv.clientWidth/400;if(!sc)return;fr.style.transform='scale('+sc+')';fr.style.height=(lv.clientHeight/sc)+'px';}
   ph.appendChild(cap);f.appendChild(ph);inn.appendChild(f);w.appendChild(inn);
-  function tog(){var on=w.classList.toggle('flip');w.setAttribute('aria-pressed',on);if(w._a)w._a.tabIndex=on?0:-1;}
+  function tog(){var on=w.classList.toggle('flip');w.setAttribute('aria-pressed',on);if(w._a)w._a.tabIndex=on?0:-1;if(on&&fr){fit();if(!fr.getAttribute('src'))fr.src=fr.getAttribute('data-src');}}
+  if(fr)window.addEventListener('resize',fit);
   w.addEventListener('click',tog);
   w.addEventListener('keydown',function(e){if(e.target===w&&(e.key==='Enter'||e.key===' ')){e.preventDefault();tog();}});
   return w;}
@@ -471,7 +480,7 @@ function neu(){
   bk.appendChild(el('p','k-ds','Zasięgi to nie wszystko. Zrobimy z Ciebie markę.'));
   var a=el('a','k-go','Porozmawiajmy →');a.href='index.html#kontakt';bk.appendChild(a);
   b.appendChild(bk);inn.appendChild(b);w.appendChild(inn);return w;}
-function draw(l){row.textContent='';l.slice(0,3).forEach(function(k,i){row.appendChild(card(k,i));});row.appendChild(neu());}
+function draw(l){row.textContent='';l.slice(0,4).forEach(function(k,i){row.appendChild(card(k,i));});row.appendChild(neu());}
 draw(FALL);
 fetch('karty.json',{cache:'no-cache'}).then(function(r){return r.ok?r.json():null;}).then(function(l){if(Array.isArray(l)&&l.length)draw(l);}).catch(function(){});
 })();</script>
