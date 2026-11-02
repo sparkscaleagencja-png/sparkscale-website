@@ -177,6 +177,7 @@
         <i class="hc bl"><svg viewBox="0 0 60 60"><path d="M2 58V16L16 2H58"/><path class="f" d="M10 58V24L24 10H58"/><path class="f" d="M26 26l6 6-6 6-6-6z"/><circle cx="16" cy="2" r="2.6"/><circle cx="2" cy="16" r="2.6"/></svg></i>
         <i class="hc br"><svg viewBox="0 0 60 60"><path d="M2 58V16L16 2H58"/><path class="f" d="M10 58V24L24 10H58"/><path class="f" d="M26 26l6 6-6 6-6-6z"/><circle cx="16" cy="2" r="2.6"/><circle cx="2" cy="16" r="2.6"/></svg></i>
         <svg class="holo-svg" id="holoSvg" aria-hidden="true" focusable="false"></svg>
+        <div class="holo-pop" id="holoPop" role="dialog" aria-live="polite"><div class="hp-imgs"><i></i><i></i><i></i></div><div class="hp-t"></div><p class="hp-d"></p><a class="hp-go" href="#kontakt">Dowiedz się więcej <span aria-hidden="true">→</span></a><button type="button" class="hp-more">Zobacz zakres</button></div>
         <div class="holo-labs">
           <button type="button" class="holo-lab" data-pillar="scale"><i>01</i><b>Scalowanie</b><span>Rośniemy razem z Twoim biznesem</span></button>
           <button type="button" class="holo-lab" data-pillar="ai"><i>02</i><b>Automatyzacje AI</b><span>Agenci i procesy bez ręcznej pracy</span></button>
@@ -950,7 +951,7 @@
 @media(max-width:720px){#sysSvg text{font-size:inherit}.sys-bridge{height:70px}}
 @media(prefers-reduced-motion:reduce){.holo-head::after,.sys-bridge i,.sys-demo[data-s=a] #sysSvg .fa .fi{animation:none}}
 .holo-wrap{width:100%;margin-top:clamp(20px,3vw,40px);display:flex;flex-direction:column;align-items:center;padding:0 2vw}
-.holo-stage{position:relative;aspect-ratio:1000/690;width:min(96vw,1620px);color:#EAF6FF;--sgw:56%}
+.holo-stage{position:relative;aspect-ratio:1000/690;width:min(96vw,1620px);color:#EAF6FF;--sgw:48%}
 .holo-stage[data-m="1"]{aspect-ratio:600/760;width:min(94vw,560px)}
 .holo-stage>*{position:absolute}
 /* tlo z Pracowni: obwody + sigil */
@@ -1037,10 +1038,27 @@
 .holo-replay{all:unset;cursor:pointer;margin-left:22px;color:var(--h);font:600 12px 'Space Grotesk';letter-spacing:1.5px;text-transform:uppercase}
 .holo-replay:hover,.holo-replay:focus-visible{text-decoration:underline;outline:none}
 @media(max-width:720px){
-  .ss-holo{padding-top:64px}.holo-stage{--sgw:66%}
+  .ss-holo{padding-top:64px}.holo-stage{--sgw:56%}
   .holo-lab{padding:3px 4px}.holo-lab span{display:none}.holo-lab i{font-size:9px;letter-spacing:1.5px}.holo-lab b{font-size:12.5px;line-height:1.12}
   .holo-head .ss-lead{display:none}.holo-legend{font-size:11.5px;padding:0 10px}
 }
+
+/* --- OFERTA: okienko z 3 zdjeciami po najechaniu na odnoge --- */
+.holo-pop{position:absolute;z-index:6;width:min(440px,92%);padding:12px 12px 14px;background:linear-gradient(180deg,rgba(10,24,52,.96),rgba(5,12,28,.97));border:1px solid rgba(88,208,255,.55);
+  box-shadow:0 0 0 1px rgba(5,12,28,.9),0 18px 60px rgba(0,0,0,.6),0 0 38px rgba(47,123,255,.35);color:#EAF6FF;opacity:0;visibility:hidden;transform:translateY(8px) scale(.98);transition:opacity .22s,transform .22s,visibility 0s .22s;pointer-events:none;border-radius:4px;left:0;top:0}
+.holo-pop.on{opacity:1;visibility:visible;transform:none;transition:opacity .22s,transform .22s;pointer-events:auto}
+.holo-pop::before{content:"";position:absolute;left:0;top:0;width:26px;height:3px;background:#FF8900;box-shadow:0 0 12px #FF8900}
+.hp-imgs{display:grid;grid-template-columns:1.25fr 1fr 1fr;gap:6px;height:clamp(92px,9vw,132px)}
+.hp-imgs i{display:block;background:#0a1a3a center/cover no-repeat;border:1px solid rgba(88,208,255,.3);border-radius:3px;overflow:hidden;position:relative}
+.hp-imgs i::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(5,12,28,.55))}
+.hp-t{margin:12px 2px 0;font-family:'Space Grotesk';font-weight:700;font-size:clamp(16px,1.5vw,21px);letter-spacing:-.3px;color:#fff}
+.hp-d{margin:6px 2px 0;font-size:clamp(12px,1vw,14px);line-height:1.5;color:#b9d6ee;font-family:Inter,sans-serif}
+.hp-go{display:inline-flex;align-items:center;gap:8px;margin:12px 2px 0;padding:9px 16px;border-radius:999px;background:#FF8900;color:#0a0a0b;font-family:'Space Grotesk';font-weight:700;font-size:13px;text-decoration:none;box-shadow:0 6px 22px rgba(255,137,0,.35)}
+.hp-go:hover,.hp-go:focus-visible{filter:brightness(1.1);outline:none}
+.hp-more{margin-left:10px;color:#7fdcff;font:600 12px 'Space Grotesk';letter-spacing:1px;cursor:pointer;background:none;border:0;padding:0}
+.hp-more:hover{text-decoration:underline}
+@media (hover:none),(max-width:720px){.holo-pop{display:none}}
+@media(prefers-reduced-motion:reduce){.holo-pop,.holo-pop.on{transition:none}}
 @media(prefers-reduced-motion:reduce){.holo-glass::after,.holo-svg .ring,.holo-svg .rr,.holo-svg .flow,.holo-stage.full .holo-svg .rays,.holo-bg,.holo-mist::before,.holo-mist::after,.holo-sg,.holo-frame,.holo-haze,.holo-lab.on{animation:none}}
 </style>
 <script>
@@ -1270,8 +1288,8 @@
   if(!sec||!stage||!svg)return;
   var NS='http://www.w3.org/2000/svg',labs=[].slice.call(stage.querySelectorAll('.holo-lab')),DIR=['n','ne','e','se','s','sw','w','nw'];
   var LAYOUT={
-    d:{W:1000,H:690,cx:500,cy:345,R:236,inner:50,w:42,lw:300,rs:1.25,gap:22,sgw:56,rain:15,motes:0,traces:30},
-    m:{W:600,H:760,cx:300,cy:380,R:150,inner:38,w:27,lw:150,rs:.72,gap:30,sgw:66,rain:6,motes:0,traces:18}
+    d:{W:1000,H:690,cx:500,cy:345,R:200,inner:42,w:36,lw:300,rs:1.06,gap:22,sgw:48,rain:15,motes:0,traces:30},
+    m:{W:600,H:760,cx:300,cy:380,R:128,inner:32,w:23,lw:150,rs:.61,gap:30,sgw:56,rain:6,motes:0,traces:18}
   };
   // runy (siatka 24x24, same proste kreski): 8 odnog + 8 ozdobnych
   var RUNES=[
@@ -1434,6 +1452,41 @@
     if(RM){setT(1e6);return;}
     setT(0);t0=0;
     (function step(n){if(!t0)t0=n;var ms=n-t0;setT(ms);if(ms<T_END+200)raf=requestAnimationFrame(step);else setT(1e6);})(performance.now());
+  }
+
+  // --- okienko z 3 zdjeciami po najechaniu na odnoge ---
+  var POP={
+    scale:{t:'Scalowanie',d:'Dokładamy kolejne elementy systemu, gdy poprzednie już działają: iteracja, optymalizacja i wsparcie po wdrożeniu.',l:['#proces','Zobacz, jak pracujemy']},
+    ai:{t:'Automatyzacje AI',d:'Agenci AI przejmują powtarzalną pracę: odpowiedzi, raporty, zlecenia. Ty zatwierdzasz to, co ważne.',l:['siec.html','Poznaj naszą sieć']},
+    apps:{t:'Aplikacje dla firm',d:'Aplikacja szyta pod Twój proces: widzisz, kto, gdzie i co robi, na telefonie i na komputerze.',l:['dla-biznesu.html#aplikacje','Zobacz aplikacje']},
+    web:{t:'Strony internetowe',d:'Strony i sklepy zaprojektowane tak, żeby przekonywały i sprzedawały, a nie tylko ładnie wyglądały.',l:['#realizacje','Zobacz realizacje']},
+    seo:{t:'Widoczność w internecie',d:'Dbamy, żeby klienci znajdowali Cię w Google: techniczne SEO, treści i analityka pokazująca, co działa.',l:['#kontakt','Porozmawiajmy']},
+    social:{t:'Social media',d:'Obecność w mediach społecznościowych z planem, nie z przypadku: treści, rytm publikacji i pomiar zasięgów.',l:['dla-influencera.html','Strefa influencera']},
+    marketing:{t:'Skuteczny marketing',d:'Kampanie nastawione na wynik: od pomysłu i kreacji po pomiar, ilu klientów realnie przyniosły.',l:['#kontakt','Porozmawiajmy']},
+    brand:{t:'Marka i branding',d:'Nazwa, identyfikacja i spójny wizerunek, dzięki którym marka jest rozpoznawalna i budzi zaufanie.',l:['#realizacje','Zobacz realizacje']}
+  };
+  var pop=document.getElementById('holoPop'),popKey=null,popTm=0;
+  if(pop&&matchMedia('(hover:hover) and (min-width:721px)').matches){
+    var pimgs=[].slice.call(pop.querySelectorAll('.hp-imgs i')),pt=pop.querySelector('.hp-t'),pd=pop.querySelector('.hp-d'),pg=pop.querySelector('.hp-go'),pm=pop.querySelector('.hp-more');
+    function showPop(b){
+      clearTimeout(popTm);var k=b.getAttribute('data-pillar'),d=POP[k];if(!d)return;
+      if(popKey!==k){popKey=k;pimgs.forEach(function(e,i){e.style.backgroundImage='url(img/oferta/'+k+'-'+(i+1)+'.webp)';});
+        pt.textContent=d.t;pd.textContent=d.d;pg.firstChild.nodeValue=d.l[1]+' ';pg.setAttribute('href',d.l[0]);}
+      var sr=stage.getBoundingClientRect(),br=b.getBoundingClientRect(),pw=pop.offsetWidth,ph=pop.offsetHeight,M=8;
+      var cx=br.left+br.width/2-sr.left,x=cx-pw/2;x=Math.max(M,Math.min(sr.width-pw-M,x));
+      var belowRoom=sr.height-(br.bottom-sr.top),y=(br.top-sr.top>belowRoom)?(br.top-sr.top)-ph-8:(br.bottom-sr.top)+8;
+      y=Math.max(M,Math.min(sr.height-ph-M,y));
+      pop.style.left=x+'px';pop.style.top=y+'px';pop.classList.add('on');
+    }
+    function hidePop(){clearTimeout(popTm);popTm=setTimeout(function(){pop.classList.remove('on');},230);}
+    labs.forEach(function(b){
+      b.addEventListener('mouseenter',function(){showPop(b);});b.addEventListener('mouseleave',hidePop);
+      b.addEventListener('focus',function(){showPop(b);});b.addEventListener('blur',hidePop);
+    });
+    pop.addEventListener('mouseenter',function(){clearTimeout(popTm);});pop.addEventListener('mouseleave',hidePop);
+    pop.addEventListener('focusin',function(){clearTimeout(popTm);});pop.addEventListener('focusout',hidePop);
+    pm.addEventListener('click',function(){pop.classList.remove('on');if(window.ssOpenPillar&&popKey)window.ssOpenPillar(popKey);});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')pop.classList.remove('on');});
   }
   labs.forEach(function(b){b.addEventListener('click',function(){if(window.ssOpenPillar)window.ssOpenPillar(b.getAttribute('data-pillar'));});});
   var rp=document.getElementById('holoReplay');if(rp)rp.addEventListener('click',play);
