@@ -265,6 +265,8 @@ a.mi:hover,a.mi:focus-visible{border-color:#fff;background:rgba(255,255,255,.12)
 .m #segs .f{display:none}.m #segs .s{display:inline}.m #segs button{font-size:12.5px}.m #segs button b{margin-right:4px}
 .m #hud{bottom:calc(12px + env(safe-area-inset-bottom))}
 @media (prefers-reduced-motion:reduce){#aurora i,.rim i,.halo,.name,.ss svg,.prev,.prev span{animation:none!important}}
+body.embed #foot,body.embed #rt,body.embed #hint,body.embed #hud,body.embed #aurora,body.embed #dust,body.embed #flash{display:none!important}
+body.embed{background:#0a0805}
 </style></head><body>
 <div id="aurora"><i></i><i></i><i></i></div>
 <div id="stage"><div id="world"><div id="card"></div></div></div>
@@ -407,6 +409,7 @@ $('#rt').innerHTML=`<a class="bt a" href="mailto:${DANE.mail}?subject=${encodeUR
 /* ---------- os czasu: 1 profil 0-5, 2 info 5-20, 3 staty 20-30, 4 tresci 30-50, 5 karta ---------- */
 const TMIN=-1.4,TMAX=51.6;
 const SEG=[['Profil',TMIN,5,0],['Kim jest',5,20,5],['Statystyki',20,30,20.8],['Filmy i tabela',30,50,30.3],['Karta',50,TMAX,TMAX]];
+const EMBED=new URLSearchParams(location.search).has('embed');if(EMBED)document.body.classList.add('embed');
 let w=innerWidth,h=innerHeight,mobile=false,KEYS=[],VID={a:30,s:5};
 const fit=(cx,cy,vW,vH,rx=0,ry=0)=>({cx,cy,z:Math.min(w/vW,h/vH),rx,ry});
 // jak fit, ale gorna krawedz kadru stoi na stalej wysokosci karty (top) niezaleznie od proporcji ekranu
@@ -419,6 +422,7 @@ function layout(){
   else{KEYS=[[TMIN,{...idle,ry:360}],[.1,fit(500,128,1040,600)],[4.6,fit(500,130,1020,600)],[6,fit(500,740,900,1500)],[19.2,fit(500,740,900,1500)],
     [20.7,fit(230,780,609,1087,16,-TILT*.72)],[24.3,fit(240,780,609,1087,16,-TILT*.72)],[25.2,fit(760,780,609,1087,16,-TILT*.72)],[28.8,fit(770,780,609,1087,16,-TILT*.72)],
     [30.3,fit(192,1040,335,500)],[33.4,fit(192,1040,330,500)],[34.2,fit(445,1040,220,500)],[36.4,fit(445,1040,216,500)],[37.1,fit(625,1040,180,500)],[39.4,fit(625,1040,176,500)],[40.2,fit(372,1225,680,500)],[42.8,fit(372,1225,670,500)],[43.6,fit(830,1110,440,850)],[49.6,fit(830,1110,430,850)],[TMAX,idle]];VID={a:43.6,s:3};}
+  if(EMBED){const E=fit(500,670,1020,1370);KEYS=[[TMIN,E],[TMAX,E]];}
   // bloki z prawej: desktop narastajaco, mobile po kolei
   $$('.bkr').forEach((el,i)=>{el.dataset.win=mobile?`${12.2+i*1.5},${i==4?19.5:13.6+i*1.5}`:`${9.2+i*1.5},19.5`});
   const c=$('#dust');c.width=w*DPR;c.height=h*DPR;
