@@ -139,24 +139,25 @@ a{color:inherit}button{font:inherit;color:inherit;background:none;border:0;curso
 .gg small{position:absolute;left:0;right:0;top:93px;line-height:1.05;font-size:12.5px;color:var(--mut);white-space:nowrap;text-shadow:0 0 6px #000}
 
 /* dol karty */
-.box{position:absolute;border:2px solid rgba(94,242,255,.5);border-radius:14px;background:rgba(10,7,18,.82);padding:12px 15px;font-size:15.5px;line-height:1.34;transform:translateZ(4px);overflow:hidden}
+.box{position:absolute;border:2px solid rgba(94,242,255,.55);border-radius:14px;background:rgba(10,7,18,.92);padding:12px 15px;font-size:16px;line-height:1.34;transform:translateZ(4px);overflow:hidden;opacity:var(--bo,1)}
+.kpi,.pbrow,.tel{opacity:var(--bo,1)}   /* plansze (ramka + tresc) znikaja w sekwencji 3 i pojawiaja sie dopiero przed swoja trescia: zero pustych ramek */
 .box h3{font-size:12px;letter-spacing:.16em;font-weight:700;color:var(--neon);margin-bottom:5px}
 .rv{opacity:var(--v,1);transform:translateY(calc((1 - var(--v,1))*10px))}
 .opis{left:44px;top:1044px;width:296px;height:190px;box-shadow:inset 0 0 22px rgba(225,48,108,.2)}
 /* cytat: duzy, bialy, z poswiata i cudzyslowem w kolorach Instagrama; kluczowa fraza zapala sie w czasie (.hl) */
-.opis q{display:block;quotes:none;position:relative;padding-left:19px;margin-bottom:7px;font-weight:800;font-size:18.5px;line-height:1.17;color:#fff;text-shadow:0 0 14px rgba(225,48,108,.5)}
+.opis q{display:block;quotes:none;position:relative;padding-left:19px;margin-bottom:7px;font-weight:800;font-size:20px;line-height:1.17;color:#fff;text-shadow:0 0 14px rgba(225,48,108,.5)}
 .opis q:before{content:"\201C";position:absolute;left:-1px;top:-7px;font:800 46px/1 "Bricolage Grotesque",serif;color:#fff;text-shadow:0 0 12px rgba(255,255,255,.5)}
-.opis .ot{font-size:14.5px;line-height:1.3}
+.opis .ot{font-size:16px;line-height:1.3}
 /* pogrubianie liter w czasie sekwencji: litera po literze (fala), bez zmiany szerokosci tekstu (kontur zamiast bold) */
 .hl{font-style:normal}
 .hl i{font-style:normal;--k:clamp(0,calc((var(--h,0)*var(--n) - var(--i))/5),1);color:color-mix(in srgb,#ffd34d calc(var(--k)*100%),var(--ink));-webkit-text-stroke:calc(var(--k)*.045em) #ffd34d;text-shadow:0 0 calc(var(--k)*10px) rgba(255,211,77,calc(var(--k)*.6))}
-.inf{left:352px;top:1044px;width:186px;height:190px}.inf li{list-style:none;margin:0 0 2px;padding-left:14px;position:relative;font-size:14.5px;line-height:1.22}.inf li+li{margin-top:5px}.inf li:before{content:"";position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--ig-p)}
+.inf{left:352px;top:1044px;width:186px;height:190px}.inf li{list-style:none;margin:0 0 2px;padding-left:14px;position:relative;font-size:16px;line-height:1.22}.inf li+li{margin-top:6px}.inf li:before{content:"";position:absolute;left:0;top:6px;width:7px;height:7px;border-radius:50%;background:var(--ig-p)}
 .kpi{left:550px;top:1044px;width:150px;height:190px;display:flex;flex-direction:column;justify-content:space-between}
-.kpi div{line-height:1.08}.kpi b{display:block;font-size:30px;line-height:1.05}.kpi span{font-size:13px;color:var(--mut);display:block;line-height:1.14;margin-top:1px}
+.kpi div{line-height:1.08}.kpi b{display:block;font-size:30px;line-height:1.05}.kpi span{font-size:14px;color:var(--mut);display:block;line-height:1.14;margin-top:1px}
 .tab{left:44px;top:1248px;width:656px;height:170px;padding:9px 14px}
 .pb{display:block;min-width:64px;height:7px;border-radius:7px;background:rgba(255,255,255,.14);margin-top:4px;overflow:hidden;text-decoration:none}.pb i{display:block;height:100%;border-radius:7px;background:var(--c);box-shadow:0 0 8px var(--c)}
-table{width:100%;border-collapse:collapse;font-size:15.5px}th{font-size:11.5px;letter-spacing:.09em;color:var(--neon);text-align:right;padding:2px 5px 5px;font-weight:700;white-space:nowrap}td{padding:5px 5px 4px;border-top:1px solid rgba(255,255,255,.13);text-align:right;font-weight:500;white-space:nowrap}td:first-child,th:first-child{text-align:left;font-weight:700}
-.note{font-size:11px;color:var(--mut);margin-top:6px;line-height:1.2}
+table{width:100%;border-collapse:collapse;font-size:16px}th{font-size:12.5px;letter-spacing:.09em;color:var(--neon);text-align:right;padding:2px 4px 5px;font-weight:700;white-space:nowrap}td{padding:5px 4px 4px;border-top:1px solid rgba(255,255,255,.13);text-align:right;font-weight:500;white-space:nowrap}td:first-child,th:first-child{text-align:left;font-weight:700}
+.note{font-size:12px;color:var(--mut);margin-top:6px;line-height:1.2}
 
 /* telefon */
 .tel{position:absolute;left:728px;top:1046px;width:206px;height:368px;border-radius:30px;background:#000;border:3px solid #fff;box-shadow:0 0 22px rgba(255,255,255,.26),0 0 0 2px #333 inset;transform-origin:30% 100%;transform:translateZ(calc(6px + var(--w,0)*50px)) scale(calc(1 + var(--w,0)*.32));padding:7px}
@@ -203,15 +204,23 @@ table{width:100%;border-collapse:collapse;font-size:15.5px}th{font-size:11.5px;l
 #hud:before{content:"";position:absolute;left:-90px;right:-90px;top:-40px;bottom:-30px;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 50% 70% at 50% 100%,rgba(5,4,10,.88),rgba(5,4,10,0))}
 .running #hud{opacity:1;transform:translate(-50%,0);pointer-events:auto}
 #segs{display:flex;gap:6px}
-#segs button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:7px;padding:10px 0 6px;text-align:left;color:#c9bfd6;font-size:13px;font-weight:700;line-height:1;white-space:nowrap;cursor:pointer;transition:color .15s}
+#segs button{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:7px;padding:10px 0 6px;text-align:left;color:#c9bfd6;font-size:14px;font-weight:700;line-height:1;white-space:nowrap;cursor:pointer;transition:color .15s}
 #segs button b{display:inline-block;margin-right:6px;color:var(--ig-o)}
 #segs .s{display:none}
 #segs u{display:block;height:4px;border-radius:4px;background:rgba(255,255,255,.34);overflow:hidden;text-decoration:none;transition:height .15s}
 #segs u i{display:block;height:100%;width:0;background:var(--ig)}
 #segs button:hover,#segs button:focus-visible,#segs button.on{color:#fff}
-#segs button:hover u,#segs button:focus-visible u{height:6px}
+#segs button:hover u,#segs button:focus-visible u,#segs button.on u{height:6px}
 #segs button.on b{color:var(--ig-y)}
 #segs button:focus-visible{outline:2px solid #fff;outline-offset:2px}
+/* nazwa biezacej sekwencji u gory ekranu: widz zawsze wie, gdzie jest; przy zmianie sekwencji plakietka "wskakuje" */
+#cap{position:fixed;left:50%;top:calc(14px + env(safe-area-inset-top));transform:translateX(-50%);z-index:10;display:flex;align-items:center;gap:10px;padding:7px 16px 7px 8px;border-radius:999px;background:rgba(5,4,10,.78);border:1px solid rgba(255,255,255,.2);box-shadow:0 6px 24px rgba(0,0,0,.45);font:800 14px/1 "Bricolage Grotesque","DM Sans",sans-serif;letter-spacing:.14em;text-transform:uppercase;color:#fff;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s}
+#cap b{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:var(--ig);color:#14060e;font-size:13px;letter-spacing:0}
+#cap small{font:600 11.5px/1 "DM Sans",sans-serif;letter-spacing:.06em;text-transform:none;color:var(--mut);margin-left:2px}
+.running #cap{opacity:1}
+#cap.pop{animation:cappop .6s cubic-bezier(.2,.9,.3,1.25)}
+@keyframes cappop{from{transform:translateX(-50%) scale(1.3);filter:brightness(1.6)}}
+.m #cap small{display:none}.m #cap{font-size:13px}
 #foot{position:fixed;left:24px;bottom:22px;z-index:9;width:210px;font-size:12.5px;line-height:1.35;color:var(--mut);transition:opacity .35s}
 .running #foot,.running #rt{opacity:0;pointer-events:none}
 /* w trakcie sekwencji ozywione tlo i ozdobne animacje stoja (mniej malowania, plynniej na telefonie) */
@@ -290,18 +299,21 @@ a.mi:hover,a.mi:focus-visible{border-color:#fff;background:rgba(255,255,255,.12)
 .mi.cur{border-color:var(--ig-o);cursor:default}.mi .tag{margin-left:auto;flex:none;font-size:11px;letter-spacing:.1em;color:var(--ig-y)}
 
 /* telefon komorkowy i waskie ekrany */
-.m .bk1,.m .bk2,.m .bk3{left:70px;width:860px;top:610px;font-size:31px;--dx:0px;padding:24px 30px;border-radius:24px}
+.m .bk1,.m .bk2,.m .bk3{left:70px;width:860px;top:610px;font-size:33px;--dx:0px;padding:24px 30px;border-radius:24px}
 .m .blk h3{font-size:22px}.m .blk h4{font-size:46px}
 .m .bar{font-size:27px;grid-template-columns:150px 1fr 140px;margin-top:9px}.m .bar b,.m .bar span{white-space:nowrap}.m .bar u{height:15px}
-.m .bk3{min-height:330px}.m .bkr{position:absolute;left:30px;right:30px;top:24px;border:0;padding:0;font-size:31px}.m .prs span{font-size:27px;padding:2px 16px}.m .go{font-size:28px;padding:11px 22px}
+.m .bk3{min-height:330px}.m .bkr{position:absolute;left:30px;right:30px;top:24px;border:0;padding:0;font-size:33px}.m .prs span{font-size:27px;padding:2px 16px}.m .go{font-size:28px;padding:11px 22px}
 .m .rw{font-size:24px;max-height:calc(var(--p,0)*68px)}.m .rw b{font-size:32px}
+/* telefon: tabela wezsza i wieksza (kolumny obserwujacy/wyswietlenia sa juz w panelach statystyk), kamera zbliza sie na 420 px zamiast 656 */
+.m .tab{width:420px;top:1240px;height:188px;padding:8px 12px}.m .tab th:nth-child(2),.m .tab th:nth-child(3),.m .tab td:nth-child(2),.m .tab td:nth-child(3){display:none}
+.m table{font-size:20px}.m th{font-size:13px;padding-bottom:4px}.m td{padding:4px 4px 3px}.m .pb{min-width:70px;height:8px}.m .note{font-size:12.5px;margin-top:5px}
 #foot.mh,.m #foot{display:none}
 .m #rt{left:16px;right:16px;width:auto;flex-direction:row;bottom:calc(14px + env(safe-area-inset-bottom))}.m #rt .bt{flex:1;padding:13px 10px;font-size:14px}
 .m #hint{display:none}
 .m #segs .f{display:none}.m #segs .s{display:inline}.m #segs button{font-size:12.5px}.m #segs button b{margin-right:4px}
 .m #hud{bottom:calc(12px + env(safe-area-inset-bottom))}
 @media (prefers-reduced-motion:reduce){#aurora i,.rim i,.halo,.name,.ss svg,.prev,.prev span{animation:none!important}}
-body.embed #foot,body.embed #rt,body.embed #hint,body.embed #hud,body.embed #aurora,body.embed #dust,body.embed #flash,body.embed #loader{display:none!important}
+body.embed #foot,body.embed #rt,body.embed #hint,body.embed #hud,body.embed #cap,body.embed #aurora,body.embed #dust,body.embed #flash,body.embed #loader{display:none!important}
 body.embed{background:#0a0805}
 body.embed .pbrow{display:none!important}   /* podglad (?embed) bez guzikow Korzysci/Wyniki */
 /* TELEFON / TABLET (iOS Safari): bez ciezkich efektow - will-change na karcie 1000x1448, blur(60px) halo, aurory i rozmycia tla zjadaly pamiec i Safari zamykal strone */
@@ -310,13 +322,16 @@ body.embed .pbrow{display:none!important}   /* podglad (?embed) bez guzikow Korz
 .t .sl .bg{filter:brightness(.55)}
 .t .ov .mbg{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(5,4,10,.9)}
 .t .back svg,.t #loader svg{filter:none;animation:none}
-.t .sheen,.t .rim i{animation:none}
+.t .sheen{display:none}
+.t .rim i{display:none}
+.t .rim{background:conic-gradient(from 210deg,#ffd34d,#fa7e1e,#e1306c,#a23bd6,#5b5bff,#e1306c,#ffd34d)}   /* statyczna ramka zamiast obracanego elementu 1800x1800 */
 </style></head><body>
 <div id="aurora"><i></i><i></i><i></i></div>
 <div id="stage"><div id="world"><div id="card"></div></div></div>
 <canvas id="dust"></canvas>
 <div id="flash"><i></i><i></i><i></i></div>
 <div id="foot"></div><div id="rt"></div><div id="hint">Kliknij PODGLĄD albo przewiń</div>
+<div id="cap" aria-live="polite"></div>
 <nav id="hud" aria-label="Nawigacja po animacji"><div id="segs"></div></nav>
 <div id="menu" class="ov" hidden><div class="mbg" data-close></div><div class="mp" role="dialog" aria-modal="true" aria-label="Menu Spark Scale"><div class="mh"><span class="ml" id="mlogo"></span><b>Spark Scale</b><button class="mx" type="button" data-close aria-label="Zamknij menu">×</button></div><nav id="mnav"></nav></div></div>
 <div id="sharem" class="ov" hidden><div class="mbg" data-close></div><div class="mp" role="dialog" aria-modal="true" aria-label="Udostępnij kartę"><div class="mh"><span class="ml" id="shlogo"></span><b>Udostępnij kartę</b><button class="mx" type="button" data-close aria-label="Zamknij">×</button></div>
@@ -373,8 +388,8 @@ const DANE={
   tt:{nazwa:'TikTok, 2 konta',suma:441.2,wiersze:[
     {h:'@mkryspin'},{l:'Obserwujący',v:377.1,d:1,u:' tys.',suma:377.1},{l:'Wyświetlenia, 60 dni',v:29.2,d:1,u:' mln'},
     {h:'@niekryspin'},{l:'Obserwujący',v:64.1,d:1,u:' tys.',suma:64.1},{l:'Wyświetlenia, 60 dni',v:27.8,d:1,u:' mln'}]},
-  opisCytat:'Ten film, który wysyłasz przyjaciółce z dopiskiem „{{32.4|to dosłownie my}}”.',
-  opis:'Krystian mówi to, co piszesz na grupce. {{35.6|Produkt jest częścią żartu}}, a nie przerwą w filmie.',
+  opisCytat:'Ten film, który wysyłasz przyjaciółce z dopiskiem „{{31.9|to dosłownie my}}”.',
+  opis:'Krystian mówi to, co piszesz na grupce. {{32.5|Produkt jest częścią żartu}}, a nie przerwą w filmie.',
   // najczesciej ogladana rolka miesiaca: indeksy w DANE.filmy (IG, TikTok) — uzupelniac co miesiac z paneli; dopoki brak danych miesiecznych, to filmy z najwieksza liczba wyswietlen z listy ponizej
   rolki:{ig:2,tt:0},
   // okienko "Korzysci dla marki" (guzik na srodku karty): same fakty z danych powyzej, bez obietnic wynikow sprzedazowych
@@ -446,18 +461,18 @@ html+=`<div class="halo"></div><div class="back">${SS}</div><div class="rim"><i>
 <div class="in dots" id="dots">${DANE.zdjecia.map((_,i)=>`<button data-i="${i}" aria-label="Zdjęcie ${i+1}"></button>`).join('')}</div>
 <div class="blk bk1" data-win="6.3,19.5" data-win-m="6.3,9.4"><h3>KIM JEST</h3><p>${hl(DANE.kim)}</p><p class="mu"><i>${DANE.kimCytat}</i></p></div>
 <div class="blk bk2" data-win="7.4,19.5" data-win-m="9.6,12"><h3>GRUPA DOCELOWA</h3><h4 class="d">${hl(DANE.grupaTyt)}</h4>${DANE.grupa.map(g=>`<div class="bar">${g[0].length>6?`<span style="font-size:.82em;line-height:1">${g[0]}</span>`:g[0]}<u><i style="width:${g[1]}%"></i></u><b>${g[2]}</b></div>`).join('')}</div>
-<div class="blk bk3" id="bk3" data-win="8.4,19.5" data-win-m="12.2,19.5">${DANE.bloki.map((b,i)=>`<div class="bkr" data-win="0,0"><h3>${b.t}</h3>${b.prs?`<div class="prs">${b.prs.map(x=>`<span>${x}</span>`).join('')}</div>`:`<div>${hl(b.p)}</div>`}${b.cta?`<a class="go" href="mailto:${DANE.mail}?subject=${encodeURIComponent(DANE.temat)}">${b.cta}</a>`:''}</div>`).join('')}</div>
+<div class="blk bk3" id="bk3" data-win="9,19.5" data-win-m="12.2,19.5">${DANE.bloki.map((b,i)=>`<div class="bkr" data-win="0,0"><h3>${b.t}</h3>${b.prs?`<div class="prs">${b.prs.map(x=>`<span>${x}</span>`).join('')}</div>`:`<div>${hl(b.p)}</div>`}${b.cta?`<a class="go" href="mailto:${DANE.mail}?subject=${encodeURIComponent(DANE.temat)}">${b.cta}</a>`:''}</div>`).join('')}</div>
 <div class="shd" id="shIg" style="background:radial-gradient(closest-side,rgba(255,211,77,.8),transparent)"></div><div class="shd" id="shTt" style="background:radial-gradient(closest-side,rgba(162,59,214,.9),transparent)"></div>
 <div class="st" id="stIg" style="--c:#ffd34d;--tx:#2a1d00;--pl:linear-gradient(180deg,#ffe48a 0%,#ffc83a 48%,#e9a300 100%)"><div class="sti"><div class="rows">${rowsHtml(DANE.ig.wiersze)}</div><div class="hd"><b class="d">${fmt(DANE.ig.suma,1)} tys.</b><span class="brand ig" role="img" aria-label="Instagram">${ICO.ig}</span></div></div></div>
 <div class="st" id="stTt" style="--c:#c06bff;--tx:#1c0830;--pl:linear-gradient(180deg,#e2b6ff 0%,#b878ff 48%,#8f3fe0 100%)"><div class="sti"><div class="rows">${rowsHtml(DANE.tt.wiersze)}</div><div class="hd"><b class="d">${fmt(DANE.tt.suma,1)} tys.</b><span class="brand tt" role="img" aria-label="TikTok">${ICO.tt}</span></div></div></div>
 <div class="in gg" id="gg"><svg viewBox="0 0 200 112"><path d="M16 100a84 84 0 0 1 168 0" fill="none" stroke="rgba(255,255,255,.15)" stroke-width="11" stroke-linecap="round"/><path id="ga" d="M16 100a84 84 0 0 1 168 0" fill="none" stroke="url(#igh)" stroke-width="11" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1"/><text x="16" y="116" class="gl">0</text><text x="184" y="116" class="gl" text-anchor="end">cel ${fmt(GMAX,0)} tys.</text><g class="nd" id="nd"><path d="M2 100l30-5v10z" fill="#fff" style="filter:drop-shadow(0 0 4px #fff)"/></g></svg><b class="d" id="sum"></b><small>obserwujących<br>łącznie</small></div>
-<div class="box opis"><div class="rv" data-rv="31"><h3>OPIS</h3><q class="d">${hl(DANE.opisCytat)}</q><div class="ot">${hl(DANE.opis)}</div></div></div>
+<div class="box opis" data-bo="31.2" data-bo-m="31"><div class="rv" data-rv="31.2" data-rv-m="31"><h3>OPIS</h3><q class="d">${hl(DANE.opisCytat)}</q><div class="ot">${hl(DANE.opis)}</div></div></div>
 ${reel('rkIg','ig','#ffd34d')}${reel('rkTt','tt','#c06bff')}
-<div class="in pbrow"><div class="rv" data-rv="30.4"><button class="gz" id="pbKor" type="button" aria-haspopup="dialog"><span class="gz-cap"><span class="gz-win">${ICO.star}</span><span class="gz-t">Korzyści dla marki</span></span></button><button class="gz" id="pbRyn" type="button" aria-haspopup="dialog"><span class="gz-cap"><span class="gz-win">${ICO.chart}</span><span class="gz-t">Wyniki vs rynek</span></span></button></div></div>
-<div class="box inf"><div class="rv" data-rv="33"><h3>INFO WSPÓŁPRACY</h3><ul>${DANE.info.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
-<div class="in kpi">${DANE.kpi.map((k,i)=>`<div class="rv" data-rv="${35+i}"><b class="d gt">${k.v}</b><span>${k.o}</span></div>`).join('')}</div>
-<div class="box tab"><table><tr class="rv" data-rv="38">${DANE.tabela.g.map(x=>`<th>${x}</th>`).join('')}</tr>${DANE.tabela.w.map((r,i)=>`<tr class="rv" data-rv="${39+i}" style="--c:${i?'#ffd34d':'#c06bff'}">${r.map((x,j)=>j==0?`<td style="color:var(--c)">${x}</td>`:j>=3?`<td>${x}<u class="pb"><i style="width:calc(var(--v,1)*${pct(x)}%)"></i></u></td>`:`<td>${x}</td>`).join('')}</tr>`).join('')}</table><div class="note rv" data-rv="41">${DANE.tabela.p} Słupki: środek podanego zakresu.</div></div>
-<div class="tel" id="tel"><div class="scr"><div class="reel" id="reel">${DANE.filmy.map((f,i)=>`<div class="sl${f.mp4?' v':''}" style="top:${i*100}%" data-i="${i}"><b class="bg" style="background-image:url(${f.img})"></b>${f.mp4?`<video src="${f.mp4}" muted loop playsinline preload="none"></video>`:''}<div class="hdr"><span class="avr"><img src="${DANE.avatarIG}" alt=""></span><b>${acct(f.url)}</b><i aria-label="${f.url.includes('instagram')?'Instagram':'TikTok'}">${ICO[f.url.includes('instagram')?'ig':'tt']}</i></div><div class="cp${f.t.length>95?' lg':''}">${f.t}</div><div class="ph"><img src="${f.img}" alt="" loading="lazy"></div></div>`).join('')}</div><button class="tap" id="tap" aria-label="Otwórz film"></button><div class="lbl"><span id="snd"></span><a id="vl" target="_blank" rel="noopener">Zobacz</a></div><div class="acts">${['ig','tt'].map(t=>DANE.sociale.find(s=>s.typ===t)).filter(Boolean).map(s=>`<a href="${s.url}" target="_blank" rel="noopener" aria-label="Profil ${s.typ==='ig'?'Instagram':'TikTok'}: ${s.opis}"><span>${ICO[s.typ]}</span></a>`).join('')}</div></div><div class="sw"><button id="vu" aria-label="Poprzedni film">▲</button><button id="vd" aria-label="Następny film">▼</button></div></div>`;
+<div class="in pbrow" data-bo="30.8" data-bo-m="30.6"><div class="rv" data-rv="30.8" data-rv-m="30.6"><button class="gz" id="pbKor" type="button" aria-haspopup="dialog"><span class="gz-cap"><span class="gz-win">${ICO.star}</span><span class="gz-t">Korzyści dla marki</span></span></button><button class="gz" id="pbRyn" type="button" aria-haspopup="dialog"><span class="gz-cap"><span class="gz-win">${ICO.chart}</span><span class="gz-t">Wyniki vs rynek</span></span></button></div></div>
+<div class="box inf" data-bo="33" data-bo-m="35.4"><div class="rv" data-rv="33" data-rv-m="35.4"><h3>INFO WSPÓŁPRACY</h3><ul>${DANE.info.map(x=>`<li>${x}</li>`).join('')}</ul></div></div>
+<div class="in kpi" data-bo="35" data-bo-m="35.6">${DANE.kpi.map((k,i)=>`<div class="rv" data-rv="${35+i}" data-rv-m="${(35.6+i*.4).toFixed(1)}"><b class="d gt">${k.v}</b><span>${k.o}</span></div>`).join('')}</div>
+<div class="box tab" data-bo="38" data-bo-m="40.4"><table><tr class="rv" data-rv="38" data-rv-m="40.4">${DANE.tabela.g.map(x=>`<th>${x}</th>`).join('')}</tr>${DANE.tabela.w.map((r,i)=>`<tr class="rv" data-rv="${39+i}" data-rv-m="${(40.8+i*.4).toFixed(1)}" style="--c:${i?'#ffd34d':'#c06bff'}">${r.map((x,j)=>j==0?`<td style="color:var(--c)">${x}</td>`:j>=3?`<td>${x}<u class="pb"><i style="width:calc(var(--v,1)*${pct(x)}%)"></i></u></td>`:`<td>${x}</td>`).join('')}</tr>`).join('')}</table><div class="note rv" data-rv="41" data-rv-m="41.6">${DANE.tabela.p} Słupki: środek podanego zakresu.</div></div>
+<div class="tel" id="tel" data-bo="30"><div class="scr"><div class="reel" id="reel">${DANE.filmy.map((f,i)=>`<div class="sl${f.mp4?' v':''}" style="top:${i*100}%" data-i="${i}"><b class="bg" style="background-image:url(${f.img})"></b>${f.mp4?`<video src="${f.mp4}" muted loop playsinline preload="none"></video>`:''}<div class="hdr"><span class="avr"><img src="${DANE.avatarIG}" alt=""></span><b>${acct(f.url)}</b><i aria-label="${f.url.includes('instagram')?'Instagram':'TikTok'}">${ICO[f.url.includes('instagram')?'ig':'tt']}</i></div><div class="cp${f.t.length>95?' lg':''}">${f.t}</div><div class="ph"><img src="${f.img}" alt="" loading="lazy"></div></div>`).join('')}</div><button class="tap" id="tap" aria-label="Otwórz film"></button><div class="lbl"><span id="snd"></span><a id="vl" target="_blank" rel="noopener">Zobacz</a></div><div class="acts">${['ig','tt'].map(t=>DANE.sociale.find(s=>s.typ===t)).filter(Boolean).map(s=>`<a href="${s.url}" target="_blank" rel="noopener" aria-label="Profil ${s.typ==='ig'?'Instagram':'TikTok'}: ${s.opis}"><span>${ICO[s.typ]}</span></a>`).join('')}</div></div><div class="sw"><button id="vu" aria-label="Poprzedni film">▲</button><button id="vd" aria-label="Następny film">▼</button></div></div>`;
 card.innerHTML=html;
 const hls=$$('.hl'),rkIg=$('#rkIg'),rkTt=$('#rkTt');
 // {{sekunda|fraza}} -> litery frazy w <i> (fala pogrubiania sterowana osia czasu, patrz .hl w CSS i apply())
@@ -473,8 +488,9 @@ $('#foot').innerHTML=`Karta influencera agencji <b>Spark Scale</b>.<br>${DANE.st
 $('#rt').innerHTML=`<a class="bt a" href="mailto:${DANE.mail}?subject=${encodeURIComponent(DANE.temat)}">Porozmawiajmy<span class="ar" aria-hidden="true">→</span></a><button class="bt s" id="share" type="button" aria-haspopup="dialog">${ICO.share}Udostępnij</button>`;
 
 /* ---------- os czasu: 1 profil 0-5, 2 info 5-20, 3 staty 20-30, 4 tresci 30-50, 5 karta ---------- */
-const TMIN=-1.4,TMAX=51.6;
-const SEG=[['Profil',TMIN,5,0],['Kim jest',5,20,5],['Statystyki',20,30,20.8],['Filmy i tabela',30,50,30.3],['Karta',50,TMAX,TMAX]];
+const PACE=1.15;   // tempo odtwarzania: calosc o 15% dluzej (tresc dluzej na ekranie)
+const TMIN=-2.6,TMAX=51.6;   // wstep (obrot karty po kliknieciu PODGLAD) trwa 2,7 s zamiast 1,5 s: lagodniej
+const SEG=[['Profil',TMIN,5,0],['Kim jest',5,20,5],['Statystyki',20,30,21.8],['Filmy i tabela',30,50,31.4],['Karta',50,TMAX,TMAX]];
 const EMBED=new URLSearchParams(location.search).has('embed');if(EMBED)document.body.classList.add('embed');
 let w=innerWidth,h=innerHeight,mobile=false,KEYS=[],VID={a:30,s:5};
 const fit=(cx,cy,vW,vH,rx=0,ry=0)=>({cx,cy,z:Math.min(w/vW,h/vH),rx,ry});
@@ -483,14 +499,16 @@ const fitT=(cx,top,vW,vH,rx=0,ry=0)=>{const z=Math.min(w/vW,h/vH);return{cx,cy:t
 function layout(){
   w=innerWidth;h=innerHeight;mobile=w<820&&h>w;document.body.classList.toggle('m',mobile);
   const idle=mobile?fit(500,724,1050,1868):fit(500,724,1090,1508);
-  if(!mobile){KEYS=[[TMIN,{...idle,ry:360}],[.1,fit(500,128,1070,430)],[4.6,fit(500,136,1040,430)],[6,fitT(520,205,1500,820)],[19,fitT(520,205,1480,820)],
-    [20.7,fit(270,775,783,783,20,-TILT)],[28.8,fit(640,755,783,783,20,-TILT)],[30.3,fit(525,1205,1130,760)],[49.4,fit(525,1209,1110,760)],[TMAX,idle]];VID={a:30,s:3.4};}
-  else{KEYS=[[TMIN,{...idle,ry:360}],[.1,fit(500,128,1040,600)],[4.6,fit(500,130,1020,600)],[6,fit(500,740,900,1500)],[19.2,fit(500,740,900,1500)],
-    [20.7,fit(230,780,609,1087,16,-TILT*.72)],[24.3,fit(240,780,609,1087,16,-TILT*.72)],[25.2,fit(760,780,609,1087,16,-TILT*.72)],[28.8,fit(770,780,609,1087,16,-TILT*.72)],
-    [30.3,fit(192,1144,335,500)],[33.4,fit(192,1144,330,500)],[34.2,fit(445,1144,220,500)],[36.4,fit(445,1144,216,500)],[37.1,fit(625,1144,180,500)],[39.4,fit(625,1144,176,500)],[40.2,fit(372,1335,680,500)],[42.8,fit(372,1335,670,500)],[43.6,fit(830,1220,440,850)],[49.6,fit(830,1220,430,850)],[TMAX,idle]];VID={a:43.6,s:3};}
+  // Przejscia kamery: kazdy ruch ma min. ok. 1,7-2,8 s (wczesniej 0,7-1,5 s) - ruch startuje wczesniej, w czasie postoju, wiec tresc jest w tych samych sekundach
+  if(!mobile){KEYS=[[TMIN,{...idle,ry:360}],[.1,fit(500,128,1070,430)],[3.9,fit(500,136,1040,430)],[6,fitT(520,205,1500,820)],[19,fitT(520,205,1480,820)],
+    [21.6,fit(270,790,700,700,14,-TILT*.76)],[28.0,fit(640,770,700,700,14,-TILT*.76)],[30.8,fit(525,1205,1130,760)],[48.8,fit(525,1209,1110,760)],[TMAX,idle]];VID={a:30,s:3.4};}
+  else{const TI=-TILT*.62,OP=fit(192,1144,320,500),IK=fit(526,1140,372,500),TB=fit(254,1334,440,520),PH=fit(830,1220,440,850);   // telefon: opis -> info+kpi razem -> tabela (wezsza wersja) -> telefon z filmami
+    KEYS=[[TMIN,{...idle,ry:360}],[.1,fit(500,128,1040,600)],[3.9,fit(500,130,1020,600)],[6,fit(500,740,900,1500)],[19,fit(500,740,900,1500)],
+    [21.4,fit(240,790,560,1000,12,TI)],[24.4,fit(250,790,560,1000,12,TI)],[26.2,fit(750,790,560,1000,12,TI)],[28.0,fit(760,790,560,1000,12,TI)],
+    [30.6,OP],[33.5,fit(192,1144,316,500)],[35.3,IK],[38.6,fit(526,1140,368,500)],[40.3,TB],[43.0,fit(254,1334,436,520)],[45.3,PH],[49.6,fit(830,1220,430,850)],[TMAX,idle]];VID={a:45.3,s:2.15};}
   if(EMBED){const E=fit(500,724,990,1433);KEYS=[[TMIN,E],[TMAX,E]];}   // podglad (?embed): cala karta (wysokosc 1448) w kadrze
   // bloki z prawej: desktop narastajaco, mobile po kolei
-  $$('.bkr').forEach((el,i)=>{el.dataset.win=mobile?`${12.2+i*1.5},${i==4?19.5:13.6+i*1.5}`:`${9.2+i*1.5},19.5`});
+  $$('.bkr').forEach((el,i)=>{el.dataset.win=mobile?`${12.2+i*1.5},${i==4?19.5:13.6+i*1.5}`:`${9.4+i*1.5},19.5`});
   const c=$('#dust');c.width=w*DPR;c.height=h*DPR;
   dustSeed();
 }
@@ -502,22 +520,24 @@ function camAt(t){
 
 /* ---------- stan ---------- */
 const world=$('#world'),reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let jf=0,jph=0,jreq=false;   // jf: zaslona przy duzym skoku (0..1), jph: 0 brak, 1 gasnie, 2 rozjasnia sie
 let T=TMIN,shown=TMIN,playing=false,paused=false,lastScrub=-1e9,enter=EMBED?1:0,ready=false,idleW=1,px=0,py=0,tx=0,ty=0,slideOff=0,lastSlide=-1,vidOff=0,lastVid=-1,sound=false,armedAt=0;
-const windows=$$('[data-win]'),rvs=$$('[data-rv]'),ksL=$$('#ks span'),socL=$$('.soc a');
+const windows=$$('[data-win]'),rvs=$$('[data-rv]'),bos=$$('[data-bo]'),ksL=$$('#ks span'),socL=$$('.soc a');
 const rwIg=$$('#stIg .rw'),rwTt=$$('#stTt .rw');
-const IGIN=[22,23,23.9,24.8],TTIN=[24.4,24.7,25.6,26.4,26.7,27.6];
+let curSeg=-1;const SEGSUB=['nagłówek karty','kim jest i do kogo mówi','Instagram i TikTok w liczbach','opis, tabela, filmy','powrót do karty'];
+const IGIN=[22.2,22.8,23.4,24],TTIN=[25.2,25.7,26.3,26.8,27.1,27.4];   // wiersze statystyk: IG gdy kamera stoi przy IG, TT gdy dojedzie do TT
 const set=(el,k,v)=>{const s=v.toFixed(3);if(el['_'+k]!==s){el['_'+k]=s;el.style.setProperty(k,s)}};
 
 function apply(t,now){
   document.body.classList.toggle('running',t>TMIN+.001&&t<TMAX-.001);
   // kamera
-  const c=camAt(t),idle=t<=-1.3||t>=51.4;idleW+=((idle?1:0)-idleW)*.07;
+  const c=camAt(t),idle=t<=TMIN+.1||t>=TMAX-.2;idleW+=((idle?1:0)-idleW)*.07;
   tx+=(px-tx)*.06;ty+=(py-ty)*.06;
   const fl=(reduce||EMBED)?0:idleW,sec=now/1000,
     rx=c.rx-ty*7*idleW+Math.sin(sec*.7)*1.5*fl,ry=(reduce&&t<.1?0:c.ry)+tx*10*idleW+Math.cos(sec*.55)*2.3*fl,
     dy=Math.sin(sec*.9)*7*fl,e=sm(enter),z=c.z*(.72+.28*e);
   world.style.transform=`translate3d(${w/2}px,${h/2+dy}px,0) scale(${z}) rotateX(${rx.toFixed(3)}deg) rotateY(${(ry-(1-e)*55).toFixed(3)}deg) translate(${-c.cx}px,${-c.cy}px)`;
-  world.style.opacity=e;
+  world.style.opacity=e*(1-jf);
   $('#sheen').style.transform=`translate3d(${((ry%360)*9+Math.sin(sec*.5)*90).toFixed(1)}px,${(rx*-7).toFixed(1)}px,0)`;
 
   // 1: ryta ksywka i puchnace kolka
@@ -531,22 +551,24 @@ function apply(t,now){
   // 2: bloki
   for(const el of windows){const v=(mobile&&el.dataset.winM||el.dataset.win).split(','),p=sm((t-v[0])/.7)*(1-sm((t-v[1])/.6));
     set(el,'--p',p);const hid=p<.002;if(el._h!==hid){el._h=hid;el.style.visibility=hid?'hidden':'visible'}}
-  const auto=t<10?0:1+Math.floor((t-10)/3);const si=((t>=20?0:auto)+slideOff)%DANE.zdjecia.length;
+  const auto=t<10?0:1+Math.floor((t-10)/3);const si=((t>=21?0:auto)+slideOff)%DANE.zdjecia.length;
   if(si!==lastSlide){lastSlide=si;$$('#foto i').forEach((x,i)=>x.classList.toggle('on',i===si));$$('#dots button').forEach((x,i)=>x.classList.toggle('on',i===si))}
 
   // 3: statystyki wychodza z karty
-  const q=sm((t-20.5)/1.2)*(1-sm((t-29)/1.1));
+  const q=sm((t-21)/1.2)*(1-sm((t-29.4)/1.1));   // panele statystyk: 21 -> 29,4 s
   stat($('#stIg'),$('#shIg'),rwIg,DANE.ig.wiersze,IGIN,t,q,lerp(150,mobile?20:40,q),lerp(222,mobile?460:430,q));
   stat($('#stTt'),$('#shTt'),rwTt,DANE.tt.wiersze,TTIN,t,q,lerp(628,mobile?520:530,q),lerp(222,mobile?460:430,q));
   let s=0;const all=[...DANE.ig.wiersze.map((r,i)=>[r,IGIN[i]]),...DANE.tt.wiersze.map((r,i)=>[r,TTIN[i]])];
-  for(const [r,a] of all)if(r.suma)s+=r.suma*(t<21||t>28.6?1:sm((t-a)/1.1));
+  for(const [r,a] of all)if(r.suma)s+=r.suma*(t<21||t>28.8?1:sm((t-a)/1.1));
   $('#sum').textContent=fmt(s,1)+' tys.';
   const f=cl(s/GMAX);$('#ga').style.filter=f>.9?'drop-shadow(0 0 6px rgba(34,177,76,.9))':'';$('#nd').style.transform=`rotate(${(f*180).toFixed(1)}deg)`;$('#ga').setAttribute('stroke-dasharray',`${f.toFixed(3)} 1`);
   $('#gg').style.transform=`translateZ(${4+q*190}px) translateY(${q*(mobile?170:92)}px) scale(${1+q*(mobile?.25:.62)})`;
   $('#foto').style.opacity=1-q*.62;
 
   // 4: tekst, tabela, telefon
-  for(const el of rvs){const a=+el.dataset.rv;const v=t<28.6||t>=50?1-q*.72:t<29.6?(1-sm(t-28.6))*.28:sm((t-a)/.8);set(el,'--v',v)}
+  // plansze dolu karty: w sekwencji 3 gasna w calosci (ramka i tresc), potem kazda ramka pojawia sie 0,4 s przed swoja trescia
+  for(const el of bos){const a=+(mobile&&el.dataset.boM||el.dataset.bo);set(el,'--bo',t<29.4||t>=50?1-q:sm((t-a+.4)/.8))}
+  for(const el of rvs){const a=+(mobile&&el.dataset.rvM||el.dataset.rv);set(el,'--v',t<29.4||t>=50?1:sm((t-a)/.8))}
   const wt=sm((t-29.6)/1)*(1-sm((t-49.6)/1));const tel=$('#tel');set(tel,'--w',wt);
   const ph=t>=29&&t<50.2,n=DANE.filmy.length;const vi=ph?((Math.max(0,Math.floor((t-VID.a)/VID.s))+vidOff)%n+n)%n:-1;
   if(vi!==lastVid){setVid(vi);lastVid=vi}
@@ -555,8 +577,10 @@ function apply(t,now){
   const idleT=t<=TMIN+.001||t>=TMAX-.001;
   for(const el of hls)set(el,'--h',idleT?1:sm((t-(+el.dataset.t0))/1.1));
   // rolka miesiaca: IG wysuwa sie po panelu IG (24,2 s), TikTok po panelu TikToka (26,8 s); chowaja sie razem z panelami (29 s)
-  const rOut=1-sm((t-29)/1.1);
-  for(const [el,r] of [[rkIg,sm((t-24.2)/.9)*rOut],[rkTt,sm((t-26.8)/.9)*rOut]]){if(!el)continue;set(el,'--r',r);const vis=r>.002;if(el._v!==vis){el._v=vis;el.style.visibility=vis?'visible':'hidden'}el.classList.toggle('on',r>.7)}
+  const rOut=1-sm((t-29.4)/1.1);
+  for(const [el,r] of [[rkIg,sm((t-24)/.9)*rOut],[rkTt,sm((t-26.4)/.9)*rOut]]){if(!el)continue;set(el,'--r',r);const vis=r>.002;if(el._v!==vis){el._v=vis;el.style.visibility=vis?'visible':'hidden'}el.classList.toggle('on',r>.7)}
+  // plakietka z nazwa sekwencji
+  const sg=SEG.findIndex(x=>t>=x[1]&&t<x[2]);if(sg!==curSeg&&sg>=0){const c=$('#cap');c.innerHTML=`<b>${sg+1}</b>${SEG[sg][0]}<small>· ${SEGSUB[sg]}</small>`;if(curSeg>=0){c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop')}curSeg=sg}
   // hud
   $$('#segs u i').forEach((b,i)=>{const[,a,e2]=SEG[i];b.style.width=cl((t-a)/(e2-a))*100+'%'});
   $$('#segs button').forEach((b,i)=>b.classList.toggle('on',t>=SEG[i][1]&&t<SEG[i][2]));
@@ -567,7 +591,7 @@ function stat(el,sh,rows,data,inn,t,q,left,width){
   el.style.transform=`translateZ(${5+q*135}px) translateY(${-up}px)`;
   set(el,'--q',q);
   sh.style.left=left+'px';sh.style.width=width+'px';sh.style.top=(420+(1-q)*300)+'px';sh.style.height=(490-(1-q)*300)+'px';set(sh,'--q',q*.6);
-  rows.forEach((r,i)=>{const a=inn[i],p=sm((t-a)/.6)*(1-sm((t-29)/.8));set(r,'--p',p);const b=r.querySelector('b');
+  rows.forEach((r,i)=>{const a=inn[i],p=sm((t-a)/.6)*(1-sm((t-29.4)/.8));set(r,'--p',p);const b=r.querySelector('b');
     if(b){const k=sm((t-a)/1),txt=fmt(+b.dataset.v*k,+b.dataset.d)+b.dataset.u;if(b._txt!==txt){b._txt=txt;b.textContent=txt}}});
 }
 function setVid(i){
@@ -581,9 +605,9 @@ function setVid(i){
 function start(fromBtn){
   if(fromBtn){const f=$('#flash');f.classList.remove('boom');void f.offsetWidth;f.classList.add('boom');
     const r=$('#prev').getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,150,['#ffd34d','#fa7e1e','#e1306c','#a23bd6','#5ef2ff','#fff'],8)}
-  T=shown=TMIN+.002;playing=true;paused=false;slideOff=0;vidOff=0;ksL.forEach(e=>e._sp=0);ppIcon();$('#hint').style.display='none';
+  jf=0;jph=0;T=shown=TMIN+.002;playing=true;paused=false;slideOff=0;vidOff=0;ksL.forEach(e=>e._sp=0);ppIcon();$('#hint').style.display='none';
 }
-function stop(){T=shown=TMIN;playing=false;paused=false;armedAt=performance.now();ppIcon()}
+function stop(){jf=0;jph=0;T=shown=TMIN;playing=false;paused=false;armedAt=performance.now();ppIcon()}
 function ppIcon(){}   // pasek nawigacji nie ma juz przycisku pauzy (pauza: spacja)
 function scrub(d){
   const now=performance.now();
@@ -595,10 +619,10 @@ function scrub(d){
   T=cl(T+d,TMIN,TMAX);lastScrub=now;
   if(T<=TMIN)stop();
 }
-addEventListener('wheel',e=>{if(menuOpened())return;e.preventDefault();const u=e.deltaMode===1?33:1;scrub(cl(e.deltaY*u,-160,160)*.016)},{passive:false});
+addEventListener('wheel',e=>{if(menuOpened())return;e.preventDefault();const u=e.deltaMode===1?33:1;scrub(cl(e.deltaY*u,-160,160)*.013)},{passive:false});
 let ty0=null;
 addEventListener('touchstart',e=>{ty0=e.touches[0].clientY},{passive:true});
-addEventListener('touchmove',e=>{if(ty0===null||menuOpened())return;const y=e.touches[0].clientY;scrub((ty0-y)*.03);ty0=y;e.preventDefault()},{passive:false});
+addEventListener('touchmove',e=>{if(ty0===null||menuOpened())return;const y=e.touches[0].clientY;scrub((ty0-y)*.026);ty0=y;e.preventDefault()},{passive:false});
 addEventListener('keydown',e=>{
   if(menuOpened()){if(e.key==='Escape')ovClose();else if(e.key==='Tab'&&ovEl){const f=[...ovEl.querySelectorAll('a.mi,a.go,button.mx,button.cpb,input')],a=document.activeElement;
     if(e.shiftKey&&(a===f[0]||!ovEl.contains(a))){f[f.length-1].focus();e.preventDefault()}else if(!e.shiftKey&&(a===f[f.length-1]||!ovEl.contains(a))){f[0].focus();e.preventDefault()}}return}
@@ -670,7 +694,7 @@ $('#tap').addEventListener('click',()=>{const v=DANE.filmy[Math.max(lastVid,0)];
   sound=!sound;if(sound){paused=true;ppIcon()}setVid(lastVid)});
 const SHORT=['Profil','Kim jest','Staty','Filmy','Karta'];
 $('#segs').innerHTML=SEG.map((s,i)=>`<button data-i="${i}" aria-label="${i+1}. ${s[0]}"><span class="f"><b>${i+1}</b>${s[0]}</span><span class="s"><b>${i+1}</b>${SHORT[i]}</span><u><i></i></u></button>`).join('');
-$('#segs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const s=SEG[+b.dataset.i];T=s[3];lastScrub=performance.now();playing=true;paused=false;if(T>=TMAX)T=TMAX});
+$('#segs').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;const s=SEG[+b.dataset.i];T=s[3];lastScrub=performance.now();playing=true;paused=false;jreq=true;if(T>=TMAX)T=TMAX});
 addEventListener('resize',layout);
 
 /* ---------- pyl i wybuch ---------- */
@@ -692,8 +716,12 @@ function drawDust(now,cam,dt){
 let last=performance.now();
 function frame(now){
   const dt=Math.min(.05,(now-last)/1000);last=now;
-  if(playing&&!paused&&now-lastScrub>1300&&T<TMAX)T=Math.min(TMAX,T+dt);
-  shown+=(T-shown)*(1-Math.exp(-dt*(now-lastScrub<1300?7:30)));
+  if(playing&&!paused&&now-lastScrub>1300&&T<TMAX)T=Math.min(TMAX,T+dt/PACE);
+  // duzy skok (klik w segment, mocne machniecie): zamiast lotu kamery przez cala os - krotkie wygaszenie i rozjasnienie
+  if(jreq){jreq=false;if(jph===0&&ready&&!EMBED&&Math.abs(T-shown)>1.5)jph=1}   // tylko klik w segment; przewijanie nie miga
+  if(jph===1){jf=Math.min(1,jf+dt/.2);if(jf>=1){shown=T;jph=2}}
+  else{if(jph===2){jf=Math.max(0,jf-dt/.32);if(jf<=0)jph=0}
+    const sc=now-lastScrub<1300;let d=(T-shown)*(1-Math.exp(-dt*(sc?8:30)));if(sc)d=cl(d,-3.5*dt,3.5*dt);shown+=d}   // przewijanie: kamera nadaza plynnie, nie szybciej niz 3,5x
   if(Math.abs(T-shown)<.002)shown=T;
   if(playing&&T>=TMAX&&shown>=TMAX-.01){playing=false;shown=T=TMAX;armedAt=now}
   if(ready&&enter<1)enter=Math.min(1,enter+dt/1.15);
