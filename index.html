@@ -71,7 +71,7 @@
         <button type="button" class="sys-chip" data-go="b">2 · System SparkScale</button>
         <button type="button" class="sys-chip sys-re" id="sysRe">↻ od nowa</button>
       </div>
-      <div class="sys-scroll"><svg id="sysSvg" viewBox="0 0 1200 600" role="img" aria-label="Schemat: firma z ręczną pracą ludzi zamieniona w jeden spójny system, w którym człowiek tylko weryfikuje"></svg></div>
+      <div class="sys-scroll"><svg id="sysSvg" viewBox="0 0 1280 600" role="img" aria-label="Schemat: firma z ręczną pracą ludzi zamieniona w jeden spójny system, w którym człowiek tylko weryfikuje"></svg></div>
       <p class="sys-cap"><b class="ca">Stan obecny — ręczna robota.</b><b class="cb">System firmowy — dane płyną same.</b>
         <span class="sys-leg"><svg viewBox="-12 -22 24 46" width="14" height="26" aria-hidden="true"><use href="#sysMan"/></svg> = powtarzalna praca człowieka · ludzików: <em id="sysCnt">9</em></span></p>
       <div class="sys-legend" aria-label="Legenda schematu"><h3>Legenda</h3><ul><li><svg viewBox="0 0 40 26" aria-hidden="true"><rect x="3" y="4" width="34" height="18" rx="5" fill="rgba(255,154,60,.16)" stroke="#ff9a3c" stroke-width="2"/></svg><span><b>Etap pracy</b>albo proces</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><ellipse cx="20" cy="13" rx="15" ry="10" fill="rgba(255,225,77,.14)" stroke="#ffe14d" stroke-width="2"/></svg><span><b>Dział lub osoba</b>w firmie</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><polygon points="3,8 20,2 37,8 37,18 20,24 3,18" fill="#2a2d33" stroke="#c9cfd6" stroke-width="2" stroke-linejoin="round"/></svg><span><b>System, który firma już ma</b>np. ERP</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><polygon points="3,13 20,3 37,13 20,23" fill="rgba(125,139,255,.16)" stroke="#7d8bff" stroke-width="2" stroke-linejoin="round"/></svg><span><b>Aplikacja pod firmę</b>zbudowana na zamówienie</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><rect x="6" y="4" width="28" height="18" rx="4" fill="rgba(46,213,115,.14)" stroke="#2ed573" stroke-width="2"/><path d="M9 8l11 8 11-8" fill="none" stroke="#2ed573" stroke-width="2" stroke-linecap="round"/></svg><span><b>Maile i telefony</b>kontakt z klientami i dostawcami</span></li><li><svg viewBox="-14 -22 28 46" aria-hidden="true"><use href="#sysMan"/></svg><span><b>Praca człowieka</b>powtarzalna, ręczna</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><path d="M3 13h34" stroke="#9a9a96" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></svg><span><b>Dane przenosi człowiek</b>ręcznie, z miejsca na miejsce</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><path d="M3 13h34" stroke="#58d0ff" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="13" r="3.5" fill="#FF8900"/></svg><span><b>Dane płyną same</b>bez udziału człowieka</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><rect x="3" y="3" width="34" height="20" rx="7" fill="rgba(79,100,235,.16)" stroke="#7d8bff" stroke-width="2"/></svg><span><b>Jeden wspólny system</b>wszystko w jednym miejscu</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><path d="M12 3H4v20h8M28 3h8v20h-8" fill="none" stroke="#F5F5F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="13" r="3" fill="#F5F5F4"/></svg><span><b>Człowiek tylko sprawdza</b>zatwierdza, nie przepisuje</span></li></ul></div>
@@ -104,10 +104,10 @@
       'M178 175L355 110','M170 215L300 252','M480 145V204','M183 335L265 330','M160 380L215 396','M150 447L200 462','M297 452L333 462','M165 515L335 515','M470 396V440','M675 300L740 320','M920 320L990 320','M770 247L815 270','M785 370L752 414','M830 370V414','M880 370L908 414'
     ].map(function(d){return '<path class="la" d="'+d+'"/>';}).join('')+'</g>';
     // wiry stanu docelowego
-    var wires=['M330 118V178','M330 178V235L305 245','M125 241V290','M190 241V274','M255 241V258','M440 237V279','M500 340H584','M640 340H660','M920 340H930','M305 431V483','M720 280Q735 262 765 262','M865 280Q835 262 815 262'];
+    var wires=['M330 118V178','M330 178V235L305 245','M125 241V290','M190 241V274','M255 241V258','M440 237V279','M500 340H584','M640 340H658V425','M918 425H959','M305 431V483'];
     h+=wires.map(function(d,i){return line(d,'wb','style="--d:'+(2+i*.08)+'s"');}).join('');
     // pulsy
-    var pul=['M330 118V235L305 245','M500 340H660','M660 340H930','M305 431V483','M125 241V290','M440 237V279'];
+    var pul=['M330 118V235L305 245','M500 340H658V425','M658 425H959','M305 431V483','M125 241V290','M440 237V279'];
     h+='<g class="pb">'+pul.map(function(d,i){return '<circle r="4.5" fill="#FF8900" style="filter:drop-shadow(0 0 6px #FF8900)"><animateMotion dur="'+(2.4+i*.35)+'s" begin="'+(i*.4)+'s" repeatCount="indefinite" path="'+d+'"/></circle>';}).join('')+'</g>';
     // wezly
     h+=node('dos',480,100,1,330,80,.84,rect(250,90,OR,'DOSTAWY',20),null,.1);
@@ -116,8 +116,8 @@
     h+=node('han',125,335,1,190,215,1,ell(64,52,DR,'HANDLOWIEC',13),'<circle r="27" '+SH(DR)+'/><text fill="'+DR+'" font-size="22">H</text>',.25);
     h+=node('biu',110,490,1,255,215,1,ell(55,48,RD,'BIURO',18),'<circle r="27" '+SH(RD)+'/><text fill="'+RD+'" font-size="22">B</text>',.35);
     h+=node('fak',478,500,1,330,505,1,rect(290,120,RD,'FAKTURY/BIURO',20),rect(290,44,RD,'FAKTURY I BIURO',17,22),.3);
-    h+=node('wyk',1080,320,1,1010,340,.9,rect(180,100,GO,'REALIZACJA/ZLECEŃ',20),null,.1);
-    h+=node('dia',760,185,1,790,340,1,'<polygon points="-128,0 0,-62 128,0 0,62" '+SH(BL)+' stroke-linejoin="round"/>'+lab('STRONA/INTERNETOWA',BL,13)+'','<polygon points="-130,0 0,-80 130,0 0,80" '+SH(BL)+' stroke-linejoin="round"/><text fill="'+BL+'" font-size="15">APLIKACJA FIRMY</text>',.2);
+    h+=node('wyk',1080,320,1,1040,425,.9,rect(180,100,GO,'REALIZACJA/ZLECEŃ',20),null,.1);
+    h+=node('dia',760,185,1,788,425,1,'<polygon points="-128,0 0,-62 128,0 0,62" '+SH(BL)+' stroke-linejoin="round"/>'+lab('STRONA/INTERNETOWA',BL,13)+'','<polygon points="-130,0 0,-80 130,0 0,80" '+SH(BL)+' stroke-linejoin="round"/><text fill="'+BL+'" font-size="15">APLIKACJA FIRMY</text>',.2);
     // koperta tylko w stanie obecnym
     h+='<g class="oa" transform="translate(240 425)" style="--d:.1s"><rect x="-58" y="-39" width="116" height="78" rx="14" '+SH(GR)+'/><path d="M-50-28L0 8L50-28" fill="none" stroke="'+GR+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>';
     // stan obecny: kafelek ZLECENIA BIURO i narzedzia, ktore na nim wisza
@@ -128,41 +128,56 @@
     h+='<g class="fas">'+F.map(function(p,i){return man(p[0],p[1],i,'fa');}).join('')+'</g>';
     // elementy stanu docelowego
     h+='<g class="ob" style="--d:1.9s"><rect x="385" y="193" width="170" height="44" rx="22" '+SH('#39a9ff')+'/><text x="470" y="215" fill="#39a9ff" font-size="16">NADZÓR</text></g>';
-    h+='<g class="ob" style="--d:2.1s"><rect x="518" y="243" width="62" height="38" rx="3" fill="#F5F5F4"/><text x="535" y="263" fill="'+RD+'" font-size="22">$</text><path d="M547 272L555 258L561 268L571 250" stroke="'+RD+'" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';
+    h+='<g class="ob" style="--d:2.1s"><rect x="518" y="281" width="62" height="38" rx="3" fill="#F5F5F4"/><text x="535" y="301" fill="'+RD+'" font-size="22">$</text><path d="M547 310L555 296L561 306L571 288" stroke="'+RD+'" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>';
     h+='<g class="ob" style="--d:2.3s"><use href="#sysMan" transform="translate(68 452)"/><text x="90" y="446" font-size="12" fill="'+W+'" style="text-anchor:start">WPROWADZANIE I</text><text x="90" y="462" font-size="12" fill="'+W+'" style="text-anchor:start">WYMIANA DANYCH</text></g>';
     h+='<g class="ob" style="--d:2.4s"><path d="M520 330H546V321L566 340L546 359V350H520Z" fill="'+GY+'"/></g>';
     h+=brk(330,146,0)+brk(612,340,1)+brk(305,462,2);
     h+='<text class="ob" style="--d:2.7s;text-anchor:start" x="372" y="150" font-size="14" fill="'+W+'">WERYFIKACJA</text><text class="ob" style="--d:2.7s" x="612" y="392" font-size="14" fill="'+W+'">WERYFIKACJA</text><text class="ob" style="--d:2.7s;text-anchor:start" x="352" y="466" font-size="14" fill="'+W+'">WERYFIKACJA</text>';
-    h+='<g class="ob" style="--d:2.8s"><text x="760" y="108" font-size="17" fill="'+W+'">PODGLĄD PRAC</text><circle cx="705" cy="188" r="32" '+SH(YE)+'/><circle cx="815" cy="188" r="32" '+SH(DR)+'/><text x="705" y="188" fill="'+YE+'" font-size="24">Z</text><text x="815" y="188" fill="'+DR+'" font-size="24">H</text><path d="M715 219Q735 245 765 262M805 219Q800 245 805 262" stroke="'+BL+'" stroke-width="2.5" fill="none"/></g>';
-    // rama z okablowaniem: Centrum WWW -> wzmacniacz social -> antena -> klient (tylko stan docelowy)
-    var CB='#1b7a45',CH='#3ddc84',BM='#8a9099',CY='#58d0ff';
-    function soc(x,k){var g='<g transform="translate('+x+' 196)">';
+    // rama z okablowaniem: system -> Centrum WWW -> wzmacniacz social -> router -> klient (stan docelowy)
+    var CB='#1b7a45',CH='#3ddc84',BM='#8a9099',CY='#58d0ff',LG='#c8e64b';
+    function plate(cx,cy,w,hh){var vt=hh>=w,d='';for(var i=0;i<3;i++){var f=(i+1)/4,x=vt?cx:cx-w/2+w*f,y=vt?cy-hh/2+hh*f:cy;d+='<circle cx="'+x+'" cy="'+y+'" r="2.1" fill="#39a9ff"><animate attributeName="fill-opacity" values="1;.3;1" dur="'+(1.2+i*.35)+'s" repeatCount="indefinite"/></circle>';}
+      return '<rect x="'+(cx-w/2)+'" y="'+(cy-hh/2)+'" width="'+w+'" height="'+hh+'" rx="2" fill="'+BM+'" stroke="#0a0a0b" stroke-width="3"/>'+d;}
+    function girder(len,hh){var t=Math.max(4,hh*.08),yT=-hh/2+t,yB=hh/2-t,a=len*.12,p=len*.36,b=len-a,q=len-p;
+      var web='M'+a+' '+yT+'C'+a+' '+yT*.45+' '+p+' '+yT*.2+' '+p+' 0C'+p+' '+yB*.2+' '+a+' '+yB*.45+' '+a+' '+yB+'L'+b+' '+yB+'C'+b+' '+yB*.45+' '+q+' '+yB*.2+' '+q+' 0C'+q+' '+yT*.2+' '+b+' '+yT*.45+' '+b+' '+yT+'Z';
+      var cab='M0 '+(-hh*.07)+'H'+len*.2+'V'+hh*.08+'H'+len*.8+'V'+(-hh*.05)+'H'+len;
+      return '<path d="'+web+'" fill="#171a1f" stroke="#c9cfd6" stroke-width="1.6" stroke-linejoin="round"/>'
+        +'<rect x="0" y="'+(-hh/2)+'" width="'+len+'" height="'+t+'" rx="2" fill="#2a2d33" stroke="#c9cfd6" stroke-width="1.8"/><rect x="0" y="'+(hh/2-t)+'" width="'+len+'" height="'+t+'" rx="2" fill="#2a2d33" stroke="#c9cfd6" stroke-width="1.8"/>'
+        +'<path d="'+cab+'" fill="none" stroke="'+CB+'" stroke-width="3.6" stroke-linejoin="round" stroke-linecap="round"/><path d="'+cab+'" transform="translate(0 -1.2)" fill="none" stroke="'+CH+'" stroke-width="1" stroke-opacity=".5" stroke-linejoin="round"/>';}
+    function soc(x,k){var g='<g transform="translate('+x+' 232)">';
       if(k==='ig')g+='<rect width="18" height="18" rx="5" fill="#c13584"/><rect x="4" y="4" width="10" height="10" rx="3" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="9" cy="9" r="2.5" fill="none" stroke="#fff" stroke-width="1.6"/><circle cx="12.8" cy="5.2" r="1" fill="#fff"/>';
-      if(k==='tt')g+='<rect width="18" height="18" rx="5" fill="#0a0a0b" stroke="#2a2d33" stroke-width="1"/><path d="M8.2 3.6v8.2a2.4 2.4 0 1 1-2.4-2.4M8.2 3.6c.4 2 1.7 3.1 3.8 3.3" transform="translate(-1 .6)" fill="none" stroke="#25f4ee" stroke-width="1.7" stroke-linecap="round"/><path d="M8.2 3.6v8.2a2.4 2.4 0 1 1-2.4-2.4M8.2 3.6c.4 2 1.7 3.1 3.8 3.3" transform="translate(1 -.6)" fill="none" stroke="#fe2c55" stroke-width="1.7" stroke-linecap="round"/><path d="M8.2 3.6v8.2a2.4 2.4 0 1 1-2.4-2.4M8.2 3.6c.4 2 1.7 3.1 3.8 3.3" transform="translate(1 .6)" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>';
+      if(k==='tt'){var n='M8.2 3.6v8.2a2.4 2.4 0 1 1-2.4-2.4M8.2 3.6c.4 2 1.7 3.1 3.8 3.3';g+='<rect width="18" height="18" rx="5" fill="#0a0a0b" stroke="#2a2d33" stroke-width="1"/><path d="'+n+'" transform="translate(-1 .6)" fill="none" stroke="#25f4ee" stroke-width="1.7" stroke-linecap="round"/><path d="'+n+'" transform="translate(1 -.6)" fill="none" stroke="#fe2c55" stroke-width="1.7" stroke-linecap="round"/><path d="'+n+'" transform="translate(1 .6)" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/>';}
       if(k==='yt')g+='<rect y="2.5" width="18" height="13" rx="4" fill="#ff0033"/><path d="M7.4 6.3V11.7L12 9Z" fill="#fff"/>';
       if(k==='fb')g+='<rect width="18" height="18" rx="5" fill="#1877f2"/><text x="10.2" y="10.4" font-size="15" font-weight="800" fill="#fff">f</text>';
       return g+'</g>';}
     var www='<g class="ob" style="--d:3s">';
-    // slupki i belka ramy
-    www+='<path d="M592 240V274M996 240V274" stroke="#6f757d" stroke-width="5" stroke-linecap="round"/><path d="M580 277H604M984 277H1008" stroke="#6f757d" stroke-width="4" stroke-linecap="round"/>';
-    www+='<rect x="586" y="232" width="418" height="8" rx="3" fill="#2a2d33" stroke="'+BM+'" stroke-width="2"/>';
-    // kabel po ramie (ciemnozielony) + zaciski
-    www+='<path d="M600 229H990" stroke="'+CB+'" stroke-width="5" stroke-linecap="round" fill="none"/><path d="M600 227.4H990" stroke="'+CH+'" stroke-width="1" stroke-opacity=".4" fill="none"/>';
-    www+=[640,700,770,830,980].map(function(x){return '<rect x="'+x+'" y="224" width="5" height="12" rx="1.5" fill="#0a0a0b" stroke="'+BM+'" stroke-width="1.2"/>';}).join('');
-    // skrzynia serwerowa zawieszona na ramie
-    www+='<path d="M614 240V248M688 240V248" stroke="'+BM+'" stroke-width="2.4"/>';
-    www+='<path d="M580 262H600" stroke="'+CB+'" stroke-width="4.5" stroke-linecap="round"/><path d="M651 248V229" stroke="'+CB+'" stroke-width="4.5" stroke-linecap="round"/>';
-    www+='<rect x="600" y="248" width="102" height="44" rx="6" '+SH('#39a9ff')+'/><rect x="608" y="254" width="62" height="5" rx="2" fill="#39a9ff" fill-opacity=".4"/><rect x="608" y="262" width="62" height="5" rx="2" fill="#39a9ff" fill-opacity=".4"/><circle cx="684" cy="256.5" r="2.6" fill="'+GR+'"><animate attributeName="fill-opacity" values="1;.2;1" dur="1.3s" repeatCount="indefinite"/></circle><circle cx="693" cy="256.5" r="2.6" fill="'+GR+'"><animate attributeName="fill-opacity" values=".2;1;.2" dur="1.3s" repeatCount="indefinite"/></circle><text x="651" y="281" font-size="12.5" fill="'+W+'">CENTRUM WWW</text>';
+    // PODGLAD PRAC: Z i H widza prace przez Centrum WWW (szczypce na gorze skrzyni)
+    www+='<text x="788" y="26" font-size="17" fill="'+W+'">PODGLĄD PRAC</text><circle cx="728" cy="80" r="28" '+SH(YE)+'/><circle cx="848" cy="80" r="28" '+SH(DR)+'/><text x="728" y="80" fill="'+YE+'" font-size="24">Z</text><text x="848" y="80" fill="'+DR+'" font-size="24">H</text>';
+    www+='<path d="M780 164L743 104M796 164L833 104" stroke="'+LG+'" stroke-width="2.2" stroke-dasharray="5 6" stroke-linecap="round" fill="none"><animate attributeName="stroke-dashoffset" values="0;-22" dur="1.2s" repeatCount="indefinite"/></path>';
+    www+='<path d="M774 196V176Q774 170 780 170M782 194V180Q782 176 786 176M802 194V180Q802 176 798 176M810 196V176Q810 170 804 170" stroke="#c9cfd6" stroke-width="2.2" stroke-linecap="round" fill="none"/><path d="M762 208C766 197 778 193 788 193C798 193 810 197 814 208Z" fill="'+BM+'" stroke="#0a0a0b" stroke-width="2.4"/>';
+    // ramie z systemu (lewa wtyczka w krawedz kontenera) i do skrzyni
+    www+=plate(585,250,18,56)+'<g transform="translate(594 250)">'+girder(56,92)+'</g>'+plate(659,250,18,56);
+    // POTEZNA SKRZYNIA CENTRUM WWW
+    www+='<rect x="668" y="208" width="240" height="84" rx="16" class="shp" style="color:#39a9ff" fill="#0f151c" stroke="'+BM+'" stroke-width="5"/><rect x="680" y="219" width="216" height="62" rx="9" fill="none" stroke="#39a9ff" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="1 5"/><text x="788" y="244" font-size="27" font-weight="800" fill="'+W+'">CENTRUM WWW</text>';
+    for(var i=0;i<6;i++)www+='<circle cx="'+(696+i*13)+'" cy="270" r="2.6" fill="'+GR+'"><animate attributeName="fill-opacity" values="1;.2;1" dur="'+(1+i*.27)+'s" repeatCount="indefinite"/></circle>';
+    www+='<rect x="836" y="263" width="52" height="3" rx="1.5" fill="'+BM+'"/><rect x="836" y="269" width="52" height="3" rx="1.5" fill="'+BM+'"/><rect x="836" y="275" width="52" height="3" rx="1.5" fill="'+BM+'"/>';
+    // ramie na prawo: skrzynia -> wzmacniacz
+    www+=plate(917,250,18,56)+'<g transform="translate(926 250)">'+girder(56,92)+'</g>'+plate(991,250,18,56);
     // wzmacniacz z ikonami social mediow
-    www+='<rect x="852" y="186" width="112" height="46" rx="8" fill="#15171c" stroke="#c9cfd6" stroke-width="2"/>'+soc(862,'ig')+soc(888,'tt')+soc(914,'yt')+soc(940,'fb')+'<path d="M862 224H954" stroke="'+CH+'" stroke-width="2" stroke-linecap="round" stroke-opacity=".7"/>';
-    // antena
-    www+='<path d="M990 232V120" stroke="#c9cfd6" stroke-width="3" stroke-linecap="round"/><path d="M968 140H1012M972 156H1008M976 172H1004M980 188H1000" stroke="#c9cfd6" stroke-width="2.6" stroke-linecap="round"/><circle cx="990" cy="116" r="4" fill="#FF8900"/>';
-    www+=[14,26,38].map(function(r,i){var d=(r*.7071).toFixed(1);return '<path d="M'+(990-d)+' '+(116-d)+'A'+r+' '+r+' 0 0 1 '+(990+ +d)+' '+(116-d)+'" stroke="'+CY+'" stroke-width="2.4" stroke-linecap="round" fill="none" stroke-opacity=".2"><animate attributeName="stroke-opacity" values=".15;.95;.15" dur="2.2s" begin="'+(i*.35)+'s" repeatCount="indefinite"/></path>';}).join('');
-    // klient
-    www+='<path d="M1010 156Q1042 160 1044 187" stroke="'+CY+'" stroke-width="2" fill="none" stroke-dasharray="4 5" stroke-linecap="round"><animate attributeName="stroke-dashoffset" values="0;-18" dur="1s" repeatCount="indefinite"/></path>';
-    www+='<g transform="translate(1050 215)"><circle r="27" '+SH(GR)+'/><text fill="'+GR+'" font-size="22">K</text></g>';
+    www+='<rect x="1000" y="222" width="104" height="56" rx="8" fill="#15171c" stroke="#c9cfd6" stroke-width="2"/>'+soc(1007,'ig')+soc(1031,'tt')+soc(1055,'yt')+soc(1079,'fb')+'<path d="M1010 266H1094" stroke="'+CH+'" stroke-width="2" stroke-linecap="round" stroke-opacity=".7"/>';
+    // router z 4 antenami
+    www+=plate(1113,250,18,56)+plate(1131,250,18,56);
+    [[1158,238,1142,184],[1178,238,1170,176],[1212,238,1220,176],[1232,238,1248,184]].forEach(function(q){www+='<path d="M'+q[0]+' '+q[1]+'L'+q[2]+' '+q[3]+'" stroke="#c9cfd6" stroke-width="6" stroke-linecap="round"/><path d="M'+q[0]+' '+q[1]+'L'+q[2]+' '+q[3]+'" stroke="#15171c" stroke-width="2.4" stroke-linecap="round"/><circle cx="'+q[2]+'" cy="'+q[3]+'" r="3.4" fill="#FF8900"/>';});
+    www+='<rect x="1140" y="236" width="110" height="36" rx="9" class="shp" style="color:#39a9ff" fill="#101419" stroke="#c9cfd6" stroke-width="2.4"/>';
+    for(var j=0;j<5;j++)www+='<circle cx="'+(1156+j*13)+'" cy="249" r="2.8" fill="'+GR+'"><animate attributeName="fill-opacity" values="1;.2;1" dur="'+(.9+j*.23)+'s" repeatCount="indefinite"/></circle>';
+    www+='<rect x="1152" y="258" width="62" height="5" rx="2" fill="#39a9ff" fill-opacity=".4"/><circle cx="1234" cy="254" r="4" fill="#FF8900"/>';
+    www+=[14,26,38].map(function(r,i){var d=(r*.7071).toFixed(1);return '<path d="M'+(1195-d)+' '+(158-d)+'A'+r+' '+r+' 0 0 1 '+(1195+ +d)+' '+(158-d)+'" stroke="'+CY+'" stroke-width="2.4" stroke-linecap="round" fill="none" stroke-opacity=".2"><animate attributeName="stroke-opacity" values=".15;.95;.15" dur="2.2s" begin="'+(i*.35)+'s" repeatCount="indefinite"/></path>';}).join('');
+    // klient: gruba zielona linia sieciowa z wtyczkami
+    www+='<path d="M1195 272V322" stroke="'+GR+'" stroke-width="6" stroke-linecap="round" style="filter:drop-shadow(0 0 7px '+GR+')"/><path d="M1195 272V322" stroke="#d6ffe6" stroke-width="1.6" stroke-linecap="round" stroke-opacity=".6"/><rect x="1186" y="270" width="18" height="9" rx="2.5" fill="'+GR+'" stroke="#0a0a0b" stroke-width="2"/><rect x="1186" y="313" width="18" height="9" rx="2.5" fill="'+GR+'" stroke="#0a0a0b" stroke-width="2"/>';
+    www+='<g transform="translate(1195 350)"><circle r="28" '+SH(GR)+'/><text fill="'+GR+'" font-size="24">K</text></g>';
+    // ramie w dol: skrzynia -> strona / aplikacja (tak samo, wtyczki do krawedzi)
+    www+=plate(788,295,40,6)+'<g transform="translate(788 298) rotate(90)">'+girder(41,40)+'</g>'+plate(788,342,40,6);
     www+='</g>';
-    www+='<g class="pb"><circle r="4.5" fill="#FF8900" style="filter:drop-shadow(0 0 6px #FF8900)"><animateMotion dur="3s" begin="0s" repeatCount="indefinite" path="M651 248V229H990"/></circle><circle r="4" fill="#FF8900" style="filter:drop-shadow(0 0 6px #FF8900)"><animateMotion dur="1.6s" begin=".8s" repeatCount="indefinite" path="M1010 156Q1042 160 1044 187"/></circle></g>';
+    www+='<g class="pb">'+[['M576 250H668',2.2,0],['M908 250H1000',2.2,.9],['M1195 272V322',1.2,.3],['M788 292V345',1.6,.6]].map(function(q){return '<circle r="4.2" fill="#FF8900" style="filter:drop-shadow(0 0 6px #FF8900)"><animateMotion dur="'+q[1]+'s" begin="'+q[2]+'s" repeatCount="indefinite" path="'+q[0]+'"/></circle>';}).join('')+'</g>';
     h+=www;
     demo.classList.add('nt');svg.innerHTML=h;
     function odblokuj(){requestAnimationFrame(function(){requestAnimationFrame(function(){demo.classList.remove('nt');});});}
@@ -1008,7 +1023,7 @@
 @media(max-width:720px){.sys-legend,.sys-opis{padding-left:16px;padding-right:16px}.sys-legend ul{grid-template-rows:none;grid-auto-flow:row}.so-h{display:none}.so-r{grid-template-columns:1fr;gap:6px}
  .so-r p::before{display:block;font:600 11px 'Space Grotesk';letter-spacing:1.5px;text-transform:uppercase;margin-bottom:2px}
  .so-r .so-a::before{content:'W chaosie';color:#8C8C88}.so-r .so-b::before{content:'W systemie';color:#58d0ff}}
-@media(max-width:720px){.sys-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -22px;padding:0 22px 6px}#sysSvg{min-width:680px}.sys-bridge{height:70px}}
+@media(max-width:720px){.sys-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -22px;padding:0 22px 6px}#sysSvg{min-width:780px}.sys-bridge{height:70px}}
 @media(prefers-reduced-motion:reduce){.holo-head::after,.sys-bridge i,.sys-demo[data-s=a] #sysSvg .fa .fi,#sysSvg .la{animation:none}}
 .holo-wrap{width:100%;margin-top:clamp(20px,3vw,40px);display:flex;flex-direction:column;align-items:center;padding:0 2vw}
 .holo-stage{position:relative;aspect-ratio:1000/690;width:min(96vw,1620px);color:#EAF6FF;--sgw:48%}
