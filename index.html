@@ -71,7 +71,7 @@
         <button type="button" class="sys-chip" data-go="b">2 · System SparkScale</button>
         <button type="button" class="sys-chip sys-re" id="sysRe">↻ od nowa</button>
       </div>
-      <div class="sys-scroll"><svg id="sysSvg" viewBox="0 0 1100 580" role="img" aria-label="Schemat: firma z ręczną pracą ludzi zamieniona w jeden spójny system, w którym człowiek tylko weryfikuje"></svg></div>
+      <div class="sys-scroll"><svg id="sysSvg" viewBox="0 0 1200 600" role="img" aria-label="Schemat: firma z ręczną pracą ludzi zamieniona w jeden spójny system, w którym człowiek tylko weryfikuje"></svg></div>
       <p class="sys-cap"><b class="ca">Stan obecny — ręczna robota.</b><b class="cb">System firmowy — dane płyną same.</b>
         <span class="sys-leg"><svg viewBox="-12 -22 24 46" width="14" height="26" aria-hidden="true"><use href="#sysMan"/></svg> = powtarzalna praca człowieka · ludzików: <em id="sysCnt">9</em></span></p>
       <div class="sys-legend" aria-label="Legenda schematu"><h3>Legenda</h3><ul><li><svg viewBox="0 0 40 26" aria-hidden="true"><rect x="3" y="4" width="34" height="18" rx="5" fill="rgba(255,154,60,.16)" stroke="#ff9a3c" stroke-width="2"/></svg><span><b>Etap pracy</b>albo proces</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><ellipse cx="20" cy="13" rx="15" ry="10" fill="rgba(255,225,77,.14)" stroke="#ffe14d" stroke-width="2"/></svg><span><b>Dział lub osoba</b>w firmie</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><polygon points="3,8 20,2 37,8 37,18 20,24 3,18" fill="#2a2d33" stroke="#c9cfd6" stroke-width="2" stroke-linejoin="round"/></svg><span><b>System, który firma już ma</b>np. ERP</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><polygon points="3,13 20,3 37,13 20,23" fill="rgba(125,139,255,.16)" stroke="#7d8bff" stroke-width="2" stroke-linejoin="round"/></svg><span><b>Aplikacja pod firmę</b>zbudowana na zamówienie</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><rect x="6" y="4" width="28" height="18" rx="4" fill="rgba(46,213,115,.14)" stroke="#2ed573" stroke-width="2"/><path d="M9 8l11 8 11-8" fill="none" stroke="#2ed573" stroke-width="2" stroke-linecap="round"/></svg><span><b>Maile i telefony</b>kontakt z klientami i dostawcami</span></li><li><svg viewBox="-14 -22 28 46" aria-hidden="true"><use href="#sysMan"/></svg><span><b>Praca człowieka</b>powtarzalna, ręczna</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><path d="M3 13h34" stroke="#9a9a96" stroke-width="2" stroke-dasharray="2 6" stroke-linecap="round"/></svg><span><b>Dane przenosi człowiek</b>ręcznie, z miejsca na miejsce</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><path d="M3 13h34" stroke="#58d0ff" stroke-width="2" stroke-linecap="round"/><circle cx="24" cy="13" r="3.5" fill="#FF8900"/></svg><span><b>Dane płyną same</b>bez udziału człowieka</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><rect x="3" y="3" width="34" height="20" rx="7" fill="rgba(79,100,235,.16)" stroke="#7d8bff" stroke-width="2"/></svg><span><b>Jeden wspólny system</b>wszystko w jednym miejscu</span></li><li><svg viewBox="0 0 40 26" aria-hidden="true"><path d="M12 3H4v20h8M28 3h8v20h-8" fill="none" stroke="#F5F5F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="20" cy="13" r="3" fill="#F5F5F4"/></svg><span><b>Człowiek tylko sprawdza</b>zatwierdza, nie przepisuje</span></li></ul></div>
@@ -101,7 +101,7 @@
     h+='<rect class="cont" x="40" y="178" width="535" height="367" rx="34" pathLength="1"/>';
     // linie stanu obecnego (reczna robota)
     h+='<g class="oa" style="--d:.2s">'+[
-      'M178 175L355 110','M170 215L300 252','M480 145V204','M183 335L265 330','M160 380L215 396','M150 447L200 462','M297 452L333 462','M165 515L335 515','M470 396V440','M675 298L820 296','M775 245L850 252'
+      'M178 175L355 110','M170 215L300 252','M480 145V204','M183 335L265 330','M160 380L215 396','M150 447L200 462','M297 452L333 462','M165 515L335 515','M470 396V440','M675 300L740 320','M920 320L990 320','M770 247L815 270','M785 370L752 414','M830 370V414','M880 370L908 414'
     ].map(function(d){return '<path class="la" d="'+d+'"/>';}).join('')+'</g>';
     // wiry stanu docelowego
     var wires=['M330 118V178','M330 178V235L305 245','M125 241V290','M190 241V274','M255 241V258','M440 237V279','M500 340H584','M640 340H660','M920 340H930','M305 431V483','M720 280Q735 262 765 262','M865 280Q835 262 815 262'];
@@ -116,12 +116,15 @@
     h+=node('han',125,335,1,190,215,1,ell(64,52,DR,'HANDLOWIEC',13),'<circle r="27" '+SH(DR)+'/><text fill="'+DR+'" font-size="22">H</text>',.25);
     h+=node('biu',110,490,1,255,215,1,ell(55,48,RD,'BIURO',18),'<circle r="27" '+SH(RD)+'/><text fill="'+RD+'" font-size="22">B</text>',.35);
     h+=node('fak',478,500,1,330,505,1,rect(290,120,RD,'FAKTURY/BIURO',20),rect(290,44,RD,'FAKTURY I BIURO',17,22),.3);
-    h+=node('wyk',910,300,1,1010,340,.9,rect(180,100,GO,'ZLECENIA',20),null,.1);
-    h+=node('dia',760,185,1,790,340,1,'<polygon points="-128,0 0,-62 128,0 0,62" '+SH(BL)+' stroke-linejoin="round"/><text fill="'+BL+'" font-size="14">APLIKACJA FIRMY</text>','<polygon points="-130,0 0,-80 130,0 0,80" '+SH(BL)+' stroke-linejoin="round"/><text fill="'+BL+'" font-size="15">APLIKACJA FIRMY</text>',.2);
+    h+=node('wyk',1080,320,1,1010,340,.9,rect(180,100,GO,'REALIZACJA/ZLECEŃ',20),null,.1);
+    h+=node('dia',760,185,1,790,340,1,'<polygon points="-128,0 0,-62 128,0 0,62" '+SH(BL)+' stroke-linejoin="round"/>'+lab('STRONA/INTERNETOWA',BL,13)+'','<polygon points="-130,0 0,-80 130,0 0,80" '+SH(BL)+' stroke-linejoin="round"/><text fill="'+BL+'" font-size="15">APLIKACJA FIRMY</text>',.2);
     // koperta tylko w stanie obecnym
     h+='<g class="oa" transform="translate(240 425)" style="--d:.1s"><rect x="-58" y="-39" width="116" height="78" rx="14" '+SH(GR)+'/><path d="M-50-28L0 8L50-28" fill="none" stroke="'+GR+'" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></g>';
+    // stan obecny: kafelek ZLECENIA BIURO i narzedzia, ktore na nim wisza
+    h+='<g class="oa" transform="translate(830 320)" style="--d:.1s">'+rect(180,100,RD,'ZLECENIA/BIURO',20)+'</g>';
+    h+='<g class="oa" style="--d:.3s">'+[[750,'#1d6f42','#c9cfd6','X','#fff',24,'EXCEL'],[830,'#0f1b17','#10a37f','GPT','#10a37f',15,'GPT'],[910,'#2b579a','#c9cfd6','W','#fff',24,'WORD']].map(function(t){return '<g transform="translate('+t[0]+' 440)"><rect x="-28" y="-26" width="56" height="52" rx="10" fill="'+t[1]+'" stroke="'+t[2]+'" stroke-width="1.8"/><text fill="'+t[4]+'" font-size="'+t[5]+'" font-weight="700">'+t[3]+'</text><text y="42" fill="'+W+'" font-size="12">'+t[6]+'</text></g>';}).join('')+'</g>';
     // ludziki stanu obecnego
-    var F=[[245,88],[302,205],[172,262],[104,422],[322,412],[560,410],[228,552],[885,225],[400,165]];
+    var F=[[245,88],[302,205],[172,262],[104,422],[322,412],[560,410],[228,552],[885,225],[400,165],[955,320]];
     h+='<g class="fas">'+F.map(function(p,i){return man(p[0],p[1],i,'fa');}).join('')+'</g>';
     // elementy stanu docelowego
     h+='<g class="ob" style="--d:1.9s"><rect x="385" y="193" width="170" height="44" rx="22" '+SH('#39a9ff')+'/><text x="470" y="215" fill="#39a9ff" font-size="16">NADZÓR</text></g>';
@@ -165,7 +168,7 @@
     function odblokuj(){requestAnimationFrame(function(){requestAnimationFrame(function(){demo.classList.remove('nt');});});}
     if(document.readyState==='complete')odblokuj();else addEventListener('load',odblokuj);
     var cnt=document.getElementById('sysCnt'),chips=demo.querySelectorAll('.sys-chip[data-go]');
-    var R=[[[178,175],[355,110]],[[170,215],[300,252]],[[183,335],[265,330]],[[160,380],[215,396]],[[297,452],[333,462]],[[470,396],[470,440]],[[165,515],[335,515]],[[675,298],[820,296]],[[480,145],[480,204]]],
+    var R=[[[178,175],[355,110]],[[170,215],[300,252]],[[183,335],[265,330]],[[160,380],[215,396]],[[297,452],[333,462]],[[470,396],[470,440]],[[165,515],[335,515]],[[675,300],[740,320]],[[480,145],[480,204]],[[920,320],[990,320]]],
       run=null;
     function startRun(){
       if(RM||run)return;
