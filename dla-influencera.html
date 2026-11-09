@@ -145,7 +145,7 @@ a{color:inherit}
 @keyframes kSpin{to{transform:rotate(360deg)}}@keyframes kSpinR{to{transform:rotate(-360deg)}}
 .k-ch{margin-top:8%;font:700 calc(var(--w)*.064)/1.1 'Space Grotesk';letter-spacing:.3px;color:#ffe7a1;overflow-wrap:anywhere}
 .k-pl{margin-top:4px;font:600 calc(var(--w)*.038)/1 'Space Grotesk';letter-spacing:2px;text-transform:uppercase;color:#b8975a}
-.k-ds{margin:6% 0 0;font-size:calc(var(--w)*.05);line-height:1.45;color:#e6dcc4}
+.k-ds{margin:6% 0 0;font-size:calc(var(--w)*.05);line-height:1.45;color:#e6dcc4;text-wrap:balance}
 .k-go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;padding:9px 18px;border-radius:999px;border:1.5px solid #e0a82e;color:#ffe7a1;font:700 12.5px 'Space Grotesk';letter-spacing:.3px;background:rgba(224,168,46,.1);box-shadow:inset 0 0 14px rgba(224,168,46,.18),0 0 18px rgba(224,168,46,.2);animation:kPulse 2.4s infinite}
 @keyframes kPulse{50%{box-shadow:inset 0 0 14px rgba(224,168,46,.3),0 0 28px rgba(224,168,46,.5)}}
 /* druga strona: zdjecie albo zywa karta z landingu na CALA powierzchnie */
@@ -472,7 +472,7 @@ function card(k,i){
   var av=el('div','k-av'),avi=el('div');if(ok(k.zdjecie))avi.style.backgroundImage='url("'+k.zdjecie+'")';else avi.innerHTML='<svg viewBox="38 26 126 204" style="width:34%;opacity:.85" aria-hidden="true"><g fill="#e8c36a"><polygon points="46,66 101,35 101,69 46,100"/><polygon points="101,66 156,35 156,69 101,100"/><polygon points="101,90 68,110 101,130"/><polygon points="101,126 134,146 101,166"/><polygon points="46,188 101,157 101,191 46,222"/><polygon points="101,188 156,157 156,191 101,222"/></g></svg>';av.appendChild(avi);bk.appendChild(av);
   bk.appendChild(el('div','k-ch',k.kanal||k.nazwa));
   if(k.platformy)bk.appendChild(el('div','k-pl',k.platformy));
-  bk.appendChild(el('p','k-ds',k.opis||''));
+  bk.appendChild(el('p','k-ds',(k.opis||'').replace(/(^|\s)([\p{L}\d]{1,2}) (?=\S)/gu,'$1$2 ').replace(/(\d) (mln|tys\.|dni|dzień|zł)/g,'$1 $2')));
   bk.appendChild(el('span','k-go','Odwróć kartę ↻'));
   b.appendChild(bk);inn.appendChild(b);
   var f=el('div','k-f k-fr'),ph=el('div','k-ph');if(ok(k.foto||k.zdjecie))ph.style.backgroundImage='url("'+(k.foto||k.zdjecie)+'")';
